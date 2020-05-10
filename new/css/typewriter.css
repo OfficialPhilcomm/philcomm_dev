@@ -20,17 +20,6 @@ typewriter::after {
   animation-iteration-count: infinite;
 }
 
-typewriter.title {
-  color: white;
-
-  min-height: 20pt;
-  font-size: 20pt;
-}
-typewriter.title::after {
-  background-color: white;
-  height: 20pt;
-}
-
 @keyframes typewriter-cursor-blink {
   0% {
     opacity: 1;
