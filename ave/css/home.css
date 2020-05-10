@@ -1,0 +1,73 @@
+img.starters {
+  height: 200px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+div.team-history {
+  width: 100%;
+
+  padding: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+div.info-box {
+  padding: 0 10px;
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+div.info-box .info-circle {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  border-radius: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white
+}
+div.info-box .info-text {
+  padding: 0 20px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+button.primary {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 600px) {
+  div.info-box {
+    flex-direction: row;
+  }
+  div.info-box:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+  div.info-box .info-text {
+    text-align: left;
+  }
+  div.info-box:nth-child(2n) .info-text {
+    text-align: right;
+  }
+}
+
+img.team-picture {
+  width: 100%;
+  margin-bottom: 40px;
+}

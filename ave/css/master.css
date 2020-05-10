@@ -1,0 +1,86 @@
+@import url("main.css");
+@import url("footer.css");
+
+@import url("headings.css");
+@import url("button.css");
+@import url("wrapper.css");
+
+:root {
+  --color-primary: #ACD3EB;
+  --color-text: #333333;
+
+  --font-size-small: 12pt;
+  --font-size-medium: 18pt;
+  --font-size-big: 30pt;
+
+  --footer-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+
+  color: var(--color-text);
+  font-size: var(--font-size-small);
+  font-family: sans-serif;
+}
+
+html,body {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  min-height: 100%;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+nav {
+  width: 100%;
+
+  background-color: var(--color-primary);
+  border-bottom: 2px solid white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: fixed;
+}
+nav:hover > button {
+  font-size: calc(var(--font-size-medium) + 6pt);
+}
+nav .nav-button {
+  background: none;
+  border: none;
+
+  color: white;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+
+  padding: 5px 10px;
+
+  cursor: pointer;
+
+  transition: 200ms all;
+}
+nav .nav-button:hover {
+  color: #f0f0f0;
+}
+
+.top-box {
+  width: 100%;
+  padding: 150px 0 250px 0;
+
+  background-color: var(--color-primary);
+
+  margin-bottom: -100px;
+
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 50% 100%, 0 calc(100% - 40px));
+
+  z-index: -1;
+}

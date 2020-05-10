@@ -1,0 +1,43 @@
+:root {
+  --default-font-size: 12pt;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif, serif;
+  font-size: var(--default-font-size);
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /*background-color: #F0F0F0;*/
+  background-color: #ce3635;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+main {
+  /*background-color: white;*/
+  width: 100%;
+
+  /*max-width: 1000px;
+  min-height: 100%;*/
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}

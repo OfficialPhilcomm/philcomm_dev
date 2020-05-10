@@ -1,0 +1,43 @@
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: var(--color-footer-background);
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: var(--dimension-footer-height);
+}
+
+footer .social-media {
+  margin-left: auto;
+}
+footer .social-media img {
+  height: 24pt;
+}
+
+footer .social-media a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: 100ms color ease-in;
+}
+
+footer .social-media a.github {
+  color: var(--color-github);
+}
+footer .social-media a.github:hover {
+  color: var(--color-github-hover);
+}
+
+footer .social-media a.twitter {
+  color: var(--color-twitter);
+}
+footer .social-media a.twitter:hover {
+  color: var(--color-twitter-hover);
+}

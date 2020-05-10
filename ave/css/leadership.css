@@ -1,0 +1,48 @@
+img.starters {
+  height: 200px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+div.leader-box {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+div.leader-box .trainer-name {
+  font-size: var(--font-size-medium);
+}
+
+div.leader-box .images {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+div.leader-box .images .trainer, div.leader-box .images .follower {
+  width: 160px;
+  height: 160px;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+div.leader-box .description {
+  width: 100%;
+  text-align: center;
+}

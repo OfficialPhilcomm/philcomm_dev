@@ -1,0 +1,19 @@
+h1, h2 {
+  width: 100%;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--font-size-big);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: var(--font-size-medium);
+  font-weight: normal;
+}
+
+h1.no-margin, h2.no-margin {
+  margin: 0;
+}
