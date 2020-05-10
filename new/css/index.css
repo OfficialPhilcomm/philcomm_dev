@@ -3,6 +3,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  flex-wrap: nowrap;
 }
 
 header .name {
@@ -11,6 +13,8 @@ header .name {
 
 header .subtitle {
   font-size: 20pt;
+
+  text-align: center;
 }
 
 typewriter.title {
