@@ -11,6 +11,25 @@ class Order {
 }
 Order.steps = ["Started", "Breeding", "Training", "Finish"];
 
+class UserOrder {
+  constructor(jsonObject) {
+    this.username = jsonObject.username;
+    this.pokemonName = jsonObject.pokemon_name;
+    this.gender = jsonObject.gender;
+    this.move1 = jsonObject.move1;
+    this.move2 = jsonObject.move2;
+    this.move3 = jsonObject.move3;
+    this.move4 = jsonObject.move4;
+    this.ability = jsonObject.ability;
+    this.paymentMax = jsonObject.payment_max;
+    this.createdAt = jsonObject.created_at;
+  }
+
+  createUIElement() {
+    // TODO: implement function that returns ui element
+  }
+}
+
 class OrderData {
   constructor(pokemonName, gender, move1, move2, move3, move4, ability) {
     this.pokemonName = pokemonName;
