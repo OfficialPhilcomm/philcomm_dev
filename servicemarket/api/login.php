@@ -4,6 +4,7 @@ include 'general.php';
 $body = json_decode(file_get_contents('php://input'));
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+echo (db_host() . db_user() . db_pass() . db_name());
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
