@@ -9,12 +9,16 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "select * from UserOrder";
+$stmt = $conn->prepare("select * from UserOrder where UserID = ?");
+$stmt->bind_param("i", getUserID());
+$stmt->execute();
 
-$result = $conn->query($sql);
+$result = $stmt->get_result();
 if($result->num_rows === 0) exit('No rows');
 while($row = $result->fetch_assoc()) {
-  echo $row['ID'];
+  echo $row['ID'] . "\n";
 }
+
+$stmt->close();
 
 $conn->close();
