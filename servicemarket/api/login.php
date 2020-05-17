@@ -23,7 +23,6 @@ while($row = $result->fetch_assoc()) {
   echo $row['ID'] . "\n";
   $_SESSION['username'] = $row['UserID'];
 }
-echo $success;
 
 $stmt->close();
 
