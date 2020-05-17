@@ -13,9 +13,8 @@ $api_result = new stdClass();
 $api_result->type = "my_orders";
 $api_result->orders = array();
 
-$stmt = $conn->prepare("
-select uo.ID as ID, u.Username as Username from UserOrder uo on uo.UserID = ?
-join User u on uo.UserID = u.ID");
+$stmt = $conn->prepare("select uo.ID as ID, u.Username as Username from UserOrder uo
+join User u on uo.UserID = ? and uo.UserID = u.ID");
 $stmt->bind_param("i", getUserID());
 $stmt->execute();
 
