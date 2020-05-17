@@ -4,7 +4,7 @@ include 'general.php';
 requireLogin();
 
 $body = json_decode(file_get_contents('php://input'));
-echo "asd " . implode(", ", get_object_vars($body));
+echo "asd " . );
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 

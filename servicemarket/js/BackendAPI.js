@@ -4,9 +4,7 @@ class BackendAPI {
 
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
-    request.send(JSON.stringify(
-      orderData.serialize()
-    ));
+    request.send(orderData.serialize());
 
     if (request.status === 200) {
       let apiResponse = request.responseText;
