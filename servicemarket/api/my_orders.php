@@ -26,7 +26,7 @@ while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["ID"];
   $order->user_name = $row["Username"]
-  array_push($orders, $order);
+  $orders[] = $order;
 }
 $api_result->orders = $orders;
 
