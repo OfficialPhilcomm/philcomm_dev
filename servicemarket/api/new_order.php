@@ -4,8 +4,7 @@ include 'general.php';
 requireLogin();
 
 $body = json_decode(file_get_contents('php://input'));
-
-echo file_get_contents('php://input') . "\n";
+echo implode(", ", get_object_vars($body));
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
