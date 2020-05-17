@@ -67,5 +67,5 @@ submitButton.addEventListener("click", function(e) {
   let ability = abilitySelect[abilitySelect.selectedIndex].value;
 
   let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability);
-  console.log(orderData.serialize());
+  BackendAPI.submitOrder(orderData);
 });

@@ -11,3 +11,7 @@ function requireLogin() {
     exit("not logged in");
   }
 }
+
+function getUserID() {
+  return $_SESSION['user_id'];
+}

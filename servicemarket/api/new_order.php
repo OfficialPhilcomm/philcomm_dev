@@ -16,7 +16,12 @@ values (?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssss", $body->pokemon_name, $body->gender, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability);
 $stmt->execute();
 
-if($stmt->affected_rows === 0) exit('No rows updated');
+$userID = getUserID();
+$orderDataID = $conn->insert_id;
+
+$stmt = $conn->prepare("insert into UserOrder (UserID,OrderDataID) values (?, ?)");
+$stmt->bind_param("ii", $userID, $orderDataID);
+$stmt->execute();
 
 $stmt->close();
 
