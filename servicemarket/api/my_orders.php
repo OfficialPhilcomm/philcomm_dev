@@ -25,7 +25,7 @@ $orders = array();
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["ID"];
-  $order->user_name = $row["Username"]
+  $order->user_name = $row["Username"];
   $orders[] = $order;
 }
 $api_result->orders = $orders;
