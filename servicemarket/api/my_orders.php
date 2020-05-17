@@ -21,11 +21,13 @@ $stmt->execute();
 
 $result = $stmt->get_result();
 if($result->num_rows === 0) exit('No rows');
+$orders = array();
 while($row = $result->fetch_assoc()) {
   $order->id = $row["ID"];
   $order->user_name = $row["Username"]
-  array_push($api_result->orders, $order);
+  array_push($orders, $order);
 }
+$api_result->orders = $orders;
 
 echo json_encode($api_result);
 
