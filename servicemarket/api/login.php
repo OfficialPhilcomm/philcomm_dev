@@ -23,12 +23,8 @@ while($row = $result->fetch_assoc()) {
   echo $row['ID'];
   $_SESSION['username'] = $row['UserID'];
 }
-
-if($success) {
-
-}
 echo $success;
 
-$stmt.close();
+$stmt->close();
 
 $conn->close();
