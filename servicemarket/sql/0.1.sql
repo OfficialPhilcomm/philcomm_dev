@@ -2,7 +2,7 @@ drop table if exists User;
 create table User (
   ID int not null auto_increment primary key,
   Username varchar(64) not null unique,
-  Password password not null
+  Password text not null
 );
 insert into User (Username, Password) values ('Philcomm', password('123578'));
 
@@ -18,11 +18,11 @@ create table OrderData (
   Ability varchar(64) not null
 );
 
-drop table if exists Order;
-create table Order (
+drop table if exists UserOrder;
+create table UserOrder (
   ID int not null auto_increment primary key,
   UserID int not null,
   OrderDataID int not null
 );
-alter table Order add foreign key (UserID) references Order(ID) on update cascade on delete cascade;
-alter table Order add foreign key (OrderDataID) references OrderData(ID) on update cascade on delete cascade;
+alter table UserOrder add foreign key (UserID) references User(ID) on update cascade on delete cascade;
+alter table UserOrder add foreign key (OrderDataID) references OrderData(ID) on update cascade on delete cascade;

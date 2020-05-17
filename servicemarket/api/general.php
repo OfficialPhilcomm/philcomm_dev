@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$db_host = "localhost";
-$db_user = "servicemarket";
-$db_pass = "servicemarket";
-$db_name = "ServiceMarket";
+$db_host = "db5000463258.hosting-data.io";
+$db_user = "dbu43335";
+$db_pass = "2fC&uUc5su!NVFsG";
+$db_name = "dbs443745";
 
 function db_host() { return $db_host; }
 function db_user() { return $db_user; }
