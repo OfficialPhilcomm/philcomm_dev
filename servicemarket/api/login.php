@@ -20,7 +20,7 @@ while($row = $result->fetch_assoc()) {
   $success = true;
   $_SESSION['valid_login'] = true;
   $_SESSION['user_id'] = $row['ID'];
-  echo $row['ID'];
+  echo $row['ID'] . "\n";
   $_SESSION['username'] = $row['UserID'];
 }
 echo $success;
