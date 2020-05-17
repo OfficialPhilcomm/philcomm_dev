@@ -1,0 +1,98 @@
+:root {
+  --progress-bar-grey:  #777;
+  --progress-bar-grey2: #dfe3e4;
+  --progress-bar-blue:  #2183dd;
+  --progress-bar-green: #009900;
+  --progress-bar-white: #fff;
+}
+
+@charset "UTF-8";
+progressbar {
+  position: relative;
+  display: flex;
+
+  margin: 5px;
+}
+progressbar .progressbar-track {
+  position: absolute;
+  top: 6px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--progress-bar-grey2);
+  z-index: -1;
+}
+progressbar .progressbar-step {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+progressbar .progressbar-step:last-child:after {
+  display: none;
+}
+progressbar .progressbar-step:before {
+  content: "";
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 10px;
+  height: 10px;
+  background: var(--progress-bar-white);
+  border: 4px solid var(--progress-bar-grey2);
+  border-radius: 100%;
+  color: var(--progress-bar-white);
+}
+progressbar .progressbar-step:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 0%;
+  transition: width 1s ease-in;
+  height: 5px;
+  background: var(--progress-bar-grey2);
+  z-index: -1;
+}
+progressbar .progressbar-step.is-active {
+  color: var(--progress-bar-blue);
+}
+progressbar .progressbar-step.is-active:before {
+  border: 4px solid var(--progress-bar-grey);
+  animation: pulse 2s infinite;
+}
+progressbar .progressbar-step.is-complete {
+  color: var(--progress-bar-green);
+}
+progressbar .progressbar-step.is-complete:before {
+  font-family: FontAwesome;
+  font-size: 10px;
+  color: var(--progress-bar-white);
+  background: var(--progress-bar-green);
+  border: 4px solid transparent;
+}
+progressbar .progressbar-step.is-complete:after {
+  background: var(--progress-bar-blue);
+  animation: nextStep 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(33, 131, 221, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(33, 131, 221, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(33, 131, 221, 0);
+  }
+}
+
+@keyframes nextStep {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
