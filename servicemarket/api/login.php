@@ -19,8 +19,9 @@ if($result->num_rows === 0) exit('No rows');
 while($row = $result->fetch_assoc()) {
   $success = true;
   $_SESSION['valid_login'] = true;
-  $_SESSION['user_id'] = row['ID'];
-  $_SESSION['username'] = row['UserID'];
+  $_SESSION['user_id'] = $row['ID'];
+  echo $row['ID'];
+  $_SESSION['username'] = $row['UserID'];
 }
 
 if($success) {
