@@ -15,8 +15,17 @@ if ($conn->connect_error) {
 
 $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability)
 values (?, ?, ?, ?, ?, ?, ?)");
+echo $body->pokemon_name . "\n";
+echo $body->gender . "\n";
+echo $body->move1 . "\n";
+echo $body->move2 . "\n";
+echo $body->move3 . "\n";
+echo $body->move4 . "\n";
+echo $body->ability . "\n";
 $stmt->bind_param("sssssss", $body->pokemon_name, $body->gender, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability);
 $stmt->execute();
+
+echo $stmt->affected_rows . "\n";
 
 $userID = getUserID();
 $orderDataID = $conn->insert_id;
