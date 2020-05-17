@@ -19,6 +19,8 @@ $stmt->execute();
 $userID = getUserID();
 $orderDataID = $conn->insert_id;
 
+echo $userID . " asd " . $orderDataID;
+
 $stmt = $conn->prepare("insert into UserOrder (UserID,OrderDataID) values (?, ?)");
 $stmt->bind_param("ii", $userID, $orderDataID);
 $stmt->execute();
