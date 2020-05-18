@@ -35,7 +35,7 @@
               <td><input id="login-password" type="password" /></td>
             </tr>
             <tr>
-              <td colspan="2"><button id="login-submit">Login</button></td>
+              <td colspan="2"><button id="login-submit" onclick="login()">Login</button></td>
             </tr>
           </table>
         </div>
