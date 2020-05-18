@@ -15,13 +15,17 @@ $stmt->bind_param("ss", $body->user, $body->pass);
 $stmt->execute();
 
 $result = $stmt->get_result();
-if($result->num_rows === 0) exit('No rows');
-while($row = $result->fetch_assoc()) {
-  $success = true;
-  $_SESSION['valid_login'] = true;
-  $_SESSION['user_id'] = $row['ID'];
-  echo $row['ID'] . "\n";
-  $_SESSION['username'] = $row['UserID'];
+
+$success = false;
+
+if($result->num_rows !== 0) {
+  while($row = $result->fetch_assoc()) {
+    $success = true;
+    $_SESSION['valid_login'] = true;
+    $_SESSION['user_id'] = $row['ID'];
+    echo $row['ID'] . "\n";
+    $_SESSION['username'] = $row['Username'];
+  }
 }
 
 $api_response = new stdClass();
