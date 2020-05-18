@@ -10,9 +10,11 @@ username.value = undefined;
 
 function login() {
   let result = BackendAPI.login(loginUsername.value, loginPassword.value);
-  if(result.success) {
-    loggedIn.value = false;
-    username.value = result.username;
+  if(result != undefined) {
+    if(result.success) {
+      loggedIn.value = false;
+      username.value = result.username;
+    }
   }
 }
 

@@ -56,7 +56,7 @@ class BackendAPI {
     if (request.status === 200) {
       let apiResponse = request.responseText;
 
-      console.log(apiResponse);
+      return JSON.parse(apiResponse);
     }
   }
 
