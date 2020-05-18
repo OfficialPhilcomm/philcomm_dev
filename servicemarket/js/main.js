@@ -5,5 +5,5 @@ var userData = new LiveData();
 userData.value = false;
 
 function login() {
-  BackendAPI.login(loginUsername, loginPassword);
+  BackendAPI.login(loginUsername.value, loginPassword.value);
 }
