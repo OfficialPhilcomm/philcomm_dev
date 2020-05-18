@@ -11,7 +11,7 @@
     <script src="js/BackendAPI.js" charset="utf-8"></script>
     <script src="js/LiveData.js" charset="utf-8"></script>
 
-    <script src="js/main.js" charset="utf-8"></script>
+    <script defer src="js/main.js" charset="utf-8"></script>
   </head>
   <body>
     <?php include("nav.html"); ?>
