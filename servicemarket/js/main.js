@@ -1,3 +1,4 @@
+var loginContainer = document.getElementById("login-container");
 var loginUsername = document.getElementById("login-username");
 var loginPassword = document.getElementById("login-password");
 var logoutImg = document.getElementById("logout");
@@ -16,6 +17,8 @@ function login() {
       username.value = result.username;
 
       logoutImg.style.display = "block";
+
+      loginContainer.style.display = "none";
     }
   }
 }
