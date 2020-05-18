@@ -19,5 +19,6 @@ class LiveData {
 
   registerListener(func) {
     this.listeners.push(func);
+    func(this.valueInternal);
   }
 }

@@ -56,21 +56,6 @@
   </button>
   <div id="user">
     <img id="logout" src="icons/sign-out-alt-solid.svg" onclick="logout()" alt="test">
-    <script defer type="text/javascript">
-      userData.registerListener(function(newValue) {
-        console.log("userData listener called");
-        let logoutImg = document.getElementById("logout");
-        if(newValue) {
-          logoutImg.style.display = "none";
-        } else {
-          logoutImg.style.display = "block";
-        }
-      });
-
-      function logout() {
-        console.log(BackendAPI.logout());
-      }
-    </script>
-    <div id="username">This is the user</div>
+    <div id="username-display">This is the user</div>
   </div>
 </nav>
