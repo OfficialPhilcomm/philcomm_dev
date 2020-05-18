@@ -14,6 +14,8 @@ function login() {
     if(result.success) {
       loggedIn.value = false;
       username.value = result.username;
+
+      logoutImg.style.display = "block";
     }
   }
 }
