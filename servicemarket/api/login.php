@@ -23,7 +23,6 @@ if($result->num_rows !== 0) {
     $success = true;
     $_SESSION['valid_login'] = true;
     $_SESSION['user_id'] = $row['ID'];
-    echo $row['ID'] . "\n";
     $_SESSION['username'] = $row['Username'];
   }
 }
