@@ -24,6 +24,13 @@ while($row = $result->fetch_assoc()) {
   $_SESSION['username'] = $row['UserID'];
 }
 
+$api_response = new stdClass();
+$api_response->success = $success;
+if($success) {
+  $api_response->username = $_SESSION['username'];
+}
+exit(json_encode($api_response));
+
 $stmt->close();
 
 $conn->close();

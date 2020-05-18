@@ -8,7 +8,10 @@ function db_name() { return "dbs443745"; }
 
 function requireLogin() {
   if(!$_SESSION['valid_login']) {
-    exit("not logged in");
+    $api_response = new stdClass();
+    $api_response->errors = array();
+    $api_response->errors[] = "not logged in";
+    exit(json_encode($api_response));
   }
 }
 

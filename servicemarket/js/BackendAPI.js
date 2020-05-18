@@ -23,7 +23,7 @@ class BackendAPI {
     if (request.status === 200) {
       let apiResponse = JSON.parse(request.responseText);
 
-      console.log(apiResponse);
+      return apiResponse;
     }
   }
 
@@ -58,5 +58,12 @@ class BackendAPI {
 
       console.log(apiResponse);
     }
+  }
+
+  static logout() {
+    const url = "api/logout.php";
+    var request = new XMLHttpRequest();
+    request.open('GET', url, false);
+    request.send(null);
   }
 }

@@ -1,12 +1,76 @@
 <nav>
+  <style media="screen">
+    nav {
+      z-index: 3;
+      width: 100%;
+      height: var(--nav-height);
+
+      background-color: var(--nav-color);
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      position: fixed;
+
+      box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    nav .logo {
+      margin: 0 10px;
+    }
+
+    nav .navlink {
+      height: 100%;
+
+      padding: 0 10px;
+
+      border: none;
+      background-color: white;
+    }
+
+    nav #user {
+      margin-left: auto;
+
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    nav #user:hover {
+      color: green;
+    }
+
+    nav #user #logout {
+      height: var(--font-size-small);
+    }
+  </style>
   <div class="logo">
     This is the logo
   </div>
   <button class="navlink">
     This is a navlink
   </button>
-  <img id="logout" src="icons/sign-out-alt-solid.svg" alt="test">
   <div id="user">
-    This is the user
+    <img id="logout" src="icons/sign-out-alt-solid.svg" onclick="logout()" alt="test">
+    <script defer type="text/javascript">
+      userData.registerListener(function(newValue) {
+        console.log("userData listener called");
+        let logoutImg = document.getElementById("logout");
+        if(newValue) {
+          logoutImg.style.display = "none";
+        } else {
+          logoutImg.style.display = "block";
+        }
+      });
+
+      function logout() {
+        console.log(BackendAPI.logout());
+      }
+    </script>
+    <div id="username">This is the user</div>
   </div>
 </nav>

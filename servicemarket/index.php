@@ -7,21 +7,39 @@
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/progressbar.css">
 
-    <script defer src="js/main.js" charset="utf-8"></script>
-
     <script src="js/PokemonAPI.js" charset="utf-8"></script>
-    <script src="js/Order.js" charset="utf-8"></script>
-    <script src="js/ProgressBar.js" charset="utf-8"></script>
-    <script src="js/UserInfo.js" charset="utf-8"></script>
+    <script src="js/BackendAPI.js" charset="utf-8"></script>
+    <script src="js/LiveData.js" charset="utf-8"></script>
+
+    <script src="js/main.js" charset="utf-8"></script>
   </head>
   <body>
     <?php include("nav.html"); ?>
 
     <main>
-      <div class="all_requests">all_requests</div>
-      <div id="user_info"></div>
-      <div class="own_requests">own_requests</div>
-      <div class="more_information">more_information</div>
+      <div id="main-container">
+        <div class="all_requests">all_requests</div>
+        <div id="user_info"></div>
+        <div class="own_requests">own_requests</div>
+        <div class="more_information">more_information</div>
+      </div>
+      <div id="login-container">
+        <div class="login-dialog">
+          <table>
+            <tr>
+              <td>Username:</td>
+              <td><input id="login-username" type="text" /></td>
+            </tr>
+            <tr>
+              <td>Password:</td>
+              <td><input id="login-password" type="password" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button id="login-submit">Login</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </main>
   </body>
 </html>

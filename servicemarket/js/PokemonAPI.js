@@ -44,6 +44,8 @@ class Pokemon {
 
   fillData(jsonObject) {
     if(!this.loaded) {
+      this.spriteUrl = jsonObject.sprites.front_default;
+
       this.moves = [];
       for(let move of jsonObject.moves) {
         this.moves.push(new Move(move.move));
