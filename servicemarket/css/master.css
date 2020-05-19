@@ -42,7 +42,7 @@ main #main-container {
 
   background-color: var(--main-background-color);
 
-  flex-grow: 1;
+  height: 100%;
 
   grid-gap: 20px;
 
