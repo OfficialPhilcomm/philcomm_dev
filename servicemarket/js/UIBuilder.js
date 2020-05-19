@@ -1,6 +1,6 @@
 class UIBuilder {
   static fromObject(uiJSON) {
-    let elementType = uiJson.type || "div";
+    let elementType = uiJSON.type || "div";
 
     let domElement = document.createElement(elementType);
 
