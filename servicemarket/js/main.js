@@ -106,7 +106,7 @@ function generateOrderBox(userOrder) {
     children: [
       {
         type: 'td',
-        content: userOrder.pokemonName
+        content: userOrder.pokemon_name
       },
       {
         type: 'td',
