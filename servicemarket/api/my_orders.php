@@ -23,7 +23,7 @@ if($result->num_rows === 0) exit('No rows');
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["ID"];
-  $order->user_name = $row["Username"];
+  $order->username = $row["Username"];
   $api_result->orders[] = $order;
 }
 
