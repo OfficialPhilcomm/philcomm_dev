@@ -58,6 +58,9 @@ loggedIn.registerListener(function(newValue) {
 
     loginContainer.style.display = "none";
 
+    loginUsername.value = "";
+    loginPassword.value = "";
+
     requestAllOrders();
     requestMyOrders();
   } else {
