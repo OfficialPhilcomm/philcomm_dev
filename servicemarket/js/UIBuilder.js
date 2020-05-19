@@ -10,7 +10,7 @@ class UIBuilder {
     if(uiJSON.content) domElement.innerHTML = uiJSON.content;
     if(uiJSON.children) {
       for(let child of uiJSON.children) {
-        domElement.appendChild(fromObject(child));
+        domElement.appendChild(UIBuilder.fromObject(child));
       }
     }
 
