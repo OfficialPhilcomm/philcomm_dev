@@ -31,7 +31,7 @@ function requestMyOrders() {
   let myOrders = BackendAPI.myOrders();
 
   for(let order of myOrders.orders) {
-    myOrders.appendChild(generateOrderBox(order));
+    myOrdersBox.appendChild(generateOrderBox(order));
   }
 
   console.log(myOrders);
