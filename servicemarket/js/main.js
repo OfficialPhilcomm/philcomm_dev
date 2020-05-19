@@ -4,6 +4,7 @@ var loginUsername = document.getElementById("login-username");
 var loginPassword = document.getElementById("login-password");
 var logoutImg = document.getElementById("logout");
 var usernameDisplay = document.getElementById("username-display");
+var myOrdersBox = document.getElementById("my-orders");
 
 var loggedIn = new LiveData();
 loggedIn.value = false;
@@ -28,6 +29,10 @@ function logout() {
 
 function requestMyOrders() {
   let myOrders = BackendAPI.myOrders();
+
+  for(let order of myOrders.orders) {
+    myOrders.appendChild(generateOrderBox(order));
+  }
 
   console.log(myOrders);
 }
