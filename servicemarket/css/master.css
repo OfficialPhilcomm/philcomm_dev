@@ -58,6 +58,8 @@ main #main-container .all_requests, main #main-container #user_info, main #main-
   border-radius: 10px;
 
   box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+
+  overflow-y: auto;
 }
 
 main .all_requests {
