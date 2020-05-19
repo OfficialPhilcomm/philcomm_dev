@@ -1,3 +1,4 @@
+// View Elements
 var loginContainer = document.getElementById("login-container");
 var loginUsername = document.getElementById("login-username");
 var loginPassword = document.getElementById("login-password");
@@ -13,15 +14,23 @@ function login() {
   let result = BackendAPI.login(loginUsername.value, loginPassword.value);
   if(result != undefined) {
     if(result.success) {
-      loggedIn.value = false;
+      loggedIn.value = true;
       username.value = result.username;
-
-      logoutImg.style.display = "block";
-
-      loginContainer.style.display = "none";
     }
   }
 }
+
+loggedIn.registerListener(function(newValue) {
+  if(newValue) {
+    logoutImg.style.display = "block";
+
+    loginContainer.style.display = "none";
+  } else {
+    logoutImg.style.display = "none";
+
+    loginContainer.style.display = "flex";
+  }
+});
 
 username.registerListener(function(newValue) {
   console.log("userData listener called");
