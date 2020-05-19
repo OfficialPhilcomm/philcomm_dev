@@ -82,6 +82,44 @@ function generateOrderBox(userOrder) {
 
   let infoTable = document.createElement("table");
 
+  let thRow = UIBuilder.fromObject({
+    type: 'tr',
+    children: [
+      {
+        type: 'th',
+        content: 'Pokemon'
+      },
+      {
+        type: 'th',
+        content: 'User'
+      },
+      {
+        type: 'th',
+        content: 'Payment'
+      }
+    ]
+  });
+  infoTable.appendChild(thRow);
+
+  let infoRow = UIBuilder.fromObject({
+    type: 'tr',
+    children: [
+      {
+        type: 'td',
+        content: userOrder.pokemonName
+      },
+      {
+        type: 'td',
+        content: userOrder.username
+      },
+      {
+        type: 'td',
+        content: 10000 // TODO: implement price
+      }
+    ]
+  });
+  infoTable.appendChild(infoRow);
+
   container.appendChild(infoTable);
 
   return container;
