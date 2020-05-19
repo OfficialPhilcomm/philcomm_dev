@@ -24,10 +24,6 @@ class UserOrder {
     this.paymentMax = jsonObject.payment_max;
     this.createdAt = jsonObject.created_at;
   }
-
-  createUIElement() {
-    // TODO: implement function that returns ui element
-  }
 }
 
 class OrderData {
