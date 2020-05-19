@@ -20,7 +20,6 @@ $stmt->bind_param("i", getUserID());
 $stmt->execute();
 
 $result = $stmt->get_result();
-if($result->num_rows === 0) exit('No rows');
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["ID"];

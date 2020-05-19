@@ -17,7 +17,7 @@ create table OrderData (
   Move2 varchar(64) not null,
   Move3 varchar(64) not null,
   Move4 varchar(64) not null,
-  Ability varchar(64) not null,
+  Ability varchar(64) not null
 );
 
 drop table if exists UserOrder;
@@ -31,7 +31,6 @@ create table UserOrder (
 );
 alter table UserOrder add foreign key (UserID) references User(ID) on update cascade on delete cascade;
 alter table UserOrder add foreign key (OrderDataID) references OrderData(ID) on update cascade on delete cascade;
-alter table UserOrder add foreign key (AcceptedOfferID) references Offer(ID) on update cascade on delete cascade;
 
 drop table if exists Offer;
 create table Offer (
@@ -42,3 +41,5 @@ create table Offer (
 );
 alter table Offer add foreign key (UserOrderID) references UserOrder(ID) on update cascade on delete cascade;
 alter table Offer add foreign key (UserID) references User(ID) on update cascade on delete cascade;
+
+alter table UserOrder add foreign key (AcceptedOfferID) references Offer(ID) on update cascade on delete cascade;
