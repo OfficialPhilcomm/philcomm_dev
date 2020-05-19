@@ -20,11 +20,25 @@ function login() {
   }
 }
 
+function logout() {
+  console.log(BackendAPI.logout());
+  loggedIn.value = false;
+  username.value = undefined;
+}
+
+function requestMyOrders() {
+  let myOrders = BackendAPI.myOrders();
+
+  console.log(myOrders);
+}
+
 loggedIn.registerListener(function(newValue) {
   if(newValue) {
     logoutImg.style.display = "block";
 
     loginContainer.style.display = "none";
+
+    requestMyOrders();
   } else {
     logoutImg.style.display = "none";
 
@@ -38,6 +52,17 @@ username.registerListener(function(newValue) {
   usernameDisplay.innerHTML = newValue;
 });
 
-function logout() {
-  console.log(BackendAPI.logout());
+function generateOrderBox(userOrder) {
+  let container = document.createElement("div");
+  container.className = "order-box";
+
+  let spriteImg = document.createElement("img");
+  spriteImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/2000px-Placeholder_no_text.svg.png"; // TODO: Add sprite
+  container.appendChild(spriteImg);
+
+  let infoDiv = document.createElement("div");
+  infoDiv.innerHTML = "username: " + userOrder.username;
+  container.appendChild(infoDiv);
+
+  return container;
 }

@@ -10,6 +10,7 @@
     <script src="js/PokemonAPI.js" charset="utf-8"></script>
     <script src="js/BackendAPI.js" charset="utf-8"></script>
     <script src="js/LiveData.js" charset="utf-8"></script>
+    <script src="js/StringUtils.js" charset="utf-8"></script>
 
     <script defer src="js/main.js" charset="utf-8"></script>
   </head>
