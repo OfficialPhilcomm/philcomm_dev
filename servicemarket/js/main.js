@@ -5,6 +5,7 @@ var loginPassword = document.getElementById("login-password");
 var logoutImg = document.getElementById("logout");
 var usernameDisplay = document.getElementById("username-display");
 var myOrdersBox = document.getElementById("my-orders");
+var allOrdersBox = document.getElementById("all-orders");
 
 var loggedIn = new LiveData();
 loggedIn.value = false;
@@ -27,6 +28,18 @@ function logout() {
   username.value = undefined;
 }
 
+function requestAllOrders() {
+  let allOrders = BackendAPI.allOrders();
+
+  allOrdersBox.innerHTML = "";
+
+  for(let order of allOrders.orders) {
+    allOrdersBox.appendChild(generateOrderBox(order));
+  }
+
+  console.log(allOrders);
+}
+
 function requestMyOrders() {
   let myOrders = BackendAPI.myOrders();
 
@@ -45,6 +58,7 @@ loggedIn.registerListener(function(newValue) {
 
     loginContainer.style.display = "none";
 
+    requestAllOrders();
     requestMyOrders();
   } else {
     logoutImg.style.display = "none";

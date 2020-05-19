@@ -19,7 +19,7 @@
 
     <main>
       <div id="main-container">
-        <div class="all_requests">all_requests</div>
+        <div id="all-orders" class="all_requests">all_requests</div>
         <div id="user_info"></div>
         <div id="my-orders" class="own_requests">own_requests</div>
         <div class="more_information">more_information</div>
