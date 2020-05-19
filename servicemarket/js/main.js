@@ -80,13 +80,9 @@ function generateOrderBox(userOrder) {
   let container = document.createElement("div");
   container.className = "order-box";
 
-  let spriteImg = document.createElement("img");
-  spriteImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/2000px-Placeholder_no_text.svg.png"; // TODO: Add sprite
-  container.appendChild(spriteImg);
+  let infoTable = document.createElement("table");
 
-  let infoDiv = document.createElement("div");
-  infoDiv.innerHTML = "username: " + userOrder.username;
-  container.appendChild(infoDiv);
+  container.appendChild(infoTable);
 
   return container;
 }
