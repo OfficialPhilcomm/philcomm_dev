@@ -33,6 +33,8 @@ main {
   flex-flow: column;
 
   position: relative;
+
+  overflow: hidden;
 }
 
 main #main-container {
