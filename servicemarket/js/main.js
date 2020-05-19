@@ -30,6 +30,8 @@ function logout() {
 function requestMyOrders() {
   let myOrders = BackendAPI.myOrders();
 
+  myOrdersBox.innerHTML = "";
+
   for(let order of myOrders.orders) {
     myOrdersBox.appendChild(generateOrderBox(order));
   }
