@@ -33,6 +33,7 @@ alter table UserOrder add foreign key (UserID) references User(ID) on update cas
 alter table UserOrder add foreign key (OrderDataID) references OrderData(ID) on update cascade on delete cascade;
 alter table UserOrder add foreign key (AcceptedOfferID) references Offer(ID) on update cascade on delete cascade;
 
+drop table if exists Offer;
 create table Offer (
   ID int not null auto_increment primary key,
   Price int not null,
