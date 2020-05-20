@@ -80,7 +80,7 @@ class BackendAPI {
     if (request.status === 200) {
       let apiResponse = request.responseText;
 
-      console.log(JSON.parse(apiResponse));
+      console.log(apiResponse);
     }
   }
 
