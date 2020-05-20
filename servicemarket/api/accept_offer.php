@@ -26,9 +26,9 @@ $user_order_id = $body->user_order_id;
 $offer_id = $body->offer_id;
 
 $stmt = $conn->prepare("update UserOrder
-set AcceptedOfferID = ?, State = 'started' where ID = ?");
+set AcceptedOfferID = ?, State = 0 where ID = ?");
 
-if($stmt->bind_param("iii", $offer_id, getUserID(), $user_order_id) === false) {
+if($stmt->bind_param("ii", $offer_id, $user_order_id) === false) {
   throwError($stmt->error);
 }
 if($stmt->execute() === false) {
