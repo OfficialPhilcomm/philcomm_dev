@@ -207,7 +207,7 @@ function generateOrderBox(userOrder) {
       onclick: function() {
         let dom = UIBuilder.fromObject({type: 'div'});
         let apiResponse = BackendAPI.allOffers(userOrder.id);
-        console.log(apiResponse));
+        console.log(apiResponse);
         for(let offer of apiResponse.offers) {
           dom.appendChild(UIBuilder.fromObject({
             type: 'div',
