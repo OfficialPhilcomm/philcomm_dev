@@ -4,6 +4,7 @@ var logoutImg = document.getElementById("logout");
 var usernameDisplay = document.getElementById("username-display");
 var myOrdersBox = document.getElementById("my-orders");
 var allOrdersBox = document.getElementById("all-orders");
+var moreInformationBox = document.getElementById("more_information");
 
 // Live Data
 var loggedIn = new LiveData();
@@ -233,7 +234,8 @@ function generateOrderBox(userOrder) {
       type: 'button',
       content: 'Show Info',
       onclick: function() {
-        BackendAPI.getOrderInfo(userOrder.id);
+        let orderInfo = BackendAPI.getOrderInfo(userOrder.id);
+        showOrderInfo(orderInfo.order);
       }
     });
     container.appendChild(userOrderInfoButton);
@@ -278,4 +280,18 @@ function createPopup(domElement) {
   popup.appendChild(domElement);
   popupContainer.appendChild(popup);
   popupChange();
+}
+
+function showOrderInfo(object) {
+  moreInformationBox.innerHTML = "";
+  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
+  moreInformationBox.appendChild(progressBar.element);
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'span',
+    content: 'Breeder: ' + object.breeder
+  }));
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'span',
+    content: 'Price: ' + object.price
+  }));
 }
