@@ -16,8 +16,8 @@ function login(un, pw) {
   let result = BackendAPI.login(un, pw);
   if(result != undefined) {
     if(result.success) {
-      loggedIn.value = true;
       username.value = result.username;
+      loggedIn.value = true;
     }
   }
 }
