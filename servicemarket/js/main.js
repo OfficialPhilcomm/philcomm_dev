@@ -126,7 +126,10 @@ function generateOrderBox(userOrder) {
     type: 'button',
     content: 'Make offer',
     onclick: function() {
-      window.alert(userOrder.id);
+      let price = parseInt(window.prompt("Price offer"));
+      if(Number.isNaN(price)) {
+        BackendAPI.makeOffer(userOrder.id, price);
+      }
     }
   });
   container.appendChild(makeOfferButton);
