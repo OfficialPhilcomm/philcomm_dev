@@ -204,7 +204,15 @@ function generateOrderBox(userOrder) {
     type: 'button',
     content: 'List all offers',
     onclick: function() {
-      BackendAPI.allOffers(userOrder.id);
+      let dom = UIBuilder.fromObject({type: 'div'});
+      let apiResponse = BackendAPI.allOffers(userOrder.id);
+      for(let offer of apiResponse.offers) {
+        dom.appendChild(UIBuilder.fromObject({
+          type: 'div',
+          content: offer.price + " " + offer.username
+        }));
+      }
+      createPopup(dom);
     }
   });
   container.appendChild(allOffersButton);
@@ -219,4 +227,14 @@ function popupChange() {
   } else {
     popupContainer.style.display = "none";
   }
+}
+
+function createPopup(domElement) {
+  let popup = UIBuilder.fromObject({
+    type: 'div',
+    class: 'popup'
+  })
+  popup.appendChild(domElement);
+  popupContainer.appendChild(popup);
+  popupChange();
 }
