@@ -202,7 +202,7 @@ function generateOrderBox(userOrder) {
 
   console.log(userOrder);
 
-  if(userOrder.offer_count > 0) {
+  if(userOrder.state === null && userOrder.offer_count > 0) {
     let allOffersButton = UIBuilder.fromObject({
       type: 'button',
       content: 'List all offers',
