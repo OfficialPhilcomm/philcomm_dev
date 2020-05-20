@@ -78,4 +78,16 @@ class BackendAPI {
       }
     ));
   }
+
+  static acceptOffer(userOrderID, offerID) {
+    const url = "api/accept_offer.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID,
+        offer_id: offerID
+      }
+    ));
+  }
 }
