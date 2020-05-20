@@ -25,23 +25,7 @@
         <div id="my-orders" class="own_requests">own_requests</div>
         <div class="more_information">more_information</div>
       </div>
-      <div id="login-container">
-        <div class="login-dialog">
-          <table>
-            <tr>
-              <td>Username:</td>
-              <td><input id="login-username" type="text" /></td>
-            </tr>
-            <tr>
-              <td>Password:</td>
-              <td><input id="login-password" type="password" /></td>
-            </tr>
-            <tr>
-              <td colspan="2"><button id="login-submit" onclick="login()">Login</button></td>
-            </tr>
-          </table>
-        </div>
-      </div>
+      <div id="popup-container"></div>
     </main>
   </body>
 </html>

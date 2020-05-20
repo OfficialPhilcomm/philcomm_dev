@@ -87,7 +87,7 @@ main .more_information {
   grid-area: more_information;
 }
 
-main #login-container {
+main #popup-container {
   z-index: 2;
 
   box-sizing: border-box;
@@ -107,7 +107,7 @@ main #login-container {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#login-container .login-dialog {
+#popup-container .popup {
   background-color: white;
   border-radius: 10px;
 

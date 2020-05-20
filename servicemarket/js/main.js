@@ -1,7 +1,5 @@
 // View Elements
-var loginContainer = document.getElementById("login-container");
-var loginUsername = document.getElementById("login-username");
-var loginPassword = document.getElementById("login-password");
+var popupContainer = document.getElementById("popup-container");
 var logoutImg = document.getElementById("logout");
 var usernameDisplay = document.getElementById("username-display");
 var myOrdersBox = document.getElementById("my-orders");
@@ -13,8 +11,8 @@ loggedIn.value = false;
 var username = new LiveData();
 username.value = undefined;
 
-function login() {
-  let result = BackendAPI.login(loginUsername.value, loginPassword.value);
+function login(username, password) {
+  let result = BackendAPI.login(username, password);
   if(result != undefined) {
     if(result.success) {
       loggedIn.value = true;
@@ -57,8 +55,6 @@ loggedIn.registerListener(function(newValue) {
   if(newValue) {
     logoutImg.style.display = "block";
 
-    loginContainer.style.display = "none";
-
     loginUsername.value = "";
     loginPassword.value = "";
 
@@ -67,7 +63,75 @@ loggedIn.registerListener(function(newValue) {
   } else {
     logoutImg.style.display = "none";
 
-    loginContainer.style.display = "flex";
+    let popup = UIBuilder.fromObject({
+      type: 'div', class: 'popup',
+      children: [
+        {
+          type: 'table',
+          children: [
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  content: 'Username:'
+                },
+                {
+                  type: 'td',
+                  children: [
+                    {
+                      type: 'input',
+                      class: 'td-username',
+                      input_type: 'text'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  content: 'Password:'
+                },
+                {
+                  type: 'td',
+                  children: [
+                    {
+                      type: 'input',
+                      class: 'td-password',
+                      input_type: 'password'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  children: [
+                    {
+                      type: 'button',
+                      content: 'Login',
+                      onclick: loginClick
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+
+    function loginClick() {
+      login(popup.getElementsByClassName("td-username")[0].value, popup.getElementsByClassName("td-password")[0].value);
+    }
+
+    popupContainer.appendChild(popup);
   }
 });
 
@@ -145,4 +209,13 @@ function generateOrderBox(userOrder) {
   container.appendChild(allOffersButton);
 
   return container;
+}
+
+function popupChange() {
+  let childCount = popupContainer.childElementCount;
+  if(childCount > 0) {
+    popupContainer.style.display = "flex";
+  } else {
+    popupContainer.style.display = "none";
+  }
 }
