@@ -22,6 +22,7 @@ $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 
 $result = $stmt->get_result();
+if($result->num_rows === 0) throwError("no valid order found");
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->state = $row["State"];
