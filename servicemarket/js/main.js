@@ -216,7 +216,7 @@ function generateOrderBox(userOrder) {
             content: offer.price + " " + offer.username
           }));
         }
-        createPopup(dom);
+        createCloseablePopup(dom);
       }
     });
     container.appendChild(allOffersButton);
@@ -234,7 +234,7 @@ function popupChange() {
   }
 }
 
-function createPopup(domElement) {
+function createCloseablePopup(domElement) {
   let popup = UIBuilder.fromObject({
     type: 'div',
     class: 'popup'
@@ -246,8 +246,19 @@ function createPopup(domElement) {
     content: 'X',
     onclick: function() {
       popupContainer.removeChild(popup);
+      popupChange();
     }
   }));
+  popupContainer.appendChild(popup);
+  popupChange();
+}
+
+function createPopup(domElement) {
+  let popup = UIBuilder.fromObject({
+    type: 'div',
+    class: 'popup'
+  })
+  popup.appendChild(domElement);
   popupContainer.appendChild(popup);
   popupChange();
 }
