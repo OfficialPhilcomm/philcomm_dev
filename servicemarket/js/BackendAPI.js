@@ -67,6 +67,22 @@ class BackendAPI {
     request.send(null);
   }
 
+  static allOffers(userOrderID) {
+    const url = "api/all_offers.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID
+      }
+    ));
+    if(request.status === 200) {
+      let apiResponse = request.responseText;
+
+      console.log(JSON.parse(apiResponse));
+    }
+  }
+
   static makeOffer(userOrderID, price) {
     const url = "api/new_offer.php";
     var request = new XMLHttpRequest();
@@ -77,7 +93,7 @@ class BackendAPI {
         price: price
       }
     ));
-    if (request.status === 200) {
+    if(request.status === 200) {
       let apiResponse = request.responseText;
 
       console.log(apiResponse);
