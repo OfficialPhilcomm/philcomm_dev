@@ -213,7 +213,14 @@ function generateOrderBox(userOrder) {
         for(let offer of apiResponse.offers) {
           dom.appendChild(UIBuilder.fromObject({
             type: 'div',
-            content: offer.id + " " + offer.price + " " + offer.username
+            content: offer.id + " " + offer.price + " " + offer.username,
+            children: [{
+              type: 'button',
+              content: 'Accept',
+              onclick: function() {
+                BackendAPI.acceptOffer(userOrder.id, offer.id);
+              }
+            }]
           }));
         }
         createCloseablePopup(dom);
