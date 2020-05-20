@@ -3,6 +3,8 @@ include 'general.php';
 
 requireLogin();
 
+$body = json_decode(file_get_contents('php://input'));
+
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
 if ($conn->connect_error) {
@@ -18,7 +20,6 @@ join Offer o on uo.ID = ?
 and uo.UserID = ?
 and o.UserOrderID = uo.ID
 join User u on u.ID = o.UserID");
-echo "userorderid: ".$body->user_order_id;
 $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 
