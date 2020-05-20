@@ -189,17 +189,19 @@ function generateOrderBox(userOrder) {
 
   container.appendChild(infoTable);
 
-  let makeOfferButton = UIBuilder.fromObject({
-    type: 'button',
-    content: 'Make offer',
-    onclick: function() {
-      let price = parseInt(window.prompt("Price offer"));
-      if(!Number.isNaN(price)) {
-        BackendAPI.makeOffer(userOrder.id, price);
+  if(userOrder.username !== username.value) {
+    let makeOfferButton = UIBuilder.fromObject({
+      type: 'button',
+      content: 'Make offer',
+      onclick: function() {
+        let price = parseInt(window.prompt("Price offer"));
+        if(!Number.isNaN(price)) {
+          BackendAPI.makeOffer(userOrder.id, price);
+        }
       }
-    }
-  });
-  container.appendChild(makeOfferButton);
+    });
+    container.appendChild(makeOfferButton);
+  }
 
   console.log(userOrder);
 
