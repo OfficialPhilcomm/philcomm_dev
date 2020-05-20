@@ -12,7 +12,7 @@ var username = new LiveData();
 username.value = undefined;
 
 function login(username, password) {
-  let result = BackendAPI.login(username, password
+  let result = BackendAPI.login(username, password);
   if(result != undefined) {
     if(result.success) {
       loggedIn.value = true;
