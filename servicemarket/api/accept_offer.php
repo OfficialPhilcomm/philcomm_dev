@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("select ID from UserOrder uo
+$stmt = $conn->prepare("select o.ID from UserOrder uo
 join Offer o on uo.ID = ?
 and uo.UserID = ?
 and uo.AcceptedOfferID is null
