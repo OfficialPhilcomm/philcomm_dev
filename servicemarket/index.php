@@ -25,7 +25,7 @@
         <div id="my-orders" class="own_requests">own_requests</div>
         <div class="more_information">more_information</div>
       </div>
-      <div id="popup-container"></div>
+      <div id="popup-container" onclick="console.log('clicked')"></div>
     </main>
   </body>
 </html>
