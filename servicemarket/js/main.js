@@ -200,22 +200,25 @@ function generateOrderBox(userOrder) {
   });
   container.appendChild(makeOfferButton);
 
-  let allOffersButton = UIBuilder.fromObject({
-    type: 'button',
-    content: 'List all offers',
-    onclick: function() {
-      let dom = UIBuilder.fromObject({type: 'div'});
-      let apiResponse = BackendAPI.allOffers(userOrder.id);
-      for(let offer of apiResponse.offers) {
-        dom.appendChild(UIBuilder.fromObject({
-          type: 'div',
-          content: offer.price + " " + offer.username
-        }));
+  if(userOrder.offer_count > 0) {
+    let allOffersButton = UIBuilder.fromObject({
+      type: 'button',
+      content: 'List all offers',
+      onclick: function() {
+        let dom = UIBuilder.fromObject({type: 'div'});
+        let apiResponse = BackendAPI.allOffers(userOrder.id);
+        console.log(apiResponse));
+        for(let offer of apiResponse.offers) {
+          dom.appendChild(UIBuilder.fromObject({
+            type: 'div',
+            content: offer.price + " " + offer.username
+          }));
+        }
+        createPopup(dom);
       }
-      createPopup(dom);
-    }
-  });
-  container.appendChild(allOffersButton);
+    });
+    container.appendChild(allOffersButton);
+  }
 
   return container;
 }
