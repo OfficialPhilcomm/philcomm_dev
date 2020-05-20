@@ -26,8 +26,14 @@ if($result->num_rows === 0) throwError("no valid order found");
 echo "\n\n"."insert into Offer (Price,UserID,UserOrderID) values (".$body->price.", ".getUserID().", ".$body->user_order_id.")";
 
 $stmt = $conn->prepare("insert into Offer (Price,UserID,UserOrderID) values (?, ?, ?)");
-$stmt->bind_param("iii", $body->price, getUserID(), $user_order_id);
+if($stmt === false) {
+  echo "prepare failed: ".$conn->error;
+}
+if($stmt->bind_param("iii", $body->price, getUserID(), $user_order_id) === false) {
+  echo "binding failed";
+}
 $stmt->execute();
+echo $stmt->error;
 
 $stmt->close();
 
