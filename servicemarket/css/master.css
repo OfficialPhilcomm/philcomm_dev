@@ -88,7 +88,7 @@ main .more_information {
 }
 
 main #popup-container {
-  z-index: 2;
+  z-index: 10;
 
   box-sizing: border-box;
 
