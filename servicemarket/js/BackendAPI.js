@@ -77,6 +77,11 @@ class BackendAPI {
         price: price
       }
     ));
+    if (request.status === 200) {
+      let apiResponse = request.responseText;
+
+      console.log(JSON.parse(apiResponse));
+    }
   }
 
   static acceptOffer(userOrderID, offerID) {
@@ -89,5 +94,10 @@ class BackendAPI {
         offer_id: offerID
       }
     ));
+    if (request.status === 200) {
+      let apiResponse = request.responseText;
+
+      console.log(JSON.parse(apiResponse));
+    }
   }
 }
