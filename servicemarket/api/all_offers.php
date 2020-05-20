@@ -19,7 +19,8 @@ $stmt = $conn->prepare("select o.ID as OfferID, o.Price as Price, u.Username as 
 join Offer o on uo.ID = ?
 and uo.UserID = ?
 and o.UserOrderID = uo.ID
-join User u on u.ID = o.UserID");
+join User u on u.ID = o.UserID
+order by o.CreatedAt desc");
 $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 
