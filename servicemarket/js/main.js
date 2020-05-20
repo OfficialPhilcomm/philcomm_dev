@@ -7,6 +7,7 @@ var usernameDisplay = document.getElementById("username-display");
 var myOrdersBox = document.getElementById("my-orders");
 var allOrdersBox = document.getElementById("all-orders");
 
+// Live Data
 var loggedIn = new LiveData();
 loggedIn.value = false;
 var username = new LiveData();
