@@ -26,7 +26,7 @@ create table UserOrder (
   UserID int not null,
   OrderDataID int not null,
   AcceptedOfferID int,
-  State int not null default 0,
+  State int,
   CreatedAt datetime not null default now()
 );
 alter table UserOrder add foreign key (UserID) references User(ID) on update cascade on delete cascade;
