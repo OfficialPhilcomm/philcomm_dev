@@ -21,7 +21,7 @@ $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no valid order found");
 
 $stmt = $conn->prepare("insert into Offer (Price,UserID,UserOrderID) values (?, ?, ?)");
-$stmt->bind_param("iii", $body->price, getUserID(), $orderDataID);
+$stmt->bind_param("iii", $body->price, getUserID(), $user_order_id);
 $stmt->execute();
 
 $stmt->close();

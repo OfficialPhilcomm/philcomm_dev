@@ -66,4 +66,16 @@ class BackendAPI {
     request.open('GET', url, false);
     request.send(null);
   }
+
+  static makeOffer(userOrderID, price) {
+    const url = "api/new_offer.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID,
+        price: price
+      }
+    ));
+  }
 }
