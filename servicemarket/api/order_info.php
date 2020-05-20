@@ -14,10 +14,11 @@ if ($conn->connect_error) {
 $api_result = new stdClass();
 $api_result->type = "order_info";
 
-$stmt = $conn->prepare("select uo.State as State, o.UserID as Breeder, o.Price as Price from UserOrder uo
+$stmt = $conn->prepare("select uo.State as State, u.Username as Breeder, o.Price as Price from UserOrder uo
 join Offer o on uo.ID = ?
 and uo.UserID = ?
-and uo.AcceptedOfferID = o.ID");
+and uo.AcceptedOfferID = o.ID
+join User u on o.UserID = u.ID");
 $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 
