@@ -118,7 +118,7 @@ class BackendAPI {
   }
 
   static getOrderInfo(userOrderID) {
-    const url = "api/accept_offer.php";
+    const url = "api/order_info.php";
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
     request.send(JSON.stringify(
