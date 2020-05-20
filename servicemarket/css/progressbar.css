@@ -72,6 +72,7 @@ progressbar .progressbar-step.is-complete:before {
   border: 4px solid transparent;
 }
 progressbar .progressbar-step.is-complete:after {
+  z-index: 2;
   background: var(--progress-bar-blue);
   animation: nextStep 1s;
   animation-fill-mode: forwards;
