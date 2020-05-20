@@ -120,6 +120,8 @@ function generateOrderBox(userOrder) {
   });
   infoTable.appendChild(infoRow);
 
+  container.appendChild(infoTable);
+
   let makeOfferButton = UIBuilder.fromObject({
     type: 'button',
     content: 'Make offer',
@@ -127,8 +129,7 @@ function generateOrderBox(userOrder) {
       window.alert(userOrder.id);
     }
   });
-
-  container.appendChild(infoTable);
+  container.appendChild(makeOfferButton);
 
   return container;
 }
