@@ -26,6 +26,7 @@ progressbar .progressbar-step {
   width: 100%;
   font-size: 12px;
   text-align: center;
+  z-index: 3;
 }
 progressbar .progressbar-step:last-child:after {
   display: none;
