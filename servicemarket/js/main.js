@@ -231,7 +231,7 @@ function generateOrderBox(userOrder) {
     });
     container.appendChild(allOffersButton);
   }
-  if(userOrder.state !== null) {
+  if(userOrder.state !== null && userOrder.state !== undefined) {
     let userOrderInfoButton = UIBuilder.fromObject({
       type: 'button',
       content: 'Show Info',
