@@ -134,5 +134,14 @@ function generateOrderBox(userOrder) {
   });
   container.appendChild(makeOfferButton);
 
+  let allOffersButton = UIBuilder.fromObject({
+    type: 'button',
+    content: 'List all offers',
+    onclick: function() {
+      BackendAPI.allOffers(userOrder.id);
+    }
+  });
+  container.appendChild(allOffersButton);
+
   return container;
 }
