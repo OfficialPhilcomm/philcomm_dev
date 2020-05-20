@@ -19,7 +19,7 @@ progressbar .progressbar-track {
   width: 100%;
   height: 5px;
   background-color: var(--progress-bar-grey2);
-  z-index: -1;
+  /*z-index: -1;*/
 }
 progressbar .progressbar-step {
   position: relative;
@@ -51,7 +51,7 @@ progressbar .progressbar-step:after {
   transition: width 1s ease-in;
   height: 5px;
   background: var(--progress-bar-grey2);
-  z-index: -1;
+  /*z-index: -1;*/
 }
 progressbar .progressbar-step.is-active {
   color: var(--progress-bar-blue);
