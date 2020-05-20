@@ -116,4 +116,20 @@ class BackendAPI {
       console.log(apiResponse);
     }
   }
+
+  static getOrderInfo(userOrderID) {
+    const url = "api/accept_offer.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID
+      }
+    ));
+    if (request.status === 200) {
+      let apiResponse = request.responseText;
+
+      console.log(apiResponse);
+    }
+  }
 }

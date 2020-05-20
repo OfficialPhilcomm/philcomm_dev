@@ -18,7 +18,7 @@ $stmt = $conn->prepare("select uo.State as State, o.UserID as Breeder, o.Price a
 join Offer o on uo.ID = ?
 and uo.UserID = ?
 and uo.AcceptedOfferID = o.ID");
-$stmt->bind_param("ii", );
+$stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 
 $result = $stmt->get_result();

@@ -228,6 +228,16 @@ function generateOrderBox(userOrder) {
     });
     container.appendChild(allOffersButton);
   }
+  if(userOrder.state !== null) {
+    let userOrderInfoButton = UIBuilder.fromObject({
+      type: 'button',
+      content: 'Show Info',
+      onclick: function() {
+        BackendAPI.getOrderInfo(userOrder.id);
+      }
+    });
+    container.appendChild(userOrderInfoButton);
+  }
 
   return container;
 }
