@@ -241,9 +241,9 @@ function createCloseablePopup(domElement) {
   })
   popup.appendChild(domElement);
   popup.appendChild(UIBuilder.fromObject({
-    type: 'button',
+    type: 'img',
     class: 'close',
-    content: 'X',
+    src: 'icons/times-circle-solid.svg',
     onclick: function() {
       popupContainer.removeChild(popup);
       popupChange();
