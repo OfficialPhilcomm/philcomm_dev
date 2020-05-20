@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()) {
   $order->username = $row["Username"];
   $order->pokemon_name = $row["PokemonName"];
   $order->offer_count = $row["OfferCount"];
-  $order->accepted =
+  $order->state = $row["State"];
   $api_result->orders[] = $order;
 }
 
