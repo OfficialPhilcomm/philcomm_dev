@@ -123,6 +123,8 @@ main #popup-container {
   right: 0;
 
   cursor: pointer;
+
+  height: var(--small-font-size);
 }
 
 /* Order box */
