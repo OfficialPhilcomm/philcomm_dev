@@ -17,7 +17,7 @@ and uo.UserID = ?
 and uo.AcceptedOfferID is null
 and uo.ID = o.UserOrderID
 and o.ID = ?");
-$stmt->bind_param("ii", $body->user_order_id, getUserID(), $body->offer_id);
+$stmt->bind_param("iii", $body->user_order_id, getUserID(), $body->offer_id);
 $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no valid order found");
