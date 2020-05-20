@@ -53,10 +53,10 @@ function requestMyOrders() {
 
 loggedIn.registerListener(function(newValue) {
   if(newValue) {
-    logoutImg.style.display = "block";
+    popupContainer.innerHTML = "";
+    popupChange();
 
-    loginUsername.value = "";
-    loginPassword.value = "";
+    logoutImg.style.display = "block";
 
     requestAllOrders();
     requestMyOrders();
@@ -132,6 +132,7 @@ loggedIn.registerListener(function(newValue) {
     }
 
     popupContainer.appendChild(popup);
+    popupChange();
   }
 });
 
