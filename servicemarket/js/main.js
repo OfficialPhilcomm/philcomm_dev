@@ -13,6 +13,7 @@ username.value = undefined;
 
 function login(username, password) {
   let result = BackendAPI.login(username, password);
+  debugger
   if(result != undefined) {
     if(result.success) {
       loggedIn.value = true;
