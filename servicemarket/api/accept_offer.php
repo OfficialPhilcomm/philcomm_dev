@@ -28,12 +28,8 @@ $offer_id = $body->offer_id;
 $stmt = $conn->prepare("update UserOrder
 set AcceptedOfferID = ?, State = 0 where ID = ?");
 
-if($stmt->bind_param("ii", $offer_id, $user_order_id) === false) {
-  throwError($stmt->error);
-}
-if($stmt->execute() === false) {
-  throwError($stmt->error);
-}
+$stmt->bind_param("ii", $offer_id, $user_order_id);
+$stmt->execute();
 
 $stmt->close();
 
