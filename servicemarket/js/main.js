@@ -189,7 +189,6 @@ function generateOrderBox(userOrder) {
 
   container.appendChild(infoTable);
 
-  console.log(userOrder.username + " and " +  username.value);
   if(userOrder.username !== username.value) {
     let makeOfferButton = UIBuilder.fromObject({
       type: 'button',
