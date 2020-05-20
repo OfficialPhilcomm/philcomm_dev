@@ -240,6 +240,14 @@ function createPopup(domElement) {
     class: 'popup'
   })
   popup.appendChild(domElement);
+  popup.appendChild(UIBuilder.fromObject({
+    type: 'button',
+    class: 'close',
+    content: 'X',
+    onclick: function() {
+      popupContainer.removeChild(popup);
+    }
+  }));
   popupContainer.appendChild(popup);
   popupChange();
 }

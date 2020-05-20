@@ -112,6 +112,15 @@ main #popup-container {
   border-radius: 10px;
 
   padding: 5px;
+
+  position: relative;
+}
+
+#popup-container .popup .close {
+  position: absolute;
+
+  top: 0;
+  right: 0;
 }
 
 /* Order box */
