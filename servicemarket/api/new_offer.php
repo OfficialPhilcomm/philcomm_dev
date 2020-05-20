@@ -29,11 +29,12 @@ $stmt = $conn->prepare("insert into Offer (Price,UserID,UserOrderID) values (?, 
 if($stmt === false) {
   echo "prepare failed: ".$conn->error;
 }
-if($stmt->bind_param("iii", $body->price, getUserID(), $user_order_id) === false) {
+if($stmt->bind_param("iii", $body->price, getUserID(), $body->user_order_id) === false) {
   echo "binding failed";
 }
 $stmt->execute();
-echo $stmt->error;
+echo "execute error".$stmt->error;
+echo "type: ";
 
 $stmt->close();
 
