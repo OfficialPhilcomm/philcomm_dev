@@ -200,6 +200,8 @@ function generateOrderBox(userOrder) {
   });
   container.appendChild(makeOfferButton);
 
+  console.log(userOrder);
+
   if(userOrder.offer_count > 0) {
     let allOffersButton = UIBuilder.fromObject({
       type: 'button',
