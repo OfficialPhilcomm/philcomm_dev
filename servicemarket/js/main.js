@@ -306,7 +306,7 @@ function openNewOrderDialog() {
   let move2Select = UIBuilder.fromObject({type: 'select'});
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
-  let submitButton = UIBuilder.fromObject({type: 'button'});
+  let submitButton = UIBuilder.fromObject({type: 'button', content: 'Submit'});
   for(let pokemon of pokemonList) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
     pokemonSelect.appendChild(option);
