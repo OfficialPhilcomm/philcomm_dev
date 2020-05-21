@@ -138,7 +138,7 @@ main #popup-container {
   justify-content: center;
   align-items: center;
 
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   border-radius: 10px;
 
   background-color: #b3e4ff;
