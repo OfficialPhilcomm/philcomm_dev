@@ -306,6 +306,7 @@ function openNewOrderDialog() {
   let move2Select = UIBuilder.fromObject({type: 'select'});
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
+  let submitButton = UIBuilder.fromObject({type: 'button'});
   for(let pokemon of pokemonList) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
     pokemonSelect.appendChild(option);
@@ -343,6 +344,19 @@ function openNewOrderDialog() {
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
   popup.appendChild(move4Select);
+
+  submitButton.onclick = function() {
+    let pokemonName = pokemonList[pokemonSelect.selectedIndex].name;
+    let gender = "none"; // TODO: link to select
+    let move1 = move1Select[moveSelect1.selectedIndex].value;
+    let move2 = move2Select[moveSelect2.selectedIndex].value;
+    let move3 = move3Select[moveSelect3.selectedIndex].value;
+    let move4 = move4Select[moveSelect4.selectedIndex].value;
+    let ability = "ability"; // TODO: Add ability
+
+    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability);
+    BackendAPI.submitOrder(orderData);
+  }
 
   createCloseablePopup(popup);
 }
