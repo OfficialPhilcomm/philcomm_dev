@@ -1,30 +1,4 @@
 class BackendAPI {
-  static testValidation(body) {
-    const url = "api/test.php";
-
-    var request = new XMLHttpRequest();
-    request.open('POST', url, false);
-    request.send(JSON.stringify(body));
-    if (request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
-  }
-
-  static testRaw(body) {
-    const url = "api/test.php";
-
-    var request = new XMLHttpRequest();
-    request.open('POST', url, false);
-    request.send(body);
-    if (request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
-  }
-
   static submitOrder(orderData) {
     const url = "api/new_order.php";
 
