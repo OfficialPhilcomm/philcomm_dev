@@ -67,6 +67,10 @@ main #main-container .all_requests, main #main-container #user_info, main #main-
   overflow-y: auto;
 }
 
+main #all-orders, main #my-orders {
+  padding: 15px 15px 0 15px;
+}
+
 main .all_requests {
   grid-area: all_requests;
 }
@@ -138,7 +142,7 @@ main #popup-container {
   justify-content: center;
   align-items: center;
 
-  padding: 10px 10px 0 10px;
+  padding: 10px;
   border-radius: 10px;
 
   background-color: #b3e4ff;
