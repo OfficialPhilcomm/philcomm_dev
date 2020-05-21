@@ -22,9 +22,9 @@ function validateBody($arguments) {
     throwError("body not json");
   }
   $keys = array_keys($arguments);
-  foreach ($keys as $key) {
+  foreach ($arguments as $key => $value) {
     if(!property_exists($body, $key)) throwError("argument missing: " . $key);
-    if(gettype($body->$key) !== $arguments[$key]) throwError("argument " . $key . " must be of type " + $key);
+    // if(gettype($body->$key) !== $value) throwError("argument " . $key . " must be of type " + $value);
   }
 
   return $body;
