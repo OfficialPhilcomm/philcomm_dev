@@ -52,7 +52,7 @@ function requestMyOrders() {
   let acceptedOrders = BackendAPI.acceptedOrders();
 
   for(let acceptedOrder of acceptedOrders.orders) {
-    generateAcceptedOrderBox(acceptedOrder);
+    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder));
   }
 }
 
