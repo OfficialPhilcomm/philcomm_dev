@@ -370,7 +370,7 @@ function showAcceptedOrderInfo(object) {
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
       popup.appendChild(stateSelect);
       stateSelect.onchange = function() {
-        BackendAPI.updateState(object.user_order_id, stateSelect.value);
+        BackendAPI.updateState(object.order.user_order_id, stateSelect.value);
       }
       createCloseablePopup(popup);
     }
