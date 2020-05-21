@@ -319,6 +319,7 @@ function openNewOrderDialog() {
     pokemonList[pokemonSelect.selectedIndex].fillData(PokemonAPI.requestPokemonData(pokemonList[pokemonSelect.selectedIndex].url));
 
     let selectedPokemon = pokemonList[pokemonSelect.selectedIndex];
+    move1Select.innerHTML = "";
     for(let move of selectedPokemon.moves) {
       let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
       move1Select.appendChild(option.cloneNode(true));
