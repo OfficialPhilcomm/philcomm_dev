@@ -3,7 +3,14 @@ include 'general.php';
 
 requireLogin();
 
-$body = json_decode(file_get_contents('php://input'));
+$arguments['pokemon_name'] = 'string';
+$arguments['gender'] = 'string';
+$arguments['move1'] = 'string';
+$arguments['move2'] = 'string';
+$arguments['move3'] = 'string';
+$arguments['move4'] = 'string';
+$arguments['ability'] = 'string';
+$body = validateBody($arguments);
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 

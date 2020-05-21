@@ -3,7 +3,8 @@ include 'general.php';
 
 requireLogin();
 
-$body = json_decode(file_get_contents('php://input'));
+$arguments['user_order_id'] = 'integer';
+$body = validateBody($arguments);
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 

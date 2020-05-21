@@ -1,7 +1,9 @@
 <?php
 include 'general.php';
 
-$body = json_decode(file_get_contents('php://input'));
+$arguments['user'] = 'string';
+$arguments['pass'] = 'string';
+$body = validateBody($arguments);
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
