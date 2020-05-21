@@ -142,6 +142,8 @@ main #popup-container {
   border-radius: 10px;
 
   background-color: #b3e4ff;
+
+  margin-bottom: 10px;
 }
 
 .order-box table {
