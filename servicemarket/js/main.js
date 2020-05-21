@@ -303,6 +303,9 @@ function openNewOrderDialog() {
   let popup = UIBuilder.fromObject({type: 'div'});
   let pokemonSelect = UIBuilder.fromObject({type: 'select'});
   let move1Select = UIBuilder.fromObject({type: 'select'});
+  let move2Select = UIBuilder.fromObject({type: 'select'});
+  let move3Select = UIBuilder.fromObject({type: 'select'});
+  let move4Select = UIBuilder.fromObject({type: 'select'});
   for(let pokemon of pokemonList) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
     pokemonSelect.appendChild(option);
@@ -313,6 +316,9 @@ function openNewOrderDialog() {
   for(let move of selectedPokemon.moves) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
     move1Select.appendChild(option.cloneNode(true));
+    move2Select.appendChild(option.cloneNode(true));
+    move3Select.appendChild(option.cloneNode(true));
+    move4Select.appendChild(option.cloneNode(true));
   }
 
   pokemonSelect.onchange = function() {
@@ -320,14 +326,23 @@ function openNewOrderDialog() {
 
     let selectedPokemon = pokemonList[pokemonSelect.selectedIndex];
     move1Select.innerHTML = "";
+    move2Select.innerHTML = "";
+    move3Select.innerHTML = "";
+    move4Select.innerHTML = "";
     for(let move of selectedPokemon.moves) {
       let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
       move1Select.appendChild(option.cloneNode(true));
+      move2Select.appendChild(option.cloneNode(true));
+      move3Select.appendChild(option.cloneNode(true));
+      move4Select.appendChild(option.cloneNode(true));
     }
   }
 
   popup.appendChild(pokemonSelect);
   popup.appendChild(move1Select);
+  popup.appendChild(move2Select);
+  popup.appendChild(move3Select);
+  popup.appendChild(move4Select);
 
   createCloseablePopup(popup);
 }
