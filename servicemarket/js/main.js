@@ -359,7 +359,20 @@ function showAcceptedOrderInfo(object) {
     type: 'button',
     content: 'Change state',
     onclick: function() {
-      // TODO: change state
+      let popup = UIBuilder.fromObject({
+        type: 'div'
+      });
+      let stateSelect = UIBuilder.fromObject({type: 'select'});
+      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'accepted', select_value: '0'}));
+      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'started', select_value: '1'}));
+      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
+      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
+      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
+      popup.appendChild(stateInput);
+      stateSelect.onchange = function() {
+        BackendAPI.updateState(object.order.id, stateSelect.value);
+      }
+      createCloseablePopup(popup);
     }
   }));
 }
