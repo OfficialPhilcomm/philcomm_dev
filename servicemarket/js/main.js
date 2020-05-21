@@ -344,6 +344,9 @@ function openNewOrderDialog() {
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
   popup.appendChild(move4Select);
+  popup.appendChild(submitButton);
+
+  let closeFunction = createCloseablePopup(popup);
 
   submitButton.onclick = function() {
     let pokemonName = pokemonList[pokemonSelect.selectedIndex].name;
@@ -356,9 +359,8 @@ function openNewOrderDialog() {
 
     let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability);
     BackendAPI.submitOrder(orderData);
+    closeFunction();
   }
-
-  createCloseablePopup(popup);
 }
 
 function popupChange() {
@@ -376,17 +378,20 @@ function createCloseablePopup(domElement) {
     class: 'popup'
   })
   popup.appendChild(domElement);
+  let closeFunction = function() {
+    popupContainer.removeChild(popup);
+    popupChange();
+  }
   popup.appendChild(UIBuilder.fromObject({
     type: 'img',
     class: 'close',
     src: 'icons/times-circle-solid.svg',
-    onclick: function() {
-      popupContainer.removeChild(popup);
-      popupChange();
-    }
+    onclick: closeFunction
   }));
   popupContainer.appendChild(popup);
   popupChange();
+
+  return closeFunction;
 }
 
 function createPopup(domElement) {
