@@ -343,17 +343,17 @@ function showAcceptedOrderInfo(object) {
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'span',
-    content: 'Order of ' + object.pokemon_name
+    content: 'Order of ' + object.order.pokemon_name
   }));
-  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
+  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.order.state);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'span',
-    content: 'User: ' + object.username
+    content: 'User: ' + object.order.username
   }));
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'span',
-    content: 'Price: ' + object.price
+    content: 'Price: ' + object.order.price
   }));
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'button',
