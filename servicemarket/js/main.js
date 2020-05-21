@@ -189,6 +189,11 @@ function generateOrderBox(userOrder) {
 
   container.appendChild(infoTable);
 
+  let buttons = UIBuilder.fromObject({
+    type: 'div',
+    class: 'buttons'
+  });
+
   if(userOrder.username !== username.value) {
     let makeOfferButton = UIBuilder.fromObject({
       type: 'button',
@@ -200,10 +205,8 @@ function generateOrderBox(userOrder) {
         }
       }
     });
-    container.appendChild(makeOfferButton);
+    buttons.appendChild(makeOfferButton);
   }
-
-  console.log(userOrder);
 
   if(userOrder.state === null && userOrder.offer_count > 0) {
     let allOffersButton = UIBuilder.fromObject({
@@ -229,7 +232,7 @@ function generateOrderBox(userOrder) {
         createCloseablePopup(dom);
       }
     });
-    container.appendChild(allOffersButton);
+    buttons.appendChild(allOffersButton);
   }
   if(userOrder.state !== null && userOrder.state !== undefined) {
     let userOrderInfoButton = UIBuilder.fromObject({
@@ -240,8 +243,10 @@ function generateOrderBox(userOrder) {
         showOrderInfo(orderInfo.order);
       }
     });
-    container.appendChild(userOrderInfoButton);
+    buttons.appendChild(userOrderInfoButton);
   }
+
+  container.appendChild(buttons);
 
   return container;
 }
