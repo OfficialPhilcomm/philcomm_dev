@@ -13,7 +13,7 @@
     <script src="js/StringUtils.js" charset="utf-8"></script>
     <script src="js/UIBuilder.js" charset="utf-8"></script>
     <script src="js/ProgressBar.js" charset="utf-8"></script>
-    <script src="js/OrderData.js" charset="utf-8"></script>
+    <script src="js/Order.js" charset="utf-8"></script>
 
     <script defer src="js/main.js" charset="utf-8"></script>
   </head>
