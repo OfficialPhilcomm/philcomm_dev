@@ -23,7 +23,6 @@ function login(un, pw) {
 }
 
 function logout() {
-  console.log(BackendAPI.logout());
   loggedIn.value = false;
   username.value = undefined;
 }
@@ -36,8 +35,6 @@ function requestAllOrders() {
   for(let order of allOrders.orders) {
     allOrdersBox.appendChild(generateOrderBox(order));
   }
-
-  console.log(allOrders);
 }
 
 function requestMyOrders() {
@@ -66,7 +63,7 @@ function requestMyOrders() {
   }
 
   for(let acceptedOrder of acceptedOrders.orders) {
-    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder.order));
+    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder));
   }
 }
 
@@ -156,8 +153,6 @@ loggedIn.registerListener(function(newValue) {
 });
 
 username.registerListener(function(newValue) {
-  console.log("userData listener called");
-
   usernameDisplay.innerHTML = newValue;
 });
 
@@ -233,7 +228,7 @@ function generateOrderBox(userOrder) {
       onclick: function() {
         let dom = UIBuilder.fromObject({type: 'div'});
         let apiResponse = BackendAPI.allOffers(userOrder.id);
-        console.log(apiResponse);
+
         for(let offer of apiResponse.offers) {
           dom.appendChild(UIBuilder.fromObject({
             type: 'div',
@@ -367,5 +362,4 @@ function showAcceptedOrderInfo(object) {
       // TODO: change state
     }
   }));
-  console.log(object);
 }
