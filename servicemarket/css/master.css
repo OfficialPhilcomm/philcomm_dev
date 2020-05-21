@@ -67,10 +67,6 @@ main #main-container .all_requests, main #main-container #user_info, main #main-
   overflow-y: auto;
 }
 
-main #all-orders, main #my-orders {
-  padding: 15px 15px 0 15px;
-}
-
 main .all_requests {
   grid-area: all_requests;
 }
@@ -148,6 +144,9 @@ main #popup-container {
   background-color: #b3e4ff;
 
   margin-bottom: 10px;
+}
+.order-box:last-child {
+  margin-bottom: 0;
 }
 
 .order-box table {
