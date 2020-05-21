@@ -265,8 +265,6 @@ function generateOrderBox(userOrder) {
 }
 
 function generateAcceptedOrderBox(acceptedOrder) {
-  console.log(acceptedOrder);
-
   let container = document.createElement("div");
   container.className = "order-box";
 
@@ -280,7 +278,7 @@ function generateAcceptedOrderBox(acceptedOrder) {
     content: 'Show info',
     onclick: function() {
       let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(acceptedOrder.id);
-      showAcceptedOrderInfo(acceptedOrderInfo);
+      showAcceptedOrderInfo(acceptedOrderInfo.order);
     }
   }));
 
