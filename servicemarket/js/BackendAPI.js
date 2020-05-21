@@ -121,6 +121,11 @@ class BackendAPI {
         state: state
       }
     ));
+    if(request.status === 200) {
+      let apiResponse = request.responseText;
+
+      console.log(apiResponse);
+    }
   }
 
   static makeOffer(userOrderID, price) {
