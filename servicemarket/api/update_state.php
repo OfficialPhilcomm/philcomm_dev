@@ -25,7 +25,7 @@ if(gettype($body->state) !== 'integer') throwError("state must be integer");
 if($body->state < 0 || $body->state > 4) throwError("state must be between 0 and 4");
 
 $stmt = $conn->prepare("update UserOrder
-set State = ?, where ID = ?");
+set State = ? where ID = ?");
 
 $stmt->bind_param("ii", $body->state, $body->user_order_id);
 $stmt->execute();
