@@ -1,6 +1,8 @@
 class BackendAPI {
   static testValidation(body) {
     const url = "api/test.php";
+
+    var request = new XMLHttpRequest();
     request.open('POST', url, false);
     request.send(JSON.stringify(body));
     if (request.status === 200) {
