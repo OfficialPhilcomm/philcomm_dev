@@ -351,10 +351,10 @@ function openNewOrderDialog() {
   submitButton.onclick = function() {
     let pokemonName = pokemonList[pokemonSelect.selectedIndex].name;
     let gender = "none"; // TODO: link to select
-    let move1 = move1Select[moveSelect1.selectedIndex].value;
-    let move2 = move2Select[moveSelect2.selectedIndex].value;
-    let move3 = move3Select[moveSelect3.selectedIndex].value;
-    let move4 = move4Select[moveSelect4.selectedIndex].value;
+    let move1 = move1Select[move1Select.selectedIndex].value;
+    let move2 = move2Select[move2Select.selectedIndex].value;
+    let move3 = move3Select[move3Select.selectedIndex].value;
+    let move4 = move4Select[move4Select.selectedIndex].value;
     let ability = "ability"; // TODO: Add ability
 
     let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability);
