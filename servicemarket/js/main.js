@@ -49,6 +49,8 @@ function requestMyOrders() {
     myOrdersBox.appendChild(generateOrderBox(order));
   }
 
+  console.log(BackendAPI.acceptedOffers());
+
   console.log(myOrders);
 }
 
