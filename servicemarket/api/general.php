@@ -15,6 +15,19 @@ function requireLogin() {
   }
 }
 
+function validateBody($arguments) {
+  $body = json_decode(file_get_contents('php://input'));
+  if(json_last_error() !== JSON_ERROR_NONE) {
+    throwError("body not json");
+  }
+  foreach ($array as $key => $value) {
+    if(!property_exists($body, $key)) throwError("argument missing: " . $key);
+    if(gettype($body[$key]) !== $value) throwError("argument " . $key . " must be of type " + $value);
+  }
+
+  return $body;
+}
+
 function getUserID() {
   return $_SESSION['user_id'];
 }
