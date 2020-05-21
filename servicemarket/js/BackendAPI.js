@@ -83,12 +83,28 @@ class BackendAPI {
     }
   }
 
-  static acceptedOffers() {
+  static acceptedOrders() {
     const url = "api/accepted_orders.php";
     var request = new XMLHttpRequest();
     request.open('GET', url, false);
     request.send(null);
     if(request.status === 200) {
+      let apiResponse = request.responseText;
+
+      return JSON.parse(apiResponse);
+    }
+  }
+
+  static acceptedOrderInfo(userOrderID) {
+    const url = "api/accepted_order_info.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID
+      }
+    ));
+    if (request.status === 200) {
       let apiResponse = request.responseText;
 
       return JSON.parse(apiResponse);

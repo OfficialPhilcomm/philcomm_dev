@@ -49,9 +49,11 @@ function requestMyOrders() {
     myOrdersBox.appendChild(generateOrderBox(order));
   }
 
-  console.log(BackendAPI.acceptedOffers());
+  let acceptedOrders = BackendAPI.acceptedOrders();
 
-  console.log(myOrders);
+  for(let acceptedOrder of acceptedOrders.orders) {
+    generateAcceptedOrderBox(acceptedOrder);
+  }
 }
 
 loggedIn.registerListener(function(newValue) {
@@ -251,6 +253,10 @@ function generateOrderBox(userOrder) {
   container.appendChild(buttons);
 
   return container;
+}
+
+function generateAcceptedOrderBox(acceptedOrder) {
+  console.log(acceptedOrder);
 }
 
 function popupChange() {
