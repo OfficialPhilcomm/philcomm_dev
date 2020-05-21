@@ -41,15 +41,29 @@ function requestAllOrders() {
 }
 
 function requestMyOrders() {
-  let myOrders = BackendAPI.myOrders();
-
   myOrdersBox.innerHTML = "";
 
-  for(let order of myOrders.orders) {
-    myOrdersBox.appendChild(generateOrderBox(order));
+  let myOrders = BackendAPI.myOrders();
+
+  if(myOrders.orders.length > 0) {
+    myOrdersBox.appendChild(UIBuilder.fromObject({
+      type: 'div',
+      content: 'My orders'
+    }));
+
+    for(let order of myOrders.orders) {
+      myOrdersBox.appendChild(generateOrderBox(order));
+    }
   }
 
   let acceptedOrders = BackendAPI.acceptedOrders();
+
+  if(acceptedOrders.orders.length > 0) {
+    myOrdersBox.appendChild(UIBuilder.fromObject({
+      type: 'div',
+      content: 'Accepted orders'
+    }));
+  }
 
   for(let acceptedOrder of acceptedOrders.orders) {
     myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder));
