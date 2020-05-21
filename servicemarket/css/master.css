@@ -1,5 +1,5 @@
 :root {
-  --nav-color: #ff5500;
+  --nav-color: #3bb9ff;
 
   --font-size-small: 12pt;
 
@@ -135,7 +135,11 @@ main #popup-container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: green;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  background-color: #b3e4ff;
 }
 
 .order-box table {
