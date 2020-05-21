@@ -17,14 +17,14 @@ function requireLogin() {
 
 function validateBody($arguments) {
   $body = json_decode(file_get_contents('php://input'));
-  echo "Body: " . file_get_contents('php://input') . "\n\n";
   if(json_last_error() !== JSON_ERROR_NONE) {
     throwError("body not json");
   }
   $keys = array_keys($arguments);
   foreach ($arguments as $key => $value) {
     if(!property_exists($body, $key)) throwError("argument missing: " . $key);
-    if(gettype($body->$key) !== $value) throwError("argument " . $key . " must be of type " . $value);
+    $arg_type = gettype($body->$key);
+    if($arg_type !== $value) throwError("argument " . $key . " must be of type " . $value . " but is " . $arg_type);
   }
 
   return $body;
