@@ -257,6 +257,25 @@ function generateOrderBox(userOrder) {
 
 function generateAcceptedOrderBox(acceptedOrder) {
   console.log(acceptedOrder);
+
+  let container = document.createElement("div");
+  container.className = "order-box";
+
+  container.appendChild(UIBuilder.fromObject({
+    type: 'div',
+    content: 'User: ' + acceptedOrder.username + ' State: ' + acceptedOrder.state
+  }));
+
+  container.appendChild(UIBuilder.fromObject({
+    type: 'button',
+    content: 'Show info',
+    onclick: function() {
+      let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(acceptedOrder.id);
+      showAcceptedOrderInfo(acceptedOrderInfo);
+    }
+  }));
+
+  return container;
 }
 
 function popupChange() {
@@ -309,4 +328,8 @@ function showOrderInfo(object) {
     type: 'span',
     content: 'Price: ' + object.price
   }));
+}
+
+function showAcceptedOrderInfo(object) {
+  console.log(object);
 }
