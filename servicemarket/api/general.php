@@ -23,7 +23,7 @@ function validateBody($arguments) {
   }
   foreach ($arguments as $key => $value) {
     if(!property_exists($body, $key)) throwError("argument missing: " . $key);
-    if(gettype($body[$key]) !== $value) throwError("argument " . $key . " must be of type " + $value);
+    if(gettype($body->$key) !== $value) throwError("argument " . $key . " must be of type " + $value);
   }
 
   return $body;
