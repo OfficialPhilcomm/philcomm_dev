@@ -338,8 +338,6 @@ function showOrderInfo(object) {
 }
 
 function showAcceptedOrderInfo(object) {
-  console.log(object.order);
-
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'span',

@@ -15,7 +15,6 @@ $stmt = $conn->prepare("select uo.ID from UserOrder uo
 join Offer o on uo.AcceptedOfferID = o.ID
 and o.UserID = ?
 and uo.ID = ?");
-echo "uid: " . getUserID() . " uoid: " . $body->user_order_id;
 $stmt->bind_param("ii", getUserID(), $body->user_order_id);
 $stmt->execute();
 $result = $stmt->get_result();
