@@ -278,7 +278,7 @@ function generateAcceptedOrderBox(acceptedOrder) {
     content: 'Show info',
     onclick: function() {
       let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(acceptedOrder.id);
-      showAcceptedOrderInfo(acceptedOrderInfo.order);
+      showAcceptedOrderInfo(acceptedOrderInfo);
     }
   }));
 
@@ -338,6 +338,8 @@ function showOrderInfo(object) {
 }
 
 function showAcceptedOrderInfo(object) {
+  console.log(object);
+
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'span',
