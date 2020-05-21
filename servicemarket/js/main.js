@@ -325,6 +325,9 @@ function openNewOrderDialog() {
     }
   }
 
+  popup.appendChild(pokemonSelect);
+  popup.appendChild(move1Select);
+
   createCloseablePopup(popup);
 }
 
