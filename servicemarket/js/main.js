@@ -6,6 +6,8 @@ var myOrdersBox = document.getElementById("my-orders");
 var allOrdersBox = document.getElementById("all-orders");
 var moreInformationBox = document.getElementById("more_information");
 
+var pokemonList = PokemonAPI.requestPokemonNames();
+
 // Live Data
 var loggedIn = new LiveData();
 loggedIn.value = false;
@@ -45,7 +47,19 @@ function requestMyOrders() {
   if(myOrders.orders.length > 0) {
     myOrdersBox.appendChild(UIBuilder.fromObject({
       type: 'div',
-      content: 'My orders'
+      children: [
+        {
+          type: 'span',
+          content: 'My orders'
+        },
+        {
+          type: 'button',
+          content: 'New order',
+          onclick: function() {
+            openNewOrderDialog();
+          }
+        }
+      ]
     }));
 
     for(let order of myOrders.orders) {
@@ -283,6 +297,35 @@ function generateAcceptedOrderBox(acceptedOrder) {
   }));
 
   return container;
+}
+
+function openNewOrderDialog() {
+  let popup = UIBuilder.fromObject({type: 'div'});
+  let pokemonSelect = UIBuilder.fromObject({type: 'select'});
+  let move1Select = UIBuilder.fromObject({type: 'select'});
+  for(let pokemon of pokemonList) {
+    let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
+    pokemonSelect.appendChild(option);
+  }
+  pokemonList[pokemonSelect.selectedIndex].fillData(PokemonAPI.requestPokemonData(pokemonList[pokemonSelect.selectedIndex].url));
+
+  let selectedPokemon = pokemonList[pokemonSelect.selectedIndex];
+  for(let move of selectedPokemon.moves) {
+    let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
+    moveSelect1.appendChild(option.cloneNode(true));
+  }
+
+  pokemonSelect.onchange = function() {
+    pokemonList[pokemonSelect.selectedIndex].fillData(PokemonAPI.requestPokemonData(pokemonList[pokemonSelect.selectedIndex].url));
+
+    let selectedPokemon = pokemonList[pokemonSelect.selectedIndex];
+    for(let move of selectedPokemon.moves) {
+      let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
+      moveSelect1.appendChild(option.cloneNode(true));
+    }
+  }
+
+  createCloseablePopup(popup);
 }
 
 function popupChange() {
