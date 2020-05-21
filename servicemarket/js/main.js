@@ -321,7 +321,7 @@ function openNewOrderDialog() {
     let selectedPokemon = pokemonList[pokemonSelect.selectedIndex];
     for(let move of selectedPokemon.moves) {
       let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(move.name), select_value: move.name});
-      moveSelect1.appendChild(option.cloneNode(true));
+      move1Select.appendChild(option.cloneNode(true));
     }
   }
 
