@@ -368,7 +368,7 @@ function showAcceptedOrderInfo(object) {
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
-      popup.appendChild(stateInput);
+      popup.appendChild(stateSelect);
       stateSelect.onchange = function() {
         BackendAPI.updateState(object.order.id, stateSelect.value);
       }
