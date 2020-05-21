@@ -84,13 +84,13 @@ class BackendAPI {
   }
 
   static acceptedOffers() {
-    const url = "api/accepted_offers.php";
+    const url = "api/accepted_orders.php";
     var request = new XMLHttpRequest();
     request.open('GET', url, false);
     request.send(null);
     if(request.status === 200) {
       let apiResponse = request.responseText;
-      
+
       return JSON.parse(apiResponse);
     }
   }
