@@ -115,6 +115,7 @@ class BackendAPI {
     const url = "api/update_state.php";
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
+    console.log("userOrderID: " + userOrderID + " state: " + state);
     request.send(JSON.stringify(
       {
         user_order_id: userOrderID,
