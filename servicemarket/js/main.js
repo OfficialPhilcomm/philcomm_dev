@@ -66,7 +66,7 @@ function requestMyOrders() {
   }
 
   for(let acceptedOrder of acceptedOrders.orders) {
-    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder));
+    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder.order));
   }
 }
 
@@ -345,5 +345,27 @@ function showOrderInfo(object) {
 }
 
 function showAcceptedOrderInfo(object) {
+  moreInformationBox.innerHTML = "";
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'span',
+    content: 'Order of ' + object.pokemon_name
+  }));
+  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
+  moreInformationBox.appendChild(progressBar.element);
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'span',
+    content: 'User: ' + object.username
+  }));
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'span',
+    content: 'Price: ' + object.price
+  }));
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'button',
+    content: 'Change state',
+    onclick: function() {
+      // TODO: change state
+    }
+  }));
   console.log(object);
 }
