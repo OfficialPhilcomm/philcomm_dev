@@ -66,7 +66,7 @@ function requestMyOrders() {
   }
 
   for(let acceptedOrder of acceptedOrders.orders) {
-    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder.order));
+    myOrdersBox.appendChild(generateAcceptedOrderBox(acceptedOrder));
   }
 }
 
