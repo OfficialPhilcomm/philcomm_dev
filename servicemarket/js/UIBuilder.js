@@ -13,7 +13,11 @@ class UIBuilder {
     if(uiJSON.content) domElement.innerHTML = uiJSON.content;
     if(uiJSON.children) {
       for(let child of uiJSON.children) {
-        domElement.appendChild(UIBuilder.fromObject(child));
+        if(child instanceof HTMLElement) {
+          domElement.appendChild(child);
+        } else {
+          domElement.appendChild(UIBuilder.fromObject(child));
+        }
       }
     }
 
