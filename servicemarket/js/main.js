@@ -547,7 +547,8 @@ function showAcceptedOrderInfo(object) {
       }
     ]
   }));
-  moreInformationBox.appendChild(UIBuilder.fromObject({
+  let buttons = UIBuilder.fromObject({type: 'div', class: 'buttons'});
+  buttons.appendChild(UIBuilder.fromObject({
     type: 'button',
     content: 'Change state',
     onclick: function() {
@@ -571,4 +572,5 @@ function showAcceptedOrderInfo(object) {
       }
     }
   }));
+  moreInformationBox.appendChild(buttons);
 }
