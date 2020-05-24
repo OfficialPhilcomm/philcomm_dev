@@ -35,6 +35,7 @@ function login(un, pw) {
 }
 
 function logout() {
+  BackendAPI.logout();
   loggedIn.value = false;
   username.value = undefined;
 }
