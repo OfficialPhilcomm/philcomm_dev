@@ -65,16 +65,11 @@ function requestMyOrders() {
           content: 'My orders'
         },
         {
-          type: 'button',
+          type: 'iframe',
+          src: 'plus-solid.svg',
           onclick: function() {
             openNewOrderDialog();
-          },
-          children: [
-            {
-              type: 'img',
-              src: 'icons/plus-solid.svg'
-            }
-          ]
+          }
         }
       ]
     }));
