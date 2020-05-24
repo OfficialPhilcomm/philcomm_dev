@@ -1,5 +1,17 @@
 /* Order box */
 
+.order-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.order-title img {
+  margin-left: auto;
+  height: 12pt;
+}
+
 .order-box {
   width: 100%;
   display: flex;
