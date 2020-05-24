@@ -6,7 +6,8 @@ header("Content-type: text/css");
 $css = array(
     'master.css',
     'popup.css',
-    'order-box.css'
+    'order-box.css',
+    'more-information.css'
 );
 
 // Prevent a notice

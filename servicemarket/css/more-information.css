@@ -1,0 +1,11 @@
+#more_information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#more_information div.title {
+  width: 100%;
+  font-size: var(--font-size-medium);
+}
