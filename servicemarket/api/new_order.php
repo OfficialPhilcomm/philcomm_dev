@@ -71,8 +71,8 @@ values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability,
 $body->iv_hp, $body->iv_atk, $body->iv_def, $body->iv_spatk, $body->iv_spdev, $body->iv_spe,
 $body->ev_hp, $body->ev_atk, $body->ev_def, $body->ev_spatk, $body->ev_spdev, $body->ev_spe);
-throwError($stmt->error);
 $stmt->execute();
+throwError($stmt->error);
 
 $userID = getUserID();
 $orderDataID = $conn->insert_id;
