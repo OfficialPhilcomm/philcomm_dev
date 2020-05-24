@@ -215,6 +215,15 @@ username.registerListener(function(newValue) {
 function generateAllOrderBox(userOrder) {
   console.log(userOrder);
 
+  let ivs = [userOrder.iv_hp];
+
+  let thirtyOneCount = 0;
+  let thirtyCount = 0;
+  for(let iv of ivs) {
+    if(iv === 30) thirtyCount++;
+    if(iv === 31) thirtyOneCount++;
+  }
+
   let buttons = UIBuilder.fromObject({
     type: 'div',
     class: 'buttons'
@@ -261,7 +270,7 @@ function generateAllOrderBox(userOrder) {
     buttons.appendChild(allOffersButton);
   }
 
-  let container = UIBuilder.fromObject({
+  /*let container = UIBuilder.fromObject({
     type: 'div',
     class: 'order-box',
     children: [
@@ -299,6 +308,42 @@ function generateAllOrderBox(userOrder) {
       {
         buttons
       }
+    ]
+  });*/
+
+  let container = UIBuilder.fromObject({
+    type: 'div',
+    class: 'order-box',
+    children: [
+      {
+        type: 'table',
+        class: 'stats-container',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                children: [
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.pokemon_name)
+                  },
+                  {
+                    type: 'div',
+                    content: userOrder.username
+                  },
+                  {
+                    type: 'div',
+                    content: thirtyOneCount + 'x31 ' + thirtyCount + 'x30'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      buttons
     ]
   });
 
