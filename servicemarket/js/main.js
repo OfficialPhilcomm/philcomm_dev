@@ -707,8 +707,6 @@ function openNewOrderDialog() {
     let move3 = move3Select[move3Select.selectedIndex].value;
     let move4 = move4Select[move4Select.selectedIndex].value;
 
-    debugger
-
     let ivHP = parseInt(ivHPSelect.value);
     let ivAtk = parseInt(ivAtkSelect.value);
     let ivDef = parseInt(ivDefSelect.value);
