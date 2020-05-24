@@ -22,7 +22,17 @@ od.Move1 as Move2,
 od.Move1 as Move3,
 od.Move1 as Move4,
 od.IVHP as IVHP,
-od.EVHP as EVHP
+od.IVATK as IVATK,
+od.IVDEF as IVDEF,
+od.IVSPATK as IVSPATK,
+od.IVSPDEF as IVSPDEF,
+od.IVSPE as IVSPE,
+od.EVHP as EVHP,
+od.EVATK as EVATK,
+od.EVDEF as EVDEF,
+od.EVSPATK as EVSPATK,
+od.EVSPDEF as EVSPDEF,
+od.EVSPE as EVSPE
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
@@ -42,7 +52,17 @@ while($row = $result->fetch_assoc()) {
   $order->move3 = $row["Move3"];
   $order->move4 = $row["Move4"];
   $order->iv_hp = $row["IVHP"];
+  $order->iv_atk = $row["IVATK"];
+  $order->iv_def = $row["IVDEF"];
+  $order->iv_spatk = $row["IVSPATK"];
+  $order->iv_spdef = $row["IVSPDEF"];
+  $order->iv_spe = $row["IVSPE"];
   $order->ev_hp = $row["EVHP"];
+  $order->ev_atk = $row["EVATK"];
+  $order->ev_def = $row["EVDEF"];
+  $order->ev_spatk = $row["EVSPATK"];
+  $order->ev_spdef = $row["EVSPDEF"];
+  $order->ev_spe = $row["EVSPE"];
   $api_result->orders[] = $order;
 }
 
