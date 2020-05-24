@@ -40,13 +40,13 @@ main #popup-container {
 
 #popup-container .popup button {
   background-color: white;
-  border: 2px solid #00d94f;
+  border: 2px solid #00c949;
   border-radius: 100px;
-  color: #00d94f;
+  color: #00c949;
 
   cursor: pointer;
 }
 #popup-container .popup button:hover {
-  background-color: #00d94f;
+  background-color: #00c949;
   color: white;
 }
