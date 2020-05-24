@@ -301,10 +301,6 @@ function generateMyOrderBox(userOrder) {
       {
         type: 'th',
         content: 'Pokemon'
-      },
-      {
-        type: 'th',
-        content: 'Payment'
       }
     ]
   });
@@ -316,10 +312,6 @@ function generateMyOrderBox(userOrder) {
       {
         type: 'td',
         content: StringUtils.humanize(userOrder.pokemon_name)
-      },
-      {
-        type: 'td',
-        content: 10000 // TODO: implement price
       }
     ]
   });
