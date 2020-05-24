@@ -43,6 +43,8 @@ main #popup-container {
   border: 2px solid #00d94f;
   border-radius: 100px;
   color: #00d94f;
+
+  cursor: pointer;
 }
 #popup-container .popup button:hover {
   background-color: #00d94f;
