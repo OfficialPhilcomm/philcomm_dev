@@ -26,7 +26,7 @@ class UserOrder {
 }
 
 class OrderData {
-  constructor(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpSpe, evHP, evAtk, evDef, evSpAtk, evSpDef, evSpSpe) {
+  constructor(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe, evHP, evAtk, evDef, evSpAtk, evSpDef, evSpe) {
     this.pokemonName = pokemonName;
     this.gender = gender;
     this.move1 = move1;
