@@ -3,8 +3,8 @@
 .order-title {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 
   margin-bottom: 10px;
 }
