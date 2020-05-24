@@ -510,7 +510,7 @@ function showAcceptedOrderInfo(object) {
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'div',
     class: 'title',
-    content: 'Order of ' + object.order.pokemon_name
+    content: 'Order of ' + StringUtils.humanize(object.order.pokemon_name)
   }));
   let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.order.state);
   moreInformationBox.appendChild(progressBar.element);
