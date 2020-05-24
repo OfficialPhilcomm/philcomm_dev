@@ -469,7 +469,7 @@ function openNewOrderDialog() {
     let move4 = move4Select[move4Select.selectedIndex].value;
     let ability = "ability"; // TODO: Add ability
 
-    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, 1, -2, 1, 1, 1, 1, 1, 1, 1, 1, 2000, 1);
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
