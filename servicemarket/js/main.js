@@ -84,7 +84,13 @@ function requestMyOrders() {
   if(acceptedOrders.orders.length > 0) {
     myOrdersBox.appendChild(UIBuilder.fromObject({
       type: 'div',
-      content: 'Accepted orders'
+      class: 'order-title',
+      children: [
+        {
+          type: 'span',
+          content: 'Accepted orders'
+        }
+      ]
     }));
   }
 
