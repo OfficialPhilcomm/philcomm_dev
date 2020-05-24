@@ -224,7 +224,7 @@ username.registerListener(function(newValue) {
 function generateAllOrderBox(userOrder) {
   console.log(userOrder);
 
-  let ivs = [userOrder.iv_hp];
+  let ivs = [userOrder.iv_hp, userOrder.iv_atk, userOrder.iv_def, userOrder.iv_spatk, userOrder.iv_spdef, userOrder.iv_spe];
 
   let thirtyOneCount = 0;
   let thirtyCount = 0;
