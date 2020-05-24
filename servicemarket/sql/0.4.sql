@@ -6,8 +6,8 @@ create table User (
 );
 insert into User (Username, Password) values
   ('Philcomm', password('')),
-  ('Kora', password('')),
   ('dev', password('')),
+  ('Kora', password('')),
   ('Pottina', password('')),
   ('Moses', password(''));
 
