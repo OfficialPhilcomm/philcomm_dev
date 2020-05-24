@@ -7,9 +7,13 @@
   align-items: flex-start;
 }
 
+.order-title span {
+  font-size: var(--font-size-medium);
+}
+
 .order-title img {
   margin-left: auto;
-  height: var(--font-size-small);
+  height: var(--font-size-medium);
 }
 
 .order-box {
