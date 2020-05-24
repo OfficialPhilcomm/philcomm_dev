@@ -10,8 +10,6 @@
 progressbar {
   position: relative;
   display: flex;
-
-  padding: 0 5px;
 }
 progressbar .progressbar-track {
   position: absolute;
