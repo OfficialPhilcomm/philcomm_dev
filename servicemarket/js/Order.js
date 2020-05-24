@@ -56,7 +56,13 @@ class OrderData {
       move2: this.move2,
       move3: this.move3,
       move4: this.move4,
-      ability: this.ability
+      ability: this.ability,
+      iv_hp: this.ivHP,
+      iv_atk: this.ivAtk,
+      iv_def: this.ivDef,
+      iv_spatk: this.ivSpAtk,
+      iv_spdef: this.ivSpDef,
+      iv_spe: this.ivSpe
     });
   }
 }
