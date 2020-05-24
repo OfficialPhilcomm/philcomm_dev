@@ -9,7 +9,7 @@
 
 .order-title img {
   margin-left: auto;
-  height: 12pt;
+  height: var(--font-size-small);
 }
 
 .order-box {
