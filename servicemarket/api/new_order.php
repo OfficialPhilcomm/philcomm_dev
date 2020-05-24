@@ -65,6 +65,9 @@ foreach($evs as $value) {
   if($body->$value < 0 || $body->$value > 252) throwError("$value must be between -1 and 252");
 }
 
+$total_evs = $body->ev_hp + $body->ev_atk + $body->ev_def + $body->ev_spatk + $body->ev_spdef + $body->ev_spe;
+if($total_evs > 510) throwError("total evs cant be bigger than 510");
+
 $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability,
 IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
 values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
