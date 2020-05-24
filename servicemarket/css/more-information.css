@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+  box-sizing: border-box;
 }
 
 #more_information div.title {
