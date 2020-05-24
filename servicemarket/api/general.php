@@ -16,7 +16,6 @@ function requireLogin() {
 }
 
 function validateBody($arguments) {
-  echo file_get_contents('php://input');
   $body = json_decode(file_get_contents('php://input'));
   if(json_last_error() !== JSON_ERROR_NONE) {
     throwError("body not json");
