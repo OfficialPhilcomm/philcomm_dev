@@ -534,6 +534,7 @@ function showAcceptedOrderInfo(object) {
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
+      stateSelect.selectedIndex = object.order.state;
       popup.appendChild(stateSelect);
       let closeFunction = createCloseablePopup(popup);
       stateSelect.onchange = function() {
