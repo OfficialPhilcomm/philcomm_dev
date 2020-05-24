@@ -45,8 +45,16 @@ function requestAllOrders() {
 
   allOrdersBox.innerHTML = "";
 
-  for(let order of allOrders.orders) {
-    allOrdersBox.appendChild(generateAllOrderBox(order));
+  if(allOrders.orders.length !== 0) {
+    for(let order of allOrders.orders) {
+      allOrdersBox.appendChild(generateAllOrderBox(order));
+    }
+  } else {
+    allOrdersBox.appendChild(UIBuilder.fromObject({
+      type: 'div',
+      class: 'no-orders',
+      content: 'You have encountered a very rare case. It seems like no order is created yet. Be the first user to create one by pressing the + button next to "My Orders"'
+    }));
   }
 }
 
