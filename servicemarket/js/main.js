@@ -380,7 +380,7 @@ function generateAllOrderBox(userOrder) {
                         children: [
                           {
                             type: 'th',
-                            content: userOrder.iv_hp
+                            content: userOrder.iv_hp.toString()
                           }
                         ]
                       },
@@ -389,7 +389,7 @@ function generateAllOrderBox(userOrder) {
                         children: [
                           {
                             type: 'th',
-                            content: userOrder.ev_hp
+                            content: userOrder.ev_hp.toString()
                           }
                         ]
                       }
