@@ -444,7 +444,7 @@ function openNewOrderDialog() {
           },
           ivAtkSelect
         ]
-      }
+      },
       {
         type: 'tr',
         children: [
