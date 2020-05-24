@@ -504,22 +504,45 @@ function createPopup(domElement) {
 function showOrderInfo(object) {
   moreInformationBox.innerHTML = "";
 
-  console.log(object);
-
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'div',
     class: 'title',
-    content: 'Order of '
+    content: 'Order of ' + StringUtils.humanize(object.pokemon_name)
   }));
   let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
-    type: 'span',
-    content: 'Breeder: ' + object.breeder
-  }));
-  moreInformationBox.appendChild(UIBuilder.fromObject({
-    type: 'span',
-    content: 'Price: ' + object.price
+    type: 'table',
+    children: [
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'Breeder',
+            class: 'right'
+          },
+          {
+            type: 'td',
+            content: object.breeder
+          }
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'Price',
+            class: 'right'
+          },
+          {
+            type: 'td',
+            content: object.price
+          }
+        ]
+      }
+    ]
   }));
 }
 
