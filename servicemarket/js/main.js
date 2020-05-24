@@ -185,7 +185,11 @@ loggedIn.registerListener(function(newValue) {
 });
 
 username.registerListener(function(newValue) {
-  usernameDisplay.innerHTML = newValue;
+  if(newValue !== undefined) {
+    usernameDisplay.innerHTML = newValue;
+  } else {
+    usernameDisplay.innerHTML = "";
+  }
 });
 
 function generateAllOrderBox(userOrder) {
