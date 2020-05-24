@@ -338,6 +338,27 @@ function generateAllOrderBox(userOrder) {
                     content: thirtyOneCount + 'x31 ' + thirtyCount + 'x30'
                   }
                 ]
+              },
+              {
+                type: 'td',
+                children: [
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.move1)
+                  },
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.move2)
+                  },
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.move3)
+                  },
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.move4)
+                  }
+                ]
               }
             ]
           }
