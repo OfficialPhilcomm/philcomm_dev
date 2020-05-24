@@ -515,12 +515,35 @@ function showAcceptedOrderInfo(object) {
   let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.order.state);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
-    type: 'span',
-    content: 'User: ' + object.order.username
-  }));
-  moreInformationBox.appendChild(UIBuilder.fromObject({
-    type: 'span',
-    content: 'Price: ' + object.order.price
+    type: 'table',
+    children: [
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'User:'
+          },
+          {
+            type: 'td',
+            content: object.order.username
+          }
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'Price:'
+          },
+          {
+            type: 'td',
+            content: object.order.price
+          }
+        ]
+      }
+    ]
   }));
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'button',
