@@ -213,42 +213,7 @@ username.registerListener(function(newValue) {
 });
 
 function generateAllOrderBox(userOrder) {
-  let container = document.createElement("div");
-  container.className = "order-box";
-
-  let infoTable = document.createElement("table");
-
-  let thRow = UIBuilder.fromObject({
-    type: 'tr',
-    children: [
-      {
-        type: 'th',
-        content: 'Pokemon'
-      },
-      {
-        type: 'th',
-        content: 'User'
-      }
-    ]
-  });
-  infoTable.appendChild(thRow);
-
-  let infoRow = UIBuilder.fromObject({
-    type: 'tr',
-    children: [
-      {
-        type: 'td',
-        content: StringUtils.humanize(userOrder.pokemon_name)
-      },
-      {
-        type: 'td',
-        content: userOrder.username
-      }
-    ]
-  });
-  infoTable.appendChild(infoRow);
-
-  container.appendChild(infoTable);
+  console.log(userOrder);
 
   let buttons = UIBuilder.fromObject({
     type: 'div',
@@ -296,7 +261,46 @@ function generateAllOrderBox(userOrder) {
     buttons.appendChild(allOffersButton);
   }
 
-  container.appendChild(buttons);
+  let container = UIBuilder.fromObject({
+    type: 'div',
+    class: 'order-box',
+    children: [
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'th',
+                content: 'Pokemon'
+              },
+              {
+                type: 'th',
+                content: 'User'
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: StringUtils.humanize(userOrder.pokemon_name)
+              },
+              {
+                type: 'td',
+                content: userOrder.username
+              }
+            ]
+          }
+        ]
+      },
+      {
+        buttons
+      }
+    ]
+  });
 
   return container;
 }

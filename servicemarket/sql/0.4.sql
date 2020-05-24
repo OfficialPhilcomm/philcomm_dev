@@ -7,7 +7,9 @@ create table User (
 insert into User (Username, Password) values
   ('Philcomm', password('')),
   ('Kora', password('')),
-  ('dev', password(''));
+  ('dev', password('')),
+  ('Pottina', password('')),
+  ('Moses', password(''));
 
 drop table if exists OrderData;
 create table OrderData (
