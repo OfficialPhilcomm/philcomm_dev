@@ -1,7 +1,7 @@
 <?php
-session_start();
-
 header("Access-Control-Allow-Origin: *");
+
+session_start();
 
 function db_host() { return "db5000463258.hosting-data.io"; }
 function db_user() { return "dbu43335"; }
