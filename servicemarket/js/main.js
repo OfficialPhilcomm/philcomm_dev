@@ -475,7 +475,7 @@ function openNewOrderDialog() {
     let move2 = move2Select[move2Select.selectedIndex].value;
     let move3 = move3Select[move3Select.selectedIndex].value;
     let move4 = move4Select[move4Select.selectedIndex].value;
-    let ivHP = ivHPSelect.value;
+    let ivHP = parseInt(ivHPSelect.value);
     let ability = "ability"; // TODO: Add ability
 
     let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
