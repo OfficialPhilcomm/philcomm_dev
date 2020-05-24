@@ -30,7 +30,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-IVHP int not null default -1,
+/*IVHP int not null default -1,
 IVATK int not null default -1,
 IVDEF int not null default -1,
 IVSPATK int not null default -1,
@@ -41,7 +41,7 @@ EVATK int not null default -1,
 EVDEF int not null default -1,
 EVSPATK int not null default -1,
 EVSPDEF int not null default -1,
-EVSPE int not null default -1
+EVSPE int not null default -1*/
 
 $ivs = array();
 $ivs[] = "iv_hp";
