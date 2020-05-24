@@ -65,7 +65,7 @@ foreach($evs as $value) {
   if($body->$value < 0 || $body->$value > 252) throwError("$value must be between -1 and 31");
 }
 
-$stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability, )
+$stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability)
 values (?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssss", $body->pokemon_name, $body->gender, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability);
 $stmt->execute();
