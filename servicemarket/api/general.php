@@ -1,7 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Credentials: true");
-
 session_start();
 
 function db_host() { return "db5000463258.hosting-data.io"; }
