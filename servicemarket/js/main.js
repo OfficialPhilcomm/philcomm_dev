@@ -461,6 +461,9 @@ function openNewOrderDialog() {
     let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability);
     BackendAPI.submitOrder(orderData);
     closeFunction();
+
+    requestAllOrders();
+    requestMyOrders();
   }
 }
 
