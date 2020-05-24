@@ -418,6 +418,13 @@ function openNewOrderDialog() {
   let move2Select = UIBuilder.fromObject({type: 'select'});
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
+
+  let statsTable = UIBuilder.fromObject({type: 'table'});
+  let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
+  let statsRow = UIBuilder.fromObject({type: 'tr', children: [{type: 'td', content: 'IV HP'}]);
+  statsRow.appendChild(ivHPSelect);
+  statsTable.appendChild(statsRow);
+
   let submitButton = UIBuilder.fromObject({type: 'button', content: 'Submit'});
   for(let pokemon of pokemonList) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
@@ -456,6 +463,7 @@ function openNewOrderDialog() {
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
   popup.appendChild(move4Select);
+  popup.appendChild(statsTable);
   popup.appendChild(submitButton);
 
   let closeFunction = createCloseablePopup(popup);
@@ -467,9 +475,10 @@ function openNewOrderDialog() {
     let move2 = move2Select[move2Select.selectedIndex].value;
     let move3 = move3Select[move3Select.selectedIndex].value;
     let move4 = move4Select[move4Select.selectedIndex].value;
+    let ivHP = ivHPSelect.value;
     let ability = "ability"; // TODO: Add ability
 
-    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
