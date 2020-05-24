@@ -18,18 +18,18 @@ create table OrderData (
   Move3 varchar(64) not null,
   Move4 varchar(64) not null,
   Ability varchar(64) not null,
-  IVHP int not null,
-  IVATK int not null,
-  IVDEF int not null,
-  IVSPATK int not null,
-  IVSPDEF int not null,
-  IVSPE int not null,
-  EVHP int not null,
-  EVATK int not null,
-  EVDEF int not null,
-  EVSPATK int not null,
-  EVSPDEF int not null,
-  EVSPE int not null
+  IVHP int not null default -1,
+  IVATK int not null default -1,
+  IVDEF int not null default -1,
+  IVSPATK int not null default -1,
+  IVSPDEF int not null default -1,
+  IVSPE int not null default -1,
+  EVHP int not null default -1,
+  EVATK int not null default -1,
+  EVDEF int not null default -1,
+  EVSPATK int not null default -1,
+  EVSPDEF int not null default -1,
+  EVSPE int not null default -1
 );
 
 drop table if exists UserOrder;
