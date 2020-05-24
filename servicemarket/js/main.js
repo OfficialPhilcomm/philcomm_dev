@@ -334,7 +334,7 @@ function generateMyOrderBox(userOrder) {
       type: 'th',
       content: 'Offers'
     }));
-    thRow.appendChild(UIBuilder.fromObject({
+    infoRow.appendChild(UIBuilder.fromObject({
       type: 'td',
       content: userOrder.offer_count
     }));
