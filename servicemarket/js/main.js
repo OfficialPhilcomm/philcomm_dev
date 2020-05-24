@@ -270,47 +270,6 @@ function generateAllOrderBox(userOrder) {
     buttons.appendChild(allOffersButton);
   }
 
-  /*let container = UIBuilder.fromObject({
-    type: 'div',
-    class: 'order-box',
-    children: [
-      {
-        type: 'table',
-        children: [
-          {
-            type: 'tr',
-            children: [
-              {
-                type: 'th',
-                content: 'Pokemon'
-              },
-              {
-                type: 'th',
-                content: 'User'
-              }
-            ]
-          },
-          {
-            type: 'tr',
-            children: [
-              {
-                type: 'td',
-                content: StringUtils.humanize(userOrder.pokemon_name)
-              },
-              {
-                type: 'td',
-                content: userOrder.username
-              }
-            ]
-          }
-        ]
-      },
-      {
-        buttons
-      }
-    ]
-  });*/
-
   let container = UIBuilder.fromObject({
     type: 'div',
     class: 'order-box',
@@ -372,6 +331,26 @@ function generateAllOrderBox(userOrder) {
                           {
                             type: 'th',
                             content: 'HP'
+                          },
+                          {
+                            type: 'th',
+                            content: 'Atk'
+                          },
+                          {
+                            type: 'th',
+                            content: 'Def'
+                          },
+                          {
+                            type: 'th',
+                            content: 'SpAtk'
+                          },
+                          {
+                            type: 'th',
+                            content: 'SpDef'
+                          },
+                          {
+                            type: 'th',
+                            content: 'Speed'
                           }
                         ]
                       },
@@ -381,6 +360,26 @@ function generateAllOrderBox(userOrder) {
                           {
                             type: 'th',
                             content: userOrder.iv_hp.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.iv_atk.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.iv_def.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.iv_spatk.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.iv_spdef.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.iv_spe.toString()
                           }
                         ]
                       },
@@ -390,6 +389,26 @@ function generateAllOrderBox(userOrder) {
                           {
                             type: 'th',
                             content: userOrder.ev_hp.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.ev_atk.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.ev_def.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.ev_spatk.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.ev_spdef.toString()
+                          },
+                          {
+                            type: 'th',
+                            content: userOrder.ev_spe.toString()
                           }
                         ]
                       }
