@@ -59,10 +59,10 @@ $evs[] = "ev_spdef";
 $evs[] = "ev_spe";
 
 foreach($ivs as $value) {
-  if($body[$value] < -1 || $body[$value] > 31) throwError("$value must be between -1 and 31");
+  if($body->$value < -1 || $body->$value > 31) throwError("$value must be between -1 and 31");
 }
 foreach($evs as $value) {
-  if($body[$value] < 0 || $body[$value] > 252) throwError("$value must be between -1 and 31");
+  if($body->$value < 0 || $body->$value > 252) throwError("$value must be between -1 and 31");
 }
 
 $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability, )
