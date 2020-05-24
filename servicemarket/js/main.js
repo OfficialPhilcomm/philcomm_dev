@@ -58,6 +58,7 @@ function requestMyOrders() {
   if(myOrders.orders.length > 0) {
     myOrdersBox.appendChild(UIBuilder.fromObject({
       type: 'div',
+      class: 'order-title',
       children: [
         {
           type: 'span',
@@ -65,10 +66,15 @@ function requestMyOrders() {
         },
         {
           type: 'button',
-          content: 'New order',
           onclick: function() {
             openNewOrderDialog();
-          }
+          },
+          children: [
+            {
+              type: 'img',
+              src: 'icons/plus-solid.svg'
+            }
+          ]
         }
       ]
     }));
