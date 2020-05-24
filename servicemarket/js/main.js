@@ -419,22 +419,23 @@ function openNewOrderDialog() {
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
 
-  let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivHPSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
+  let ivAtkSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
+  let ivDefSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
+  let ivSpAtkSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
+  let ivSpDefSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
+  let ivSpeSelect = UIBuilder.fromObject({type: 'input', class: 'iv', input_type: 'number', min: -1, max: 31});
 
-  let evHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evHPSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
+  let evAtkSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
+  let evDefSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
+  let evSpAtkSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
+  let evSpDefSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
+  let evSpeSelect = UIBuilder.fromObject({type: 'input', class: 'ev', input_type: 'number', min: 0, max: 252});
 
   let statsTable = UIBuilder.fromObject({
     type: 'table',
+    class: 'stats-table',
     children: [
       {
         type: 'tr',

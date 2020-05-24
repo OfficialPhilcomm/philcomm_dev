@@ -7,7 +7,8 @@ $css = array(
     'master.css',
     'popup.css',
     'order-box.css',
-    'more-information.css'
+    'more-information.css',
+    'stats-table.css'
 );
 
 // Prevent a notice

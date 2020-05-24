@@ -1,0 +1,12 @@
+table.stats-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.stats-table input.iv {
+  width: 30px;
+}
+
+table.stats-table input.ev {
+  width: 50px;
+}
