@@ -208,10 +208,6 @@ function generateAllOrderBox(userOrder) {
       {
         type: 'th',
         content: 'User'
-      },
-      {
-        type: 'th',
-        content: 'Payment'
       }
     ]
   });
@@ -227,10 +223,6 @@ function generateAllOrderBox(userOrder) {
       {
         type: 'td',
         content: userOrder.username
-      },
-      {
-        type: 'td',
-        content: 10000 // TODO: implement price
       }
     ]
   });
