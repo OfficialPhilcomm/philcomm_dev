@@ -46,7 +46,7 @@ function requestAllOrders() {
   allOrdersBox.innerHTML = "";
 
   for(let order of allOrders.orders) {
-    allOrdersBox.appendChild(generateOrderBox(order));
+    allOrdersBox.appendChild(generateAllOrderBox(order));
   }
 }
 
@@ -75,7 +75,7 @@ function requestMyOrders() {
     }));
 
     for(let order of myOrders.orders) {
-      myOrdersBox.appendChild(generateOrderBox(order));
+      myOrdersBox.appendChild(generateMyOrderBox(order));
     }
   }
 
@@ -182,7 +182,7 @@ username.registerListener(function(newValue) {
   usernameDisplay.innerHTML = newValue;
 });
 
-function generateOrderBox(userOrder) {
+function generateAllOrderBox(userOrder) {
   let container = document.createElement("div");
   container.className = "order-box";
 
@@ -246,6 +246,81 @@ function generateOrderBox(userOrder) {
     });
     buttons.appendChild(makeOfferButton);
   }
+
+  if(userOrder.state === null && userOrder.offer_count > 0) {
+    let allOffersButton = UIBuilder.fromObject({
+      type: 'button',
+      content: 'List all offers',
+      onclick: function() {
+        let dom = UIBuilder.fromObject({type: 'div'});
+        let apiResponse = BackendAPI.allOffers(userOrder.id);
+
+        for(let offer of apiResponse.offers) {
+          dom.appendChild(UIBuilder.fromObject({
+            type: 'div',
+            content: offer.id + " " + offer.price + " " + offer.username,
+            children: [{
+              type: 'button',
+              content: 'Accept',
+              onclick: function() {
+                BackendAPI.acceptOffer(userOrder.id, offer.id);
+              }
+            }]
+          }));
+        }
+        createCloseablePopup(dom);
+      }
+    });
+    buttons.appendChild(allOffersButton);
+  }
+
+  container.appendChild(buttons);
+
+  return container;
+}
+
+function generateMyOrderBox(userOrder) {
+  let container = document.createElement("div");
+  container.className = "order-box";
+
+  let infoTable = document.createElement("table");
+
+  let thRow = UIBuilder.fromObject({
+    type: 'tr',
+    children: [
+      {
+        type: 'th',
+        content: 'Pokemon'
+      },
+      {
+        type: 'th',
+        content: 'Payment'
+      }
+    ]
+  });
+  infoTable.appendChild(thRow);
+
+  let infoRow = UIBuilder.fromObject({
+    type: 'tr',
+    children: [
+      {
+        type: 'td',
+        content: StringUtils.humanize(userOrder.pokemon_name)
+      },
+      {
+        type: 'td',
+        content: 10000 // TODO: implement price
+      }
+    ]
+  });
+  infoTable.appendChild(infoRow);
+
+  container.appendChild(infoTable);
+
+  let buttons = UIBuilder.fromObject({
+    type: 'div',
+    class: 'buttons'
+  });
 
   if(userOrder.state === null && userOrder.offer_count > 0) {
     let allOffersButton = UIBuilder.fromObject({
