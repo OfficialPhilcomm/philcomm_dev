@@ -425,7 +425,7 @@ function openNewOrderDialog() {
   let ivSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
   let ivSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
   let ivSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let statsTable = UIBuilder.fromObject({
+  let ivTable = UIBuilder.fromObject({
     type: 'table',
     children: [
       {
@@ -491,6 +491,78 @@ function openNewOrderDialog() {
     ]
   });
 
+  let evHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evTable = UIBuilder.fromObject({
+    type: 'table',
+    children: [
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV HP'
+          },
+          evHPSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV Atk'
+          },
+          evAtkSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV Def'
+          },
+          evDefSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV SpAtk'
+          },
+          evSpAtkSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV SpDef'
+          },
+          evSpDefSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'EV Speed'
+          },
+          evSpeSelect
+        ]
+      }
+    ]
+  });
+
   let submitButton = UIBuilder.fromObject({type: 'button', content: 'Submit'});
   for(let pokemon of pokemonList) {
     let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(pokemon.name), select_value: pokemon.name});
@@ -529,7 +601,8 @@ function openNewOrderDialog() {
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
   popup.appendChild(move4Select);
-  popup.appendChild(statsTable);
+  popup.appendChild(ivTable);
+  popup.appendChild(evTable);
   popup.appendChild(submitButton);
 
   let closeFunction = createCloseablePopup(popup);
@@ -541,17 +614,26 @@ function openNewOrderDialog() {
     let move2 = move2Select[move2Select.selectedIndex].value;
     let move3 = move3Select[move3Select.selectedIndex].value;
     let move4 = move4Select[move4Select.selectedIndex].value;
+
     let ivHP = parseInt(ivHPSelect.value);
     let ivAtk = parseInt(ivAtkSelect.value);
     let ivDef = parseInt(ivDefSelect.value);
     let ivSpAtk = parseInt(ivSpAtkSelect.value);
     let ivSpDef = parseInt(ivSpDefSelect.value);
     let ivSpe = parseInt(ivSpeSelect.value);
+
+    let evHP = parseInt(evHPSelect.value);
+    let evAtk = parseInt(evAtkSelect.value);
+    let evDef = parseInt(evDefSelect.value);
+    let evSpAtk = parseInt(evSpAtkSelect.value);
+    let evSpDef = parseInt(evSpDefSelect.value);
+    let evSpe = parseInt(evSpeSelect.value);
+
     let ability = "ability"; // TODO: Add ability
 
     let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability,
       ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe,
-      1, 1, 1, 1, 1, 1);
+      evHP, evAtk, evDef, evSpAtk, evSpDef, evSpe);
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
