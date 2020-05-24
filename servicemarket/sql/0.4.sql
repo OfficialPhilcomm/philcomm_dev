@@ -6,6 +6,7 @@ create table User (
 );
 insert into User (Username, Password) values
   ('Philcomm', password('')),
+  ('Kora', password('')),
   ('dev', password(''));
 
 drop table if exists OrderData;

@@ -425,7 +425,15 @@ function openNewOrderDialog() {
   let ivSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
   let ivSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
   let ivSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
-  let ivTable = UIBuilder.fromObject({
+
+  let evHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+  let evSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
+
+  let statsTable = UIBuilder.fromObject({
     type: 'table',
     children: [
       {
@@ -435,74 +443,7 @@ function openNewOrderDialog() {
             type: 'td',
             content: 'IV HP'
           },
-          ivHPSelect
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'IV Atk'
-          },
-          ivAtkSelect
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'IV Def'
-          },
-          ivDefSelect
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'IV SpAtk'
-          },
-          ivSpAtkSelect
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'IV SpDef'
-          },
-          ivSpDefSelect
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'IV Speed'
-          },
-          ivSpeSelect
-        ]
-      }
-    ]
-  });
-
-  let evHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: 0, max: 252});
-  let evTable = UIBuilder.fromObject({
-    type: 'table',
-    children: [
-      {
-        type: 'tr',
-        children: [
+          ivHPSelect,
           {
             type: 'td',
             content: 'EV HP'
@@ -515,6 +456,11 @@ function openNewOrderDialog() {
         children: [
           {
             type: 'td',
+            content: 'IV Atk'
+          },
+          ivAtkSelect,
+          {
+            type: 'td',
             content: 'EV Atk'
           },
           evAtkSelect
@@ -523,6 +469,11 @@ function openNewOrderDialog() {
       {
         type: 'tr',
         children: [
+          {
+            type: 'td',
+            content: 'IV Def'
+          },
+          ivDefSelect,
           {
             type: 'td',
             content: 'EV Def'
@@ -535,6 +486,11 @@ function openNewOrderDialog() {
         children: [
           {
             type: 'td',
+            content: 'IV SpAtk'
+          },
+          ivSpAtkSelect,
+          {
+            type: 'td',
             content: 'EV SpAtk'
           },
           evSpAtkSelect
@@ -545,6 +501,11 @@ function openNewOrderDialog() {
         children: [
           {
             type: 'td',
+            content: 'IV SpDef'
+          },
+          ivSpDefSelect,
+          {
+            type: 'td',
             content: 'EV SpDef'
           },
           evSpDefSelect
@@ -553,6 +514,11 @@ function openNewOrderDialog() {
       {
         type: 'tr',
         children: [
+          {
+            type: 'td',
+            content: 'IV Speed'
+          },
+          ivSpeSelect,
           {
             type: 'td',
             content: 'EV Speed'
@@ -601,8 +567,7 @@ function openNewOrderDialog() {
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
   popup.appendChild(move4Select);
-  popup.appendChild(ivTable);
-  popup.appendChild(evTable);
+  popup.appendChild(statsTable);
   popup.appendChild(submitButton);
 
   let closeFunction = createCloseablePopup(popup);
