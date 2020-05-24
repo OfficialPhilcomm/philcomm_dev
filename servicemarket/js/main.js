@@ -421,7 +421,7 @@ function openNewOrderDialog() {
 
   let statsTable = UIBuilder.fromObject({type: 'table'});
   let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
-  let statsRow = UIBuilder.fromObject({type: 'tr', children: [{type: 'td', content: 'IV HP'}]);
+  let statsRow = UIBuilder.fromObject({type: 'tr', children: [{type: 'td', content: 'IV HP'}]});
   statsRow.appendChild(ivHPSelect);
   statsTable.appendChild(statsRow);
 
