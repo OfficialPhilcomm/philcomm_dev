@@ -21,13 +21,12 @@ class UserOrder {
     this.move3 = jsonObject.move3;
     this.move4 = jsonObject.move4;
     this.ability = jsonObject.ability;
-    this.paymentMax = jsonObject.payment_max;
     this.createdAt = jsonObject.created_at;
   }
 }
 
 class OrderData {
-  constructor(pokemonName, gender, move1, move2, move3, move4, ability) {
+  constructor(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpSpe, evHP, evAtk, evDef, evSpAtk, evSpDef, evSpSpe) {
     this.pokemonName = pokemonName;
     this.gender = gender;
     this.move1 = move1;
@@ -35,6 +34,18 @@ class OrderData {
     this.move3 = move3;
     this.move4 = move4;
     this.ability = ability;
+    this.ivHP = ivHP;
+    this.ivAtk = ivAtk;
+    this.ivDef = ivDef;
+    this.ivSpAtk = ivSpAtk;
+    this.ivSpDef = ivSpDef;
+    this.ivSpe = ivSpe;
+    this.evHP = evHP;
+    this.evAtk = evAtk;
+    this.evDef = evDef;
+    this.evSpAtk = evSpAtk;
+    this.evSpDef = evSpDef;
+    this.evSpe = evSpe;
   }
 
   serialize() {
