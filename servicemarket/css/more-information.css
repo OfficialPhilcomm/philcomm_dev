@@ -19,3 +19,24 @@
 #more_information table td.right {
   text-align: right;
 }
+
+#more_information .buttons {
+  width: 100%;
+}
+
+#more_information .buttons button {
+  padding: 5px 10px;
+
+  background-color: white;
+  border: 2px solid #3bb9ff;
+  border-radius: 100px;
+  color: #3bb9ff;
+
+  cursor: pointer;
+
+  transition: 200ms all;
+}
+#more_information .buttons button:hover {
+  background-color: #3bb9ff;
+  color: white;
+}
