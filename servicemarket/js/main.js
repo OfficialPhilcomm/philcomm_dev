@@ -16,7 +16,7 @@ username.value = undefined;
 
 window.setInterval(function() {
   if(loggedIn.value === true) refreshOrders();
-}, 5000);
+}, 300000);
 
 requestLoginStatus();
 
