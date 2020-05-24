@@ -53,7 +53,7 @@ function requestAllOrders() {
     allOrdersBox.appendChild(UIBuilder.fromObject({
       type: 'div',
       class: 'no-orders',
-      content: 'You have encountered a very rare case. It seems like no order is created yet. Be the first user to create one by pressing the + button next to "My Orders"'
+      content: 'You have encountered a very rare case. It seems like no order is created yet. Be the first user to create one by pressing the + button next to "My orders"'
     }));
   }
 }
