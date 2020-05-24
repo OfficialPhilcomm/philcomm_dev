@@ -65,7 +65,11 @@ foreach($evs as $value) {
   if($body->$value < 0 || $body->$value > 252) throwError("$value must be between -1 and 252");
 }
 
-echo "ivspdef: $body->iv_spdef";
+echo "insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability,
+IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
+values ($body->pokemon_name, $body->gender, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability,
+$body->iv_hp, $body->iv_atk, $body->iv_def, $body->iv_spatk, $body->iv_spdev, $body->iv_spe,
+$body->ev_hp, $body->ev_atk, $body->ev_def, $body->ev_spatk, $body->ev_spdev, $body->ev_spe)";
 
 $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Move1, Move2, Move3, Move4, Ability,
 IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
