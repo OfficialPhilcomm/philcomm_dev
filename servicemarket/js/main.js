@@ -66,7 +66,7 @@ function requestMyOrders() {
         },
         {
           type: 'img',
-          src: 'plus-solid.svg',
+          src: 'icons/plus-solid.svg',
           onclick: function() {
             openNewOrderDialog();
           }
