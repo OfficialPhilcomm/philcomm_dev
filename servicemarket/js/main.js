@@ -419,9 +419,12 @@ function openNewOrderDialog() {
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
 
-  let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
-  let ivAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
-  let ivDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
+  let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivSpAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivSpDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
+  let ivSpeSelect = UIBuilder.fromObject({type: 'input', input_type: 'number', min: -1, max: 31});
   let statsTable = UIBuilder.fromObject({
     type: 'table',
     children: [
@@ -453,6 +456,36 @@ function openNewOrderDialog() {
             content: 'IV Def'
           },
           ivDefSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV SpAtk'
+          },
+          ivSpAtkSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV SpDef'
+          },
+          ivSpDefSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV Speed'
+          },
+          ivSpeSelect
         ]
       }
     ]
@@ -511,9 +544,14 @@ function openNewOrderDialog() {
     let ivHP = parseInt(ivHPSelect.value);
     let ivAtk = parseInt(ivAtkSelect.value);
     let ivDef = parseInt(ivDefSelect.value);
+    let ivSpAtk = parseInt(ivSpAtkSelect.value);
+    let ivSpDef = parseInt(ivSpDefSelect.value);
+    let ivSpe = parseInt(ivSpeSelect.value);
     let ability = "ability"; // TODO: Add ability
 
-    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability,
+      ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe,
+      1, 1, 1, 1, 1, 1);
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
