@@ -55,25 +55,25 @@ function requestMyOrders() {
 
   let myOrders = BackendAPI.myOrders();
 
-  if(myOrders.orders.length > 0) {
-    myOrdersBox.appendChild(UIBuilder.fromObject({
-      type: 'div',
-      class: 'order-title',
-      children: [
-        {
-          type: 'span',
-          content: 'My orders'
-        },
-        {
-          type: 'img',
-          src: 'icons/plus-solid.svg',
-          onclick: function() {
-            openNewOrderDialog();
-          }
+  myOrdersBox.appendChild(UIBuilder.fromObject({
+    type: 'div',
+    class: 'order-title',
+    children: [
+      {
+        type: 'span',
+        content: 'My orders'
+      },
+      {
+        type: 'img',
+        src: 'icons/plus-solid.svg',
+        onclick: function() {
+          openNewOrderDialog();
         }
-      ]
-    }));
+      }
+    ]
+  }));
 
+  if(myOrders.orders.length > 0) {
     for(let order of myOrders.orders) {
       myOrdersBox.appendChild(generateMyOrderBox(order));
     }
