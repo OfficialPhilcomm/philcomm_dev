@@ -9,3 +9,7 @@
   width: 100%;
   font-size: var(--font-size-medium);
 }
+
+#more_information progressbar {
+  width: 100%;
+}
