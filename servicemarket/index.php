@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
 
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/style.css.php">
     <link rel="stylesheet" href="css/progressbar.css">
 
     <script src="js/PokemonAPI.js" charset="utf-8"></script>
