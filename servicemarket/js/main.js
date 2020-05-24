@@ -503,6 +503,14 @@ function createPopup(domElement) {
 
 function showOrderInfo(object) {
   moreInformationBox.innerHTML = "";
+
+  console.log(object);
+
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'div',
+    class: 'title',
+    content: 'Order of '
+  }));
   let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
