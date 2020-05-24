@@ -14,7 +14,7 @@ loggedIn.value = false;
 var username = new LiveData();
 username.value = undefined;
 
-window.setInterval(refreshOrders(), 300000);
+window.setInterval(refreshOrders(), 5000);
 
 requestLoginStatus();
 
