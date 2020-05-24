@@ -188,6 +188,12 @@ loggedIn.registerListener(function(newValue) {
         }
       ]
     });
+    popup.getElementsByClassName("td-username")[0].onkeypress = function(event) {
+      if(event.keyCode === 13) loginClick();
+    }
+    popup.getElementsByClassName("td-password")[0].onkeypress = function(event) {
+      if(event.keyCode === 13) loginClick();
+    }
 
     function loginClick() {
       login(popup.getElementsByClassName("td-username")[0].value, popup.getElementsByClassName("td-password")[0].value);
