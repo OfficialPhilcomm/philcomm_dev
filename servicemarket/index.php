@@ -22,9 +22,9 @@
 
     <main>
       <div id="main-container">
-        <div id="all-orders" class="all_requests">all_requests</div>
+        <div id="all-orders" class="all_requests"></div>
         <div id="user_info"></div>
-        <div id="my-orders" class="own_requests">own_requests</div>
+        <div id="my-orders" class="own_requests"></div>
         <div id="more_information" class="more_information">
           <div class="no-information">
             To show information about an order, click on the "Show Info" button on an order
