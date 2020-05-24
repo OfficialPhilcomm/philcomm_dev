@@ -65,7 +65,7 @@ function requestMyOrders() {
           content: 'My orders'
         },
         {
-          type: 'iframe',
+          type: 'img',
           src: 'plus-solid.svg',
           onclick: function() {
             openNewOrderDialog();
