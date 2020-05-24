@@ -13,6 +13,16 @@ var loggedIn = new LiveData();
 loggedIn.value = false;
 var username = new LiveData();
 username.value = undefined;
+requestLoginStatus();
+
+function requestLoginStatus() {
+  let loginStatus = BackendAPI.requestLoginStatus();
+
+  if(loginStatus.logged_in) {
+    loggedIn.value = true;
+    username.value = loginStatus.username;
+  }
+}
 
 function login(un, pw) {
   let result = BackendAPI.login(un, pw);

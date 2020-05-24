@@ -41,6 +41,20 @@ class BackendAPI {
     }
   }
 
+  static requestLoginStatus() {
+    const url = "api/login_status.php";
+
+    var request = new XMLHttpRequest();
+    request.open('GET', url, false);
+    request.send(null);
+
+    if(request.status === 200) {
+      let apiResponse = request.responseText;
+
+      return JSON.parse(apiResponse);
+    }
+  }
+
   static login(user, pass) {
     const url = "api/login.php";
 
