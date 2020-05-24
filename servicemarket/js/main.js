@@ -13,7 +13,15 @@ var loggedIn = new LiveData();
 loggedIn.value = false;
 var username = new LiveData();
 username.value = undefined;
+
+window.setInterval(refreshOrders(), 300000);
+
 requestLoginStatus();
+
+function refreshOrders() {
+  requestAllOrders();
+  requestMyOrders();
+}
 
 function requestLoginStatus() {
   let loginStatus = BackendAPI.requestLoginStatus();
@@ -120,8 +128,7 @@ loggedIn.registerListener(function(newValue) {
 
     logoutImg.style.display = "block";
 
-    requestAllOrders();
-    requestMyOrders();
+    refreshOrders();
   } else {
     logoutImg.style.display = "none";
 
@@ -729,8 +736,7 @@ function openNewOrderDialog() {
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
-    requestAllOrders();
-    requestMyOrders();
+    refreshOrders();
   }
 }
 
