@@ -77,6 +77,12 @@ function requestMyOrders() {
     for(let order of myOrders.orders) {
       myOrdersBox.appendChild(generateMyOrderBox(order));
     }
+  } else {
+    myOrdersBox.appendChild(UIBuilder.fromObject({
+      type: 'div',
+      class: 'no-orders',
+      content: 'You have no orders yet. Create one by pressing the + button'
+    }));
   }
 
   let acceptedOrders = BackendAPI.acceptedOrders();

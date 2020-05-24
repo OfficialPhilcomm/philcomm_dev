@@ -12,6 +12,17 @@
   font-size: var(--font-size-medium);
 }
 
+#more_information div.no-orders {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: var(--font-size-medium);
+}
+
 #more_information progressbar {
   width: 100%;
 }
