@@ -419,11 +419,44 @@ function openNewOrderDialog() {
   let move3Select = UIBuilder.fromObject({type: 'select'});
   let move4Select = UIBuilder.fromObject({type: 'select'});
 
-  let statsTable = UIBuilder.fromObject({type: 'table'});
   let ivHPSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
-  let statsRow = UIBuilder.fromObject({type: 'tr', children: [{type: 'td', content: 'IV HP'}]});
-  statsRow.appendChild(ivHPSelect);
-  statsTable.appendChild(statsRow);
+  let ivAtkSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
+  let ivDefSelect = UIBuilder.fromObject({type: 'input', input_type: 'number'});
+  let statsTable = UIBuilder.fromObject({
+    type: 'table',
+    children: [
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV HP'
+          },
+          ivHPSelect
+        ]
+      },
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV Atk'
+          },
+          ivAtkSelect
+        ]
+      }
+      {
+        type: 'tr',
+        children: [
+          {
+            type: 'td',
+            content: 'IV Def'
+          },
+          ivDefSelect
+        ]
+      }
+    ]
+  });
 
   let submitButton = UIBuilder.fromObject({type: 'button', content: 'Submit'});
   for(let pokemon of pokemonList) {
@@ -476,9 +509,11 @@ function openNewOrderDialog() {
     let move3 = move3Select[move3Select.selectedIndex].value;
     let move4 = move4Select[move4Select.selectedIndex].value;
     let ivHP = parseInt(ivHPSelect.value);
+    let ivAtk = parseInt(ivAtkSelect.value);
+    let ivDef = parseInt(ivDefSelect.value);
     let ability = "ability"; // TODO: Add ability
 
-    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     BackendAPI.submitOrder(orderData);
     closeFunction();
 
