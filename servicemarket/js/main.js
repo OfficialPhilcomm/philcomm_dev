@@ -539,6 +539,8 @@ function showAcceptedOrderInfo(object) {
       stateSelect.onchange = function() {
         BackendAPI.updateState(object.order.user_order_id, parseInt(stateSelect.value));
         closeFunction();
+        let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(object.order.user_order_id);
+        showAcceptedOrderInfo(acceptedOrderInfo);
       }
     }
   }));
