@@ -359,6 +359,43 @@ function generateAllOrderBox(userOrder) {
                     content: StringUtils.humanize(userOrder.move4)
                   }
                 ]
+              },
+              {
+                type: 'td',
+                children: [
+                  {
+                    type: 'table',
+                    children: [
+                      {
+                        type: 'tr',
+                        children: [
+                          {
+                            type: 'th',
+                            content: 'HP'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'tr',
+                        children: [
+                          {
+                            type: 'th',
+                            content: userOrder.iv_hp
+                          }
+                        ]
+                      },
+                      {
+                        type: 'tr',
+                        children: [
+                          {
+                            type: 'th',
+                            content: userOrder.ev_hp
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
