@@ -15,3 +15,7 @@
 #more_information progressbar {
   width: 100%;
 }
+
+#more_information table td.right {
+  text-align: right;
+}

@@ -522,7 +522,8 @@ function showAcceptedOrderInfo(object) {
         children: [
           {
             type: 'td',
-            content: 'User:'
+            content: 'User',
+            class: 'right'
           },
           {
             type: 'td',
@@ -535,7 +536,8 @@ function showAcceptedOrderInfo(object) {
         children: [
           {
             type: 'td',
-            content: 'Price:'
+            content: 'Price',
+            class: 'right'
           },
           {
             type: 'td',
