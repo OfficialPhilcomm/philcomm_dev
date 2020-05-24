@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 
-.no-orders {
+.no-orders, .no-information {
   width: 100%;
 
   display: flex;
@@ -35,7 +35,7 @@
   text-align: center;
 }
 
-#all-orders .no-orders {
+#all-orders .no-orders, #more_information .no-information {
   height: 100%;
 }
 
