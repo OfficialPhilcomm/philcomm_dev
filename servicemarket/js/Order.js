@@ -62,7 +62,13 @@ class OrderData {
       iv_def: this.ivDef,
       iv_spatk: this.ivSpAtk,
       iv_spdef: this.ivSpDef,
-      iv_spe: this.ivSpe
+      iv_spe: this.ivSpe,
+      ev_hp: this.evHP,
+      ev_atk: this.evAtk,
+      ev_def: this.evDef,
+      ev_spatk: this.evSpAtk,
+      ev_spdef: this.evSpDef,
+      ev_spe: this.evSpe
     });
   }
 }
