@@ -16,6 +16,8 @@
 .order-title img {
   margin-left: auto;
   height: var(--font-size-medium);
+
+  cursor: pointer;
 }
 
 .order-box {
