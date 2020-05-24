@@ -329,6 +329,17 @@ function generateMyOrderBox(userOrder) {
   });
   infoTable.appendChild(infoRow);
 
+  if(userOrder.state === null && userOrder.offer_count > 0) {
+    thRow.appendChild(UIBuilder.fromObject({
+      type: 'th',
+      content: 'Offers'
+    }));
+    thRow.appendChild(UIBuilder.fromObject({
+      type: 'td',
+      content: userOrder.offer_count
+    }));
+  }
+
   container.appendChild(infoTable);
 
   let buttons = UIBuilder.fromObject({
