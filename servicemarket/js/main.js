@@ -923,7 +923,7 @@ function openNewOrderDialog() {
             type: 'tr',
             children: [
               {
-                type: td,
+                type: 'td',
                 children: [
                   move1Select,
                   move2Select
@@ -935,7 +935,7 @@ function openNewOrderDialog() {
             type: 'tr',
             children: [
               {
-                type: td,
+                type: 'td',
                 children: [
                   move3Select,
                   move4Select
