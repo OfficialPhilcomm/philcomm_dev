@@ -941,6 +941,23 @@ function openRegisterDialog() {
   }
 }
 
+function openOrderCopyDialog(orderData) {
+  let popup = UIBuilder.fromObject({
+    type: 'textarea',
+    select_value: "Username: " + orderData.username + "\n\n" +
+    orderData.pokemon_name + "\n\n" +
+    "Moves: \n" +
+    orderData.move1 + "\n" +
+    orderData.move2 + "\n" +
+    orderData.move3 + "\n" +
+    orderData.move4 + "\n\n" +
+    "Stats: " + "\n" +
+    orderData.iv_hp + " " + orderData.iv_atk + " " + orderData.iv_def + " " + orderData.iv_spatk + " " + orderData.iv_spdef + " " + orderData.iv_spe + "\n"
+    orderData.ev_hp + " " + orderData.ev_atk + " " + orderData.ev_def + " " + orderData.ev_spatk + " " + orderData.ev_spdef + " " + orderData.ev_spe
+  });
+  createCloseablePopup(popup);
+}
+
 function popupChange() {
   let childCount = popupContainer.childElementCount;
   if(childCount > 0) {
@@ -1098,11 +1115,7 @@ function showAcceptedOrderInfo(object) {
     type: 'button',
     content: 'Export data as txt',
     onclick: function() {
-      let popup = UIBuilder.fromObject({
-        type: 'textarea',
-        select_value: 'this is merica'
-      });
-      createCloseablePopup(popup);
+      openOrderCopyDialog(object.order);
     }
   }));
   moreInformationBox.appendChild(buttons);
