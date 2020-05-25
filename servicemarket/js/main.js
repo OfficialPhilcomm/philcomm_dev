@@ -13,6 +13,8 @@ var loggedIn = new LiveData();
 loggedIn.value = false;
 var username = new LiveData();
 username.value = undefined;
+var moreInformation = new LiveData();
+moreInformation.value = undefined;
 
 window.setInterval(function() {
   if(loggedIn.value === true) refreshOrders();
@@ -224,6 +226,20 @@ username.registerListener(function(newValue) {
     usernameDisplay.innerHTML = newValue;
   } else {
     usernameDisplay.innerHTML = "";
+  }
+});
+
+moreInformation.registerListener(function(newValue) {
+  if(newValue !== undefined) {
+    switch(newValue.type) {
+      case 'order_info':
+        showOrderInfo(newValue.order_info.order);
+        break;
+      case 'accepted_order_info':
+        console.log(newValue);
+        showAcceptedOrderInfo(newValue.accepted_order_info);
+        break;
+    }
   }
 });
 
@@ -525,8 +541,10 @@ function generateMyOrderBox(userOrder) {
       type: 'button',
       content: 'Show Info',
       onclick: function() {
-        let orderInfo = BackendAPI.getOrderInfo(userOrder.id);
-        showOrderInfo(orderInfo.order);
+        moreInformation.value = {
+          type: 'order_info',
+          order_info: BackendAPI.getOrderInfo(userOrder.id)
+        }
       }
     });
     buttons.appendChild(userOrderInfoButton);
@@ -550,8 +568,10 @@ function generateAcceptedOrderBox(acceptedOrder) {
     type: 'button',
     content: 'Show info',
     onclick: function() {
-      let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(acceptedOrder.id);
-      showAcceptedOrderInfo(acceptedOrderInfo);
+      moreInformation.value = {
+        type: 'accepted_order_info',
+        accepted_order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id)
+      }
     }
   }));
 
