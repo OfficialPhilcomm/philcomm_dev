@@ -892,7 +892,7 @@ function openNewOrderDialog() {
     move4Select.appendChild(option.cloneNode(true));
   }
   for(let ability of selectedPokemon.abilities) {
-    let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value, ability.name});
+    let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value: ability.name});
     abilitySelect.appendChild(option);
   }
 
