@@ -34,7 +34,7 @@ window.setInterval(function() {
         let userOrderID = moreInformation.value.user_order_id;
         moreInformation.value = {
           type: 'order_info',
-          order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id),
+          order_info: BackendAPI.acceptedOrderInfo(userOrderID),
           user_order_id: userOrderID
         }
       }
