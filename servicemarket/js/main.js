@@ -1083,14 +1083,14 @@ function showOrderInfo(object) {
   }));
 }
 
-function showAcceptedOrderInfo(object) {
+function showAcceptedOrderInfo(order) {
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'div',
     class: 'title',
-    content: 'Order of ' + StringUtils.humanize(object.order.pokemon_name)
+    content: 'Order of ' + StringUtils.humanize(order.pokemon_name)
   }));
-  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.order.state);
+  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], order.state);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'table',
@@ -1105,7 +1105,7 @@ function showAcceptedOrderInfo(object) {
           },
           {
             type: 'td',
-            content: object.order.username
+            content: order.username
           }
         ]
       },
@@ -1119,7 +1119,7 @@ function showAcceptedOrderInfo(object) {
           },
           {
             type: 'td',
-            content: object.order.price
+            content: order.price
           }
         ]
       }
@@ -1139,13 +1139,13 @@ function showAcceptedOrderInfo(object) {
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
       stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
-      stateSelect.selectedIndex = object.order.state;
+      stateSelect.selectedIndex = order.state;
       popup.appendChild(stateSelect);
       let closeFunction = createCloseablePopup(popup);
       stateSelect.onchange = function() {
-        BackendAPI.updateState(object.order.user_order_id, parseInt(stateSelect.value));
+        BackendAPI.updateState(order.user_order_id, parseInt(stateSelect.value));
         closeFunction();
-        let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(object.order.user_order_id);
+        let acceptedOrderInfo = BackendAPI.acceptedOrderInfo(order.user_order_id);
         showAcceptedOrderInfo(acceptedOrderInfo);
       }
     }
@@ -1154,9 +1154,9 @@ function showAcceptedOrderInfo(object) {
     type: 'button',
     content: 'Export data as txt',
     onclick: function() {
-      openOrderCopyDialog(object.order);
+      openOrderCopyDialog(order);
     }
   }));
   moreInformationBox.appendChild(buttons);
-  moreInformationBox.appendChild(generateOrderDataBox(object.order));
+  moreInformationBox.appendChild(generateOrderDataBox(order));
 }
