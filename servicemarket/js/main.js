@@ -909,12 +909,42 @@ function openNewOrderDialog() {
   let popup = UIBuilder.fromObject({
     type: 'div',
     children: [
-      pokemonSelect,
-      levelSelect,
-      move1Select,
-      move2Select,
-      move3Select,
-      move4Select,
+      {
+        type: 'div',
+        children: [
+          pokemonSelect,
+          levelSelect
+        ]
+      },
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: td,
+                children: [
+                  move1Select,
+                  move2Select
+                ]
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: td,
+                children: [
+                  move3Select,
+                  move4Select
+                ]
+              }
+            ]
+          }
+        ]
+      },
       statsTable,
       submitButton
     ]
