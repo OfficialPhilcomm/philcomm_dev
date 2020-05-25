@@ -736,7 +736,6 @@ function generateOrderDataBox(orderData) {
 }
 
 function openNewOrderDialog() {
-  let popup = UIBuilder.fromObject({type: 'div'});
   let pokemonSelect = UIBuilder.fromObject({type: 'select'});
   let levelSelect = UIBuilder.fromObject({
     type: 'select',
@@ -907,14 +906,19 @@ function openNewOrderDialog() {
     }
   }
 
-  popup.appendChild(pokemonSelect);
-  popup.appendChild(levelSelect);
-  popup.appendChild(move1Select);
-  popup.appendChild(move2Select);
-  popup.appendChild(move3Select);
-  popup.appendChild(move4Select);
-  popup.appendChild(statsTable);
-  popup.appendChild(submitButton);
+  let popup = UIBuilder.fromObject({
+    type: 'div',
+    children: [
+      pokemonSelect,
+      levelSelect,
+      move1Select,
+      move2Select,
+      move3Select,
+      move4Select,
+      statsTable,
+      submitButton
+    ]
+  });
 
   let closeFunction = createCloseablePopup(popup);
 
