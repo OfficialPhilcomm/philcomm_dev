@@ -557,6 +557,7 @@ function generateOrderDataBox(orderData) {
 
   let container = UIBuilder.fromObject({
     type: 'div',
+    class: 'order-data',
     children: [
       {
         type: 'table',
@@ -566,11 +567,11 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: 'move1'
+                content: orderData.move1
               },
               {
                 type: 'td',
-                content: 'move2'
+                content: orderData.move2
               }
             ]
           },
@@ -579,11 +580,11 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: 'move3'
+                content: orderData.move3
               },
               {
                 type: 'td',
-                content: 'move4'
+                content: orderData.move4
               }
             ]
           }
@@ -626,27 +627,27 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: 'HP'
+                content: orderData.iv_hp
               },
               {
                 type: 'td',
-                content: 'Atk'
+                content: orderData.iv_atk
               },
               {
                 type: 'td',
-                content: 'Def'
+                content: orderData.iv_def
               },
               {
                 type: 'td',
-                content: 'SpAtk'
+                content: orderData.iv_spatk
               },
               {
                 type: 'td',
-                content: 'SpDef'
+                content: orderData.iv_spdef
               },
               {
                 type: 'td',
-                content: 'Speed'
+                content: orderData.iv_spe
               }
             ]
           },
@@ -655,27 +656,27 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: 'HP'
+                content: orderData.ev_hp
               },
               {
                 type: 'td',
-                content: 'Atk'
+                content: orderData.ev_atk
               },
               {
                 type: 'td',
-                content: 'Def'
+                content: orderData.ev_def
               },
               {
                 type: 'td',
-                content: 'SpAtk'
+                content: orderData.ev_spatk
               },
               {
                 type: 'td',
-                content: 'SpDef'
+                content: orderData.ev_spdef
               },
               {
                 type: 'td',
-                content: 'Speed'
+                content: orderData.ev_spe
               }
             ]
           }
