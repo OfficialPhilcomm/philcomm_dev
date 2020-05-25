@@ -1094,6 +1094,17 @@ function showAcceptedOrderInfo(object) {
       }
     }
   }));
+  buttons.appendChild(UIBuilder.fromObject({
+    type: 'button',
+    content: 'Export data as txt',
+    onclick: function() {
+      let popup = UIBuilder.fromObject({
+        type: 'textarea',
+        select_value: 'this is merica'
+      });
+      createCloseablePopup(popup);
+    }
+  }));
   moreInformationBox.appendChild(buttons);
   moreInformationBox.appendChild(generateOrderDataBox(object.order));
 }
