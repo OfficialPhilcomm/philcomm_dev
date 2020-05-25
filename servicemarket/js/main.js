@@ -131,6 +131,12 @@ loggedIn.registerListener(function(newValue) {
     logoutImg.style.display = "block";
 
     refreshOrders();
+
+    let disclaimer = UIBuilder.fromObject({
+      type: 'div',
+      content: BackendAPI.requestDisclaimer()
+    });
+    createCloseablePopup();
   } else {
     logoutImg.style.display = "none";
 
