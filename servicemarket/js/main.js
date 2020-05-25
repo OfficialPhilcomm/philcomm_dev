@@ -752,7 +752,7 @@ function openRegisterDialog() {
   let usernameInput = UIBuilder.fromObject({
     type: 'input'
   });
-  let usernameInput = UIBuilder.fromObject({
+  let passwordInput = UIBuilder.fromObject({
     type: 'input',
     input_type: 'password'
   });
