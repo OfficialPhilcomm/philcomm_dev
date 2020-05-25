@@ -244,8 +244,6 @@ moreInformation.registerListener(function(newValue) {
 });
 
 function generateAllOrderBox(userOrder) {
-  console.log(userOrder);
-
   let ivs = [userOrder.iv_hp, userOrder.iv_atk, userOrder.iv_def, userOrder.iv_spatk, userOrder.iv_spdef, userOrder.iv_spe];
 
   let thirtyOneCount = 0;
@@ -579,8 +577,6 @@ function generateAcceptedOrderBox(acceptedOrder) {
 }
 
 function generateOrderDataBox(orderData) {
-  console.log(orderData);
-
   let container = UIBuilder.fromObject({
     type: 'div',
     class: 'order-data',

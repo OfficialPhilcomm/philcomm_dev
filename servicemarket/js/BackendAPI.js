@@ -19,12 +19,6 @@ class BackendAPI {
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
     request.send(orderData.serialize());
-
-    if (request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
   }
 
   static myOrders() {
@@ -143,18 +137,12 @@ class BackendAPI {
     const url = "api/update_state.php";
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
-    console.log("userOrderID: " + userOrderID + " state: " + state);
     request.send(JSON.stringify(
       {
         user_order_id: userOrderID,
         state: state
       }
     ));
-    if(request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
   }
 
   static makeOffer(userOrderID, price) {
@@ -167,11 +155,6 @@ class BackendAPI {
         price: price
       }
     ));
-    if(request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
   }
 
   static acceptOffer(userOrderID, offerID) {
@@ -184,11 +167,6 @@ class BackendAPI {
         offer_id: offerID
       }
     ));
-    if (request.status === 200) {
-      let apiResponse = request.responseText;
-
-      console.log(apiResponse);
-    }
   }
 
   static getOrderInfo(userOrderID) {
