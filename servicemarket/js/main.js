@@ -908,6 +908,7 @@ function openNewOrderDialog() {
   }
 
   popup.appendChild(pokemonSelect);
+  popup.appendChild(levelSelect);
   popup.appendChild(move1Select);
   popup.appendChild(move2Select);
   popup.appendChild(move3Select);
