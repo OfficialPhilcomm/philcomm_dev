@@ -738,6 +738,26 @@ function generateOrderDataBox(orderData) {
 function openNewOrderDialog() {
   let popup = UIBuilder.fromObject({type: 'div'});
   let pokemonSelect = UIBuilder.fromObject({type: 'select'});
+  let levelSelect = UIBuilder.fromObject({
+    type: 'select',
+    children: [
+      {
+        type: 'option',
+        select_value: '0',
+        content: 'Lvl 0'
+      },
+      {
+        type: 'option',
+        select_value: '50',
+        content: 'Lvl 50'
+      },
+      {
+        type: 'option',
+        select_value: '100',
+        content: 'Lvl 100'
+      }
+    ]
+  });
   let move1Select = UIBuilder.fromObject({type: 'select'});
   let move2Select = UIBuilder.fromObject({type: 'select'});
   let move3Select = UIBuilder.fromObject({type: 'select'});
@@ -900,6 +920,7 @@ function openNewOrderDialog() {
   submitButton.onclick = function() {
     let pokemonName = pokemonList[pokemonSelect.selectedIndex].name;
     let gender = "none"; // TODO: link to select
+    let level = parseInt(levelSelect[levelSelect.selectedIndex].value);
     let move1 = move1Select[move1Select.selectedIndex].value;
     let move2 = move2Select[move2Select.selectedIndex].value;
     let move3 = move3Select[move3Select.selectedIndex].value;
@@ -921,7 +942,7 @@ function openNewOrderDialog() {
 
     let ability = "ability"; // TODO: Add ability
 
-    let orderData = new OrderData(pokemonName, gender, move1, move2, move3, move4, ability,
+    let orderData = new OrderData(pokemonName, gender, level, move1, move2, move3, move4, ability,
       ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe,
       evHP, evAtk, evDef, evSpAtk, evSpDef, evSpe);
     BackendAPI.submitOrder(orderData);

@@ -26,9 +26,10 @@ class UserOrder {
 }
 
 class OrderData {
-  constructor(pokemonName, gender, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe, evHP, evAtk, evDef, evSpAtk, evSpDef, evSpe) {
+  constructor(pokemonName, gender, level, move1, move2, move3, move4, ability, ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe, evHP, evAtk, evDef, evSpAtk, evSpDef, evSpe) {
     this.pokemonName = pokemonName;
     this.gender = gender;
+    this.level = level;
     this.move1 = move1;
     this.move2 = move2;
     this.move3 = move3;
@@ -52,6 +53,7 @@ class OrderData {
     return JSON.stringify({
       pokemon_name: this.pokemonName,
       gender: this.gender,
+      level: this.level,
       move1: this.move1,
       move2: this.move2,
       move3: this.move3,
