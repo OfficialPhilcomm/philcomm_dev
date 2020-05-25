@@ -35,7 +35,7 @@ main #popup-container {
 
   cursor: pointer;
 
-  height: var(--font-size-small);
+  height: calc(var(--font-size-small) * 2);
 }
 
 #popup-container .popup button {
