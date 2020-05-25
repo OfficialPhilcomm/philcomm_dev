@@ -32,7 +32,7 @@ window.setInterval(function() {
       }
     }
   }
-}, 5000);
+}, 300000);
 
 requestLoginStatus();
 
