@@ -59,7 +59,7 @@ if($total_evs > 510) throwError("total evs cant be bigger than 510");
 
 $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Level, Move1, Move2, Move3, Move4, Ability,
 IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
-values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 echo $stmt->error;
 $stmt->bind_param("ssisssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->level, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability,
 $body->iv_hp, $body->iv_atk, $body->iv_def, $body->iv_spatk, $body->iv_spdef, $body->iv_spe,
