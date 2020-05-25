@@ -254,6 +254,14 @@ moreInformation.registerListener(function(newValue) {
         showAcceptedOrderInfo(orderInfo.order);
       }
     }
+  } else {
+    moreInformationBox.innerHTML = "";
+
+    moreInformationBox.appendChild(UIBuilder.fromObject({
+      type: 'div',
+      class: 'no-information',
+      content: 'To show information about an order, click on the "Show Info" button on an order'
+    }));
   }
 });
 
