@@ -9,7 +9,9 @@ insert into User (Username, Password) values
   ('dev', password('')),
   ('Kora', password('')),
   ('Pottina', password('')),
-  ('Moses', password(''));
+  ('Moses', password('')),
+  ('Captn', password('')),
+  ('Baklava', password(''));
 
 drop table if exists OrderData;
 create table OrderData (
