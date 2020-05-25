@@ -973,6 +973,9 @@ function openNewOrderDialog() {
     let pokemonName = pokemonList[pokemonSelect.selectedIndex].name;
     let gender = "none"; // TODO: link to select
     let level = parseInt(levelSelect[levelSelect.selectedIndex].value);
+
+    let ability = abilitySelect[abilitySelect.selectedIndex].value;
+
     let move1 = move1Select[move1Select.selectedIndex].value;
     let move2 = move2Select[move2Select.selectedIndex].value;
     let move3 = move3Select[move3Select.selectedIndex].value;
@@ -991,8 +994,6 @@ function openNewOrderDialog() {
     let evSpAtk = parseInt(evSpAtkSelect.value);
     let evSpDef = parseInt(evSpDefSelect.value);
     let evSpe = parseInt(evSpeSelect.value);
-
-    let ability = "ability"; // TODO: Add ability
 
     let orderData = new OrderData(pokemonName, gender, level, move1, move2, move3, move4, ability,
       ivHP, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpe,
