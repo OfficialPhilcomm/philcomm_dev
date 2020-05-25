@@ -233,6 +233,8 @@ loggedIn.registerListener(function(newValue) {
 
     popupContainer.appendChild(popup);
     popupChange();
+
+    allOrdersBox.innerHTML = "";
   }
 });
 
