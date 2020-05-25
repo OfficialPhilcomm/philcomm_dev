@@ -757,6 +757,9 @@ function openNewOrderDialog() {
       }
     ]
   });
+
+  let abilitySelect = UIBuilder.fromObject({type: 'select'});
+
   let move1Select = UIBuilder.fromObject({type: 'select'});
   let move2Select = UIBuilder.fromObject({type: 'select'});
   let move3Select = UIBuilder.fromObject({type: 'select'});
@@ -888,6 +891,10 @@ function openNewOrderDialog() {
     move3Select.appendChild(option.cloneNode(true));
     move4Select.appendChild(option.cloneNode(true));
   }
+  for(let ability of selectedPokemon.abilities) {
+    let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value, ability.name});
+    abilitySelect.appendChild(option);
+  }
 
   pokemonSelect.onchange = function() {
     pokemonList[pokemonSelect.selectedIndex].fillData(PokemonAPI.requestPokemonData(pokemonList[pokemonSelect.selectedIndex].url));
@@ -904,6 +911,12 @@ function openNewOrderDialog() {
       move3Select.appendChild(option.cloneNode(true));
       move4Select.appendChild(option.cloneNode(true));
     }
+
+    abilitySelect.innerHTML = "";
+    for(let ability of selectedPokemon.abilities) {
+      let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value, ability.name});
+      abilitySelect.appendChild(option);
+    }
   }
 
   let popup = UIBuilder.fromObject({
@@ -915,6 +928,10 @@ function openNewOrderDialog() {
           pokemonSelect,
           levelSelect
         ]
+      },
+      {
+        type: 'div',
+        children: [abilitySelect]
       },
       {
         type: 'table',
