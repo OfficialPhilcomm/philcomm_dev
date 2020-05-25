@@ -136,7 +136,7 @@ loggedIn.registerListener(function(newValue) {
       type: 'div',
       content: BackendAPI.requestDisclaimer()
     });
-    createCloseablePopup();
+    createCloseablePopup(disclaimer);
   } else {
     logoutImg.style.display = "none";
 
