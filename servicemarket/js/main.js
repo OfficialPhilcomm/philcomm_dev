@@ -235,6 +235,7 @@ loggedIn.registerListener(function(newValue) {
     popupChange();
 
     allOrdersBox.innerHTML = "";
+    myOrdersBox.innerHTML = "";
   }
 });
 
