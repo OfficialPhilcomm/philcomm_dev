@@ -40,3 +40,10 @@
   background-color: #3bb9ff;
   color: white;
 }
+
+#more_information .order-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
