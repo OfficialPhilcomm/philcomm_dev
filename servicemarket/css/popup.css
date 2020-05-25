@@ -65,4 +65,5 @@ main #popup-container {
 }
 #popup-container .popup button.no-button:hover {
   background-color: #ed4040;
+  color: white;
 }
