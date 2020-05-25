@@ -17,7 +17,27 @@ var moreInformation = new LiveData();
 moreInformation.value = undefined;
 
 window.setInterval(function() {
-  if(loggedIn.value === true) refreshOrders();
+  if(loggedIn.value === true) {
+    refreshOrders();
+
+    if(moreInformation.value !== undefined) {
+      if(moreInformation.value.type === 'order_info') {
+        let userOrderID = moreInformation.value.user_order_id;
+        moreInformation.value = {
+          type: 'order_info',
+          order_info: BackendAPI.getOrderInfo(userOrderID),
+          user_order_id: userOrderID
+        }
+      } else if(moreInformation.value.type === 'accepted_order_info') {
+        let userOrderID = moreInformation.value.user_order_id;
+        moreInformation.value = {
+          type: 'order_info',
+          order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id),
+          user_order_id: userOrderID
+        }
+      }
+    }
+  }
 }, 300000);
 
 requestLoginStatus();
@@ -541,7 +561,8 @@ function generateMyOrderBox(userOrder) {
       onclick: function() {
         moreInformation.value = {
           type: 'order_info',
-          order_info: BackendAPI.getOrderInfo(userOrder.id)
+          order_info: BackendAPI.getOrderInfo(userOrder.id),
+          user_order_id: userOrder.id
         }
       }
     });
@@ -568,7 +589,8 @@ function generateAcceptedOrderBox(acceptedOrder) {
     onclick: function() {
       moreInformation.value = {
         type: 'accepted_order_info',
-        accepted_order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id)
+        accepted_order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id),
+        user_order_id: acceptedOrder.id
       }
     }
   }));
