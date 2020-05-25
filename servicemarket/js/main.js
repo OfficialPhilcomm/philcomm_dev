@@ -22,19 +22,11 @@ window.setInterval(function() {
 
     if(moreInformation.value !== undefined) {
       if(moreInformation.value.type === 'order_info') {
-        console.log(1);
         let userOrderID = moreInformation.value.user_order_id;
+
         moreInformation.value = {
           type: 'order_info',
-          order_info: BackendAPI.getOrderInfo(userOrderID),
-          user_order_id: userOrderID
-        }
-      } else if(moreInformation.value.type === 'accepted_order_info') {
-        console.log(2);
-        let userOrderID = moreInformation.value.user_order_id;
-        moreInformation.value = {
-          type: 'order_info',
-          order_info: BackendAPI.acceptedOrderInfo(userOrderID),
+          my_order: moreInformation.value.my_order,
           user_order_id: userOrderID
         }
       }
@@ -254,13 +246,12 @@ username.registerListener(function(newValue) {
 moreInformation.registerListener(function(newValue) {
   if(newValue !== undefined) {
     console.log(newValue);
-    switch(newValue.type) {
-      case 'order_info':
+    if(newValue.type === 'order_info') {
+      if(newValue.my_order) {
         showOrderInfo(newValue.order_info.order);
-        break;
-      case 'accepted_order_info':
+      } else {
         showAcceptedOrderInfo(newValue.accepted_order_info);
-        break;
+      }
     }
   }
 });
@@ -563,7 +554,7 @@ function generateMyOrderBox(userOrder) {
       onclick: function() {
         moreInformation.value = {
           type: 'order_info',
-          order_info: BackendAPI.getOrderInfo(userOrder.id),
+          my_order: true,
           user_order_id: userOrder.id
         }
       }
@@ -590,8 +581,8 @@ function generateAcceptedOrderBox(acceptedOrder) {
     content: 'Show info',
     onclick: function() {
       moreInformation.value = {
-        type: 'accepted_order_info',
-        accepted_order_info: BackendAPI.acceptedOrderInfo(acceptedOrder.id),
+        type: 'order_info',
+        my_order: false,
         user_order_id: acceptedOrder.id
       }
     }
