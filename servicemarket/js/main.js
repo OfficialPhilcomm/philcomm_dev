@@ -1014,6 +1014,38 @@ function popupChange() {
   }
 }
 
+function createYesNoPopup(message, yesFunction) {
+  let yesButton = UIBuilder.fromObject({type: 'button', content: 'Yes'});
+  let noButton = UIBuilder.fromObject({type: 'button', content: 'No'});
+
+  let popup = UIBuilder.fromObject({
+    type: 'div',
+    class: 'popup',
+    children: [
+      {
+        type: 'div',
+        content: message
+      },
+      {
+        type: 'div',
+        class: 'buttons',
+        children: [
+          yesButton,
+          noButton
+        ]
+      }
+    ]
+  });
+  yesButton.onclick = yesFunction();
+  noButton.onclick = function() {
+    popupContainer.removeChild(popup);
+    popupChange();
+  }
+  
+  popupContainer.appendChild(popup);
+  popupChange();
+}
+
 function createCloseablePopup(domElement) {
   let popup = UIBuilder.fromObject({
     type: 'div',
