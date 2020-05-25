@@ -58,3 +58,11 @@ main #popup-container {
   background-color: #00c949;
   color: white;
 }
+
+#popup-container .popup button.no-button {
+  border: 2px solid #ed4040;
+  color: #ed4040;
+}
+#popup-container .popup button.no-button:hover {
+  background-color: #ed4040;
+}

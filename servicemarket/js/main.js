@@ -1016,7 +1016,7 @@ function popupChange() {
 
 function createYesNoPopup(message, yesFunction) {
   let yesButton = UIBuilder.fromObject({type: 'button', content: 'Yes'});
-  let noButton = UIBuilder.fromObject({type: 'button', content: 'No'});
+  let noButton = UIBuilder.fromObject({type: 'button', content: 'No', class: 'no-button'});
 
   let popup = UIBuilder.fromObject({
     type: 'div',
