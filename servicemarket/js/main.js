@@ -231,12 +231,12 @@ username.registerListener(function(newValue) {
 
 moreInformation.registerListener(function(newValue) {
   if(newValue !== undefined) {
+    console.log(newValue);
     switch(newValue.type) {
       case 'order_info':
         showOrderInfo(newValue.order_info.order);
         break;
       case 'accepted_order_info':
-        console.log(newValue);
         showAcceptedOrderInfo(newValue.accepted_order_info);
         break;
     }
