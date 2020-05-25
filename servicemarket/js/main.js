@@ -1038,6 +1038,8 @@ function createYesNoPopup(message, yesFunction) {
   });
   yesButton.onclick = function() {
     yesFunction();
+    popupContainer.removeChild(popup);
+    popupChange();
   };
   noButton.onclick = function() {
     popupContainer.removeChild(popup);
