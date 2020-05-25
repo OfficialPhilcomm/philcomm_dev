@@ -252,7 +252,7 @@ moreInformation.registerListener(function(newValue) {
         showOrderInfo(orderInfo.order);
       } else {
         let orderInfo = BackendAPI.acceptedOrderInfo(newValue.user_order_id);
-        showAcceptedOrderInfo(newValue.order_info);
+        showAcceptedOrderInfo(orderInfo.order);
       }
     }
   }
@@ -1084,7 +1084,6 @@ function showOrderInfo(object) {
 }
 
 function showAcceptedOrderInfo(order) {
-  console.log(order);
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'div',
