@@ -945,12 +945,12 @@ function openOrderCopyDialog(orderData) {
   let popup = UIBuilder.fromObject({
     type: 'textarea',
     select_value: "Username: " + orderData.username + "\n\n" +
-    orderData.pokemon_name + "\n\n" +
+    StringUtils.humanize(orderData.pokemon_name) + "\n\n" +
     "Moves: \n" +
-    orderData.move1 + "\n" +
-    orderData.move2 + "\n" +
-    orderData.move3 + "\n" +
-    orderData.move4 + "\n\n" +
+    StringUtils.humanize(orderData.move1) + "\n" +
+    StringUtils.humanize(orderData.move2) + "\n" +
+    StringUtils.humanize(orderData.move3) + "\n" +
+    StringUtils.humanize(orderData.move4) + "\n\n" +
     "Stats: " + "\n" +
     "IV: " + orderData.iv_hp + " " + orderData.iv_atk + " " + orderData.iv_def + " " + orderData.iv_spatk + " " + orderData.iv_spdef + " " + orderData.iv_spe + "\n" +
     "EV: " + orderData.ev_hp + " " + orderData.ev_atk + " " + orderData.ev_def + " " + orderData.ev_spatk + " " + orderData.ev_spdef + " " + orderData.ev_spe
