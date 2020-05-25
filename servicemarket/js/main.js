@@ -252,7 +252,7 @@ moreInformation.registerListener(function(newValue) {
         showOrderInfo(orderInfo.order);
       } else {
         let orderInfo = BackendAPI.acceptedOrderInfo(newValue.user_order_id);
-        showAcceptedOrderInfo(newValue.accepted_order_info);
+        showAcceptedOrderInfo(newValue.order_info);
       }
     }
   }
