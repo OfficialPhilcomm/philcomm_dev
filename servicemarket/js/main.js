@@ -245,7 +245,6 @@ username.registerListener(function(newValue) {
 
 moreInformation.registerListener(function(newValue) {
   if(newValue !== undefined) {
-    console.log(newValue);
     if(newValue.type === 'order_info') {
       if(newValue.my_order) {
         let orderInfo = BackendAPI.getOrderInfo(newValue.user_order_id);
