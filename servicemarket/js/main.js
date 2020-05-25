@@ -22,6 +22,7 @@ window.setInterval(function() {
 
     if(moreInformation.value !== undefined) {
       if(moreInformation.value.type === 'order_info') {
+        console.log(1);
         let userOrderID = moreInformation.value.user_order_id;
         moreInformation.value = {
           type: 'order_info',
@@ -29,6 +30,7 @@ window.setInterval(function() {
           user_order_id: userOrderID
         }
       } else if(moreInformation.value.type === 'accepted_order_info') {
+        console.log(2);
         let userOrderID = moreInformation.value.user_order_id;
         moreInformation.value = {
           type: 'order_info',
@@ -38,7 +40,7 @@ window.setInterval(function() {
       }
     }
   }
-}, 300000);
+}, 5000);
 
 requestLoginStatus();
 
