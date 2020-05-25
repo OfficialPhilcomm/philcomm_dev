@@ -157,6 +157,9 @@ loggedIn.registerListener(function(newValue) {
   } else {
     logoutImg.style.display = "none";
 
+    let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
+    let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
+
     let popup = UIBuilder.fromObject({
       type: 'div', class: 'popup',
       children: [
@@ -173,11 +176,7 @@ loggedIn.registerListener(function(newValue) {
                 {
                   type: 'td',
                   children: [
-                    {
-                      type: 'input',
-                      class: 'td-username',
-                      input_type: 'text'
-                    }
+                    usernameInput
                   ]
                 }
               ]
@@ -192,11 +191,7 @@ loggedIn.registerListener(function(newValue) {
                 {
                   type: 'td',
                   children: [
-                    {
-                      type: 'input',
-                      class: 'td-password',
-                      input_type: 'password'
-                    }
+                    passwordInput
                   ]
                 }
               ]
@@ -220,10 +215,10 @@ loggedIn.registerListener(function(newValue) {
         }
       ]
     });
-    popup.getElementsByClassName("td-username")[0].onkeypress = function(event) {
+    usernameInput.onkeypress = function(event) {
       if(event.keyCode === 13) loginClick();
     }
-    popup.getElementsByClassName("td-password")[0].onkeypress = function(event) {
+    passwordInput.onkeypress = function(event) {
       if(event.keyCode === 13) loginClick();
     }
 
@@ -233,6 +228,8 @@ loggedIn.registerListener(function(newValue) {
 
     popupContainer.appendChild(popup);
     popupChange();
+
+    usernameInput.focus();
 
     allOrdersBox.innerHTML = "";
     myOrdersBox.innerHTML = "";
