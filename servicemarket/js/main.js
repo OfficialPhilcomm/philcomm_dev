@@ -914,7 +914,7 @@ function openNewOrderDialog() {
 
     abilitySelect.innerHTML = "";
     for(let ability of selectedPokemon.abilities) {
-      let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value, ability.name});
+      let option = UIBuilder.fromObject({type: 'option', content: StringUtils.humanize(ability.name), select_value: ability.name});
       abilitySelect.appendChild(option);
     }
   }
