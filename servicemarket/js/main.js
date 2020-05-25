@@ -1084,6 +1084,7 @@ function showOrderInfo(object) {
 }
 
 function showAcceptedOrderInfo(order) {
+  console.log(order);
   moreInformationBox.innerHTML = "";
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'div',
