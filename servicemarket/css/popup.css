@@ -27,6 +27,10 @@ main #popup-container {
   position: relative;
 }
 
+#popup-container .popup.changelog {
+  z-index: 100;
+}
+
 #popup-container .popup .close {
   position: absolute;
 
