@@ -498,12 +498,18 @@ function generateMyOrderBox(userOrder) {
               type: 'button',
               content: 'Accept',
               onclick: function() {
-                BackendAPI.acceptOffer(userOrder.id, offer.id);
+                acceptOffer(userOrder.id, offer.id);
               }
             }]
           }));
         }
-        createCloseablePopup(dom);
+        let closeFunction = createCloseablePopup(dom);
+
+        function acceptOffer(uoid, oid) {
+          BackendAPI.acceptOffer(uoid, oid);
+          closeFunction();
+          refreshOrders();
+        }
       }
     });
     buttons.appendChild(allOffersButton);
