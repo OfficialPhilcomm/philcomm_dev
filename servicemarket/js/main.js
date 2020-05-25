@@ -1036,12 +1036,14 @@ function createYesNoPopup(message, yesFunction) {
       }
     ]
   });
-  yesButton.onclick = yesFunction();
+  yesButton.onclick = function() {
+    yesFunction();
+  };
   noButton.onclick = function() {
     popupContainer.removeChild(popup);
     popupChange();
-  }
-  
+  };
+
   popupContainer.appendChild(popup);
   popupChange();
 }
