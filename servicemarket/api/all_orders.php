@@ -17,6 +17,7 @@ $stmt = $conn->prepare("select
 uo.ID as ID,
 u.Username as Username,
 od.PokemonName as PokemonName,
+od.Level as Level,
 od.Move1 as Move1,
 od.Move2 as Move2,
 od.Move3 as Move3,
@@ -47,6 +48,7 @@ while($row = $result->fetch_assoc()) {
   $order->id = $row["ID"];
   $order->username = $row["Username"];
   $order->pokemon_name = $row["PokemonName"];
+  $order->level = $row["Level"];
   $order->move1 = $row["Move1"];
   $order->move2 = $row["Move2"];
   $order->move3 = $row["Move3"];

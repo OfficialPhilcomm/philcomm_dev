@@ -338,7 +338,7 @@ function generateAllOrderBox(userOrder) {
                 children: [
                   {
                     type: 'div',
-                    content: StringUtils.humanize(userOrder.pokemon_name)
+                    content: StringUtils.humanize(userOrder.pokemon_name) + " lvl " + userOrder.level
                   },
                   {
                     type: 'div',
