@@ -567,11 +567,11 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: orderData.move1
+                content: StringUtils.humanize(orderData.move1)
               },
               {
                 type: 'td',
-                content: orderData.move2
+                content: StringUtils.humanize(orderData.move2)
               }
             ]
           },
@@ -580,11 +580,11 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: orderData.move3
+                content: StringUtils.humanize(orderData.move3)
               },
               {
                 type: 'td',
-                content: orderData.move4
+                content: StringUtils.humanize(orderData.move4)
               }
             ]
           }
