@@ -952,7 +952,7 @@ function openOrderCopyDialog(orderData) {
     orderData.move3 + "\n" +
     orderData.move4 + "\n\n" +
     "Stats: " + "\n" +
-    orderData.iv_hp + " " + orderData.iv_atk + " " + orderData.iv_def + " " + orderData.iv_spatk + " " + orderData.iv_spdef + " " + orderData.iv_spe + "\n"
+    orderData.iv_hp + " " + orderData.iv_atk + " " + orderData.iv_def + " " + orderData.iv_spatk + " " + orderData.iv_spdef + " " + orderData.iv_spe + "\n" + 
     orderData.ev_hp + " " + orderData.ev_atk + " " + orderData.ev_def + " " + orderData.ev_spatk + " " + orderData.ev_spdef + " " + orderData.ev_spe
   });
   createCloseablePopup(popup);
