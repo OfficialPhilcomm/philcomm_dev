@@ -19,6 +19,8 @@ class BackendAPI {
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
     request.send(orderData.serialize());
+
+    console.log(request.responseText);
   }
 
   static myOrders() {
