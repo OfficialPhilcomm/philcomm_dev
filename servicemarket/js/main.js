@@ -552,6 +552,141 @@ function generateAcceptedOrderBox(acceptedOrder) {
   return container;
 }
 
+function generateOrderDataBox(orderData) {
+  console.log(orderData);
+
+  let container = UIBuilder.fromObject({
+    type: 'div',
+    children: [
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'move1'
+              },
+              {
+                type: 'td',
+                content: 'move2'
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'move3'
+              },
+              {
+                type: 'td',
+                content: 'move4'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'HP'
+              },
+              {
+                type: 'td',
+                content: 'Atk'
+              },
+              {
+                type: 'td',
+                content: 'Def'
+              },
+              {
+                type: 'td',
+                content: 'SpAtk'
+              },
+              {
+                type: 'td',
+                content: 'SpDef'
+              },
+              {
+                type: 'td',
+                content: 'Speed'
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'HP'
+              },
+              {
+                type: 'td',
+                content: 'Atk'
+              },
+              {
+                type: 'td',
+                content: 'Def'
+              },
+              {
+                type: 'td',
+                content: 'SpAtk'
+              },
+              {
+                type: 'td',
+                content: 'SpDef'
+              },
+              {
+                type: 'td',
+                content: 'Speed'
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'HP'
+              },
+              {
+                type: 'td',
+                content: 'Atk'
+              },
+              {
+                type: 'td',
+                content: 'Def'
+              },
+              {
+                type: 'td',
+                content: 'SpAtk'
+              },
+              {
+                type: 'td',
+                content: 'SpDef'
+              },
+              {
+                type: 'td',
+                content: 'Speed'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  });
+
+  return container;
+}
+
 function openNewOrderDialog() {
   let popup = UIBuilder.fromObject({type: 'div'});
   let pokemonSelect = UIBuilder.fromObject({type: 'select'});
@@ -959,4 +1094,5 @@ function showAcceptedOrderInfo(object) {
     }
   }));
   moreInformationBox.appendChild(buttons);
+  moreInformationBox.appendChild(generateOrderDataBox(object.order));
 }
