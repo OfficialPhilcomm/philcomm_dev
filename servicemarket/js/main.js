@@ -627,27 +627,27 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: orderData.iv_hp
+                content: orderData.iv_hp.toString()
               },
               {
                 type: 'td',
-                content: orderData.iv_atk
+                content: orderData.iv_atk.toString()
               },
               {
                 type: 'td',
-                content: orderData.iv_def
+                content: orderData.iv_def.toString()
               },
               {
                 type: 'td',
-                content: orderData.iv_spatk
+                content: orderData.iv_spatk.toString()
               },
               {
                 type: 'td',
-                content: orderData.iv_spdef
+                content: orderData.iv_spdef.toString()
               },
               {
                 type: 'td',
-                content: orderData.iv_spe
+                content: orderData.iv_spe.toString()
               }
             ]
           },
@@ -656,27 +656,27 @@ function generateOrderDataBox(orderData) {
             children: [
               {
                 type: 'td',
-                content: orderData.ev_hp
+                content: orderData.ev_hp.toString()
               },
               {
                 type: 'td',
-                content: orderData.ev_atk
+                content: orderData.ev_atk.toString()
               },
               {
                 type: 'td',
-                content: orderData.ev_def
+                content: orderData.ev_def.toString()
               },
               {
                 type: 'td',
-                content: orderData.ev_spatk
+                content: orderData.ev_spatk.toString()
               },
               {
                 type: 'td',
-                content: orderData.ev_spdef
+                content: orderData.ev_spdef.toString()
               },
               {
                 type: 'td',
-                content: orderData.ev_spe
+                content: orderData.ev_spe.toString()
               }
             ]
           }
