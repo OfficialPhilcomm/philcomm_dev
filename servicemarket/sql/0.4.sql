@@ -11,7 +11,9 @@ insert into User (Username, Password) values
   ('Pottina', password('')),
   ('Moses', password('')),
   ('Captn', password('')),
-  ('Baklava', password(''));
+  ('Baklava', password('')),
+  ('Katzu', password('')),
+  ('Angel', password(''));
 
 drop table if exists OrderData;
 create table OrderData (
