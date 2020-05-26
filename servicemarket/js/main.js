@@ -1328,4 +1328,5 @@ function showAcceptedOrderInfo(order) {
   }
   moreInformationBox.appendChild(buttons);
   moreInformationBox.appendChild(generateOrderDataBox(order));
+  debugger
 }
