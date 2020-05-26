@@ -16,7 +16,8 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("select uo.ID from UserOrder uo
 join Offer o on uo.AcceptedOfferID = o.ID
 and o.UserID = ?
-and uo.ID = ?");
+and uo.ID = ?
+and uo.Finished = 0");
 $stmt->bind_param("ii", getUserID(), $body->user_order_id);
 $stmt->execute();
 $result = $stmt->get_result();
