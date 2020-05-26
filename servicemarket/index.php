@@ -1,3 +1,9 @@
+<?php
+$conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+$conn->query("update Counter set Value = Value + 1 where KeyName = 'VisitCount'");
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
