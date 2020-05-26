@@ -16,6 +16,7 @@ $api_result->orders = array();
 $stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, uo.State as State, od.PokemonName as PokemonName, od.Level as Level from UserOrder uo
 join Offer o on uo.AcceptedOfferID = o.ID
 and o.UserID = ?
+and uo.Closed = 0
 join User u on uo.UserID = u.ID
 join OrderData od on uo.OrderDataID = od.ID");
 $stmt->bind_param("i", getUserID());
