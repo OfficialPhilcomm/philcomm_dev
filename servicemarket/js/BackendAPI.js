@@ -19,8 +19,6 @@ class BackendAPI {
     var request = new XMLHttpRequest();
     request.open('POST', url, false);
     request.send(orderData.serialize());
-
-    console.log(request.responseText);
   }
 
   static myOrders() {
@@ -131,8 +129,6 @@ class BackendAPI {
     if (request.status === 200) {
       let apiResponse = request.responseText;
 
-      console.log(apiResponse);
-
       return JSON.parse(apiResponse);
     }
   }
@@ -185,8 +181,6 @@ class BackendAPI {
     if (request.status === 200) {
       let apiResponse = request.responseText;
 
-      console.log(apiResponse);
-
       return JSON.parse(apiResponse);
     }
   }
@@ -200,9 +194,6 @@ class BackendAPI {
         user_order_id: userOrderID
       }
     ));
-    if(request.status === 200) {
-      console.log(request.responseText);
-    }
   }
 
   static closeOrder(userOrderID) {
@@ -214,8 +205,5 @@ class BackendAPI {
         user_order_id: userOrderID
       }
     ));
-    if(request.status === 200) {
-      console.log(request.responseText);
-    }
   }
 }
