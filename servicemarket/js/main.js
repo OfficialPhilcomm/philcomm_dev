@@ -1269,7 +1269,7 @@ function showAcceptedOrderInfo(order) {
 
         moreInformation.value = {
           type: 'order_info',
-          my_order: true,
+          my_order: false,
           user_order_id: order.user_order_id
         }
       }
