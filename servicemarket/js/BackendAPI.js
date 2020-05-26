@@ -13,6 +13,20 @@ class BackendAPI {
     }
   }
 
+  static requestWhyUsing() {
+    const url = "why-using.html";
+
+    var request = new XMLHttpRequest();
+    request.open('GET', url, false);
+    request.send(null);
+
+    if (request.status === 200) {
+      let apiResponse = request.responseText;
+
+      return apiResponse;
+    }
+  }
+
   static submitOrder(orderData) {
     const url = "api/new_order.php";
 

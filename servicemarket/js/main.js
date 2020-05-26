@@ -1,4 +1,5 @@
 // View Elements
+var whyUsingButton = document.getElementById("why-using-button");
 var popupContainer = document.getElementById("popup-container");
 var logoutImg = document.getElementById("logout");
 var usernameDisplay = document.getElementById("username-display");
@@ -15,6 +16,13 @@ var username = new LiveData();
 username.value = undefined;
 var moreInformation = new LiveData();
 moreInformation.value = undefined;
+
+whyUsingButton.onclick = function() {
+  createCloseablePopup(UIBuilder.fromObject({
+    type: 'popup',
+    content: BackendAPI.requestWhyUsing()
+  }));
+}
 
 window.setInterval(function() {
   if(loggedIn.value === true) {
