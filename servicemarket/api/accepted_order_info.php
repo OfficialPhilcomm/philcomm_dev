@@ -58,7 +58,7 @@ while($row = $result->fetch_assoc()) {
   if($order->state === 4 && $row["Finished"] === 0) {
     $order->finishable = true;
   } else {
-    $order->finished = false;
+    $order->finishable = false;
   }
   $order->price = $row["Price"];
   $order->pokemon_name = $row["PokemonName"];
