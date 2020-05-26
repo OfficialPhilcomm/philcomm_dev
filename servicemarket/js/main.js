@@ -245,6 +245,7 @@ username.registerListener(function(newValue) {
 });
 
 moreInformation.registerListener(function(newValue) {
+  console.log(newValue);
   if(newValue !== undefined) {
     if(newValue.type === 'order_info') {
       if(newValue.my_order) {
