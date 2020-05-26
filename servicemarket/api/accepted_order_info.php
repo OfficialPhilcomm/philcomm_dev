@@ -55,16 +55,8 @@ while($row = $result->fetch_assoc()) {
   $order->user_order_id = $row["UserOrderID"];
   $order->username = $row["Username"];
   $order->state = $row["State"];
-  if($order->state === 4 && $row["Finished"] === 0) {
-    $order->finishable = true;
-  } else {
-    $order->finishable = false;
-  }
-  if($row["Finished"] === 0) {
-    $order->finished = false
-  } else {
-    $order->finished = true
-  }
+  $order->finishable = (($order->state === 4 && $row["Finished"] === 0) ? true : false);
+  $order->finished = ($row["Finished"] === 0 ? false : true);
   $order->price = $row["Price"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
