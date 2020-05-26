@@ -23,7 +23,7 @@ $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no valid order found");
 
 $stmt = $conn->prepare("update UserOrder
-set Closed = 1, where ID = ?");
+set Closed = 1 where ID = ?");
 
 $stmt->bind_param("i", $body->user_order_id);
 $stmt->execute();
