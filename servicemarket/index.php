@@ -1,6 +1,6 @@
 <?php
 $conn = new mysqli("db5000463258.hosting-data.io", "dbu43335", "2fC&uUc5su!NVFsG", "dbs443745");
-$conn->query("update Counter set Value = Value + 1 where KeyName = 'VisitCount'");
+$conn->query("update Counter set Value = Value + 1 where KeyName = 'VisitCount'", MYSQLI_ASYNC);
 $conn->close();
 ?>
 
