@@ -1202,24 +1202,25 @@ function showOrderInfo(object) {
       }
     ]
   }));
-  moreInformationBox.appendChild(UIBuilder.fromObject({
+  let buttons = UIBuilder.fromObject({
     type: 'div',
-    class: 'buttons',
-    children: [
-      {
-        type: 'button',
-        content: 'Close order',
-        onclick: function() {
-          console.log("Object");
-          console.log(object);
+    class: 'buttons'
+  });
+  if(object.closeable) {
+    buttons.appendChild(UIBuilder.fromObject({
+      type: 'button',
+      content: 'Close order',
+      onclick: function() {
+        console.log("Object");
+        console.log(object);
 
-          BackendAPI.closeOrder(object.user_order_id);
+        BackendAPI.closeOrder(object.user_order_id);
 
-          refreshOrders();
-        }
+        refreshOrders();
       }
-    ]
-  }));
+    }));
+  }
+  moreInformationBox.appendChild(buttons);
 }
 
 function showAcceptedOrderInfo(order) {
