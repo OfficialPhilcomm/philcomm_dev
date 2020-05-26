@@ -53,12 +53,17 @@ main #popup-container {
   cursor: pointer;
 
   transition: 200ms all;
+
+  margin-left: 10px;
 }
+
 #popup-container .popup button:hover {
   background-color: #00c949;
   color: white;
 }
-
+#popup-container .popup button:last-child {
+  margin-left: 0;
+}
 #popup-container .popup button.no-button {
   border: 2px solid #ed4040;
   color: #ed4040;
@@ -66,4 +71,15 @@ main #popup-container {
 #popup-container .popup button.no-button:hover {
   background-color: #ed4040;
   color: white;
+}
+
+#popup-container .popup .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#popup-container .popup .buttons.centered {
+  justify-content: center;
 }
