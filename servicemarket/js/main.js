@@ -250,9 +250,11 @@ moreInformation.registerListener(function(newValue) {
     if(newValue.type === 'order_info') {
       if(newValue.my_order) {
         let orderInfo = BackendAPI.getOrderInfo(newValue.user_order_id);
+        console.log(orderInfo);
         showOrderInfo(orderInfo.order);
       } else {
         let orderInfo = BackendAPI.acceptedOrderInfo(newValue.user_order_id);
+        console.log(orderInfo);
         showAcceptedOrderInfo(orderInfo.order);
       }
     }
