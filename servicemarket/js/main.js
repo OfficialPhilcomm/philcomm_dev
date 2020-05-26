@@ -1212,14 +1212,13 @@ function showOrderInfo(object) {
       type: 'button',
       content: 'Close order',
       onclick: function() {
-        console.log("Object");
-        console.log(object);
+        createYesNoPopup("If you click yes, neither you or the breeder will be able to see this order again.", function() {
+          BackendAPI.closeOrder(object.user_order_id);
 
-        BackendAPI.closeOrder(object.user_order_id);
+          moreInformation.value = undefined;
 
-        moreInformation.value = undefined;
-
-        refreshOrders();
+          refreshOrders();
+        });
       }
     }));
   }
