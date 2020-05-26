@@ -186,4 +186,32 @@ class BackendAPI {
       return JSON.parse(apiResponse);
     }
   }
+
+  static finishOrder(userOrderID) {
+    const url = "api/finish_order.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID
+      }
+    ));
+    if(request.status === 200) {
+      console.log(request.responseText);
+    }
+  }
+
+  static closeOrder(userOrderID) {
+    const url = "api/close_order.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        user_order_id: userOrderID
+      }
+    ));
+    if(request.status === 200) {
+      console.log(request.responseText);
+    }
+  }
 }
