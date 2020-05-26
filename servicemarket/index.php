@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+$conn = new mysqli("db5000463258.hosting-data.io", "dbu43335", "2fC&uUc5su!NVFsG", "dbs443745");
 $conn->query("update Counter set Value = Value + 1 where KeyName = 'VisitCount'");
 $conn->close();
 ?>
