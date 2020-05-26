@@ -1272,34 +1272,36 @@ function showAcceptedOrderInfo(order) {
     ]
   }));
   let buttons = UIBuilder.fromObject({type: 'div', class: 'buttons'});
-  buttons.appendChild(UIBuilder.fromObject({
-    type: 'button',
-    content: 'Change state',
-    onclick: function() {
-      let popup = UIBuilder.fromObject({
-        type: 'div'
-      });
-      let stateSelect = UIBuilder.fromObject({type: 'select'});
-      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'accepted', select_value: '0'}));
-      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'started', select_value: '1'}));
-      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
-      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
-      stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
-      stateSelect.selectedIndex = order.state;
-      popup.appendChild(stateSelect);
-      let closeFunction = createCloseablePopup(popup);
-      stateSelect.onchange = function() {
-        BackendAPI.updateState(order.user_order_id, parseInt(stateSelect.value));
-        closeFunction();
+  if(!order.finished) {
+    buttons.appendChild(UIBuilder.fromObject({
+      type: 'button',
+      content: 'Change state',
+      onclick: function() {
+        let popup = UIBuilder.fromObject({
+          type: 'div'
+        });
+        let stateSelect = UIBuilder.fromObject({type: 'select'});
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'accepted', select_value: '0'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'started', select_value: '1'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
+        stateSelect.selectedIndex = order.state;
+        popup.appendChild(stateSelect);
+        let closeFunction = createCloseablePopup(popup);
+        stateSelect.onchange = function() {
+          BackendAPI.updateState(order.user_order_id, parseInt(stateSelect.value));
+          closeFunction();
 
-        moreInformation.value = {
-          type: 'order_info',
-          my_order: false,
-          user_order_id: order.user_order_id
+          moreInformation.value = {
+            type: 'order_info',
+            my_order: false,
+            user_order_id: order.user_order_id
+          }
         }
       }
-    }
-  }));
+    }));
+  }
   buttons.appendChild(UIBuilder.fromObject({
     type: 'button',
     content: 'Export data as txt',
