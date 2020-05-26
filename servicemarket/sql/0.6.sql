@@ -48,7 +48,7 @@ create table UserOrder (
   AcceptedOfferID int,
   State int,
   Finished tinyint(1) not null default 0,
-  Closed tinying(1) not null default 0,
+  Closed tinyint(1) not null default 0,
   CreatedAt datetime not null default now()
 );
 alter table UserOrder add foreign key (UserID) references User(ID) on update cascade on delete cascade;
