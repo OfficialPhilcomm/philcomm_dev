@@ -1237,7 +1237,7 @@ function showAcceptedOrderInfo(order) {
     content: 'Order of ' + StringUtils.humanize(order.pokemon_name) + " lvl " + order.level
   }));
   let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], order.state);
-  if(order.finished) progressbar.complete(order.state + 1);
+  if(order.finished) progressBar.complete(order.state + 1);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
     type: 'table',
