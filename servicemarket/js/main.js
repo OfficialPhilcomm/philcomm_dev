@@ -1312,13 +1312,15 @@ function showAcceptedOrderInfo(order) {
       type: 'button',
       content: 'Mark as finished',
       onclick: function() {
-        BackendAPI.finishOrder(order.user_order_id);
+        createYesNoPopup("Do you really wanna do this? This step cannot be undone.", function() {
+          BackendAPI.finishOrder(order.user_order_id);
 
-        moreInformation.value = {
-          type: 'order_info',
-          my_order: false,
-          user_order_id: order.user_order_id
-        }
+          moreInformation.value = {
+            type: 'order_info',
+            my_order: false,
+            user_order_id: order.user_order_id
+          }
+        });
       }
     }));
   }
