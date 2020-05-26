@@ -1105,7 +1105,7 @@ function createYesNoPopup(message, yesFunction) {
       },
       {
         type: 'div',
-        class: 'buttons',
+        class: 'buttons centered',
         children: [
           yesButton,
           noButton
