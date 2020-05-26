@@ -1210,6 +1210,9 @@ function showOrderInfo(object) {
         type: 'button',
         content: 'Close order',
         onclick: function() {
+          console.log("Object");
+          console.log(object);
+
           BackendAPI.closeOrder(object.user_order_id);
 
           refreshOrders();
