@@ -60,6 +60,11 @@ while($row = $result->fetch_assoc()) {
   } else {
     $order->finishable = false;
   }
+  if($row["Finished"] === 0) {
+    $order->finished = false
+  } else {
+    $order->finished = true
+  }
   $order->price = $row["Price"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];

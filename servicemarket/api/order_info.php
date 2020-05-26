@@ -32,11 +32,13 @@ while($row = $result->fetch_assoc()) {
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
   $order->state = $row["State"];
+  $order->finished = ($row["Finished"] === 1 ? true : false);
   if($row["Finished"] === 1 && $row["Closed"] === 0) {
     $order->closeable = true;
   } else {
     $order->closeable = false;
   }
+  $order->closed = ($row["Closed"] === 1 ? true : false);
   $order->breeder = $row["Breeder"];
   $order->price = $row["Price"];
   $api_result->order = $order;
