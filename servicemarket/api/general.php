@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+$conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+$conn->query("update Counter set Value = Value + 1 where KeyName = 'ClickCount'");
+$conn->close();
+
 function db_host() { return "db5000463258.hosting-data.io"; }
 function db_user() { return "dbu43335"; }
 function db_pass() { return "2fC&uUc5su!NVFsG"; }
