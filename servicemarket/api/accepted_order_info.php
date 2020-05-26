@@ -19,6 +19,7 @@ $stmt = $conn->prepare("select
 uo.ID as UserOrderID,
 u.Username as Username,
 uo.State as State,
+uo.Finished as Finished,
 o.Price as Price,
 od.PokemonName as PokemonName,
 od.Level as Level,
@@ -54,6 +55,11 @@ while($row = $result->fetch_assoc()) {
   $order->user_order_id = $row["UserOrderID"];
   $order->username = $row["Username"];
   $order->state = $row["State"];
+  if($order->state === 4 && $row["Finished"] === 0) {
+    $order->finishable = true;
+  } else {
+    $order->finished = false;
+  }
   $order->price = $row["Price"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
