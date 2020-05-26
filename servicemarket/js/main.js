@@ -1217,11 +1217,7 @@ function showOrderInfo(object) {
 
         BackendAPI.closeOrder(object.user_order_id);
 
-        moreInformation.value = {
-          type: 'order_info',
-          my_order: true,
-          user_order_id: object.user_order_id
-        }
+        moreInformation.value = undefined;
 
         refreshOrders();
       }
