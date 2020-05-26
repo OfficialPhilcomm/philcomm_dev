@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 $api_result = new stdClass();
 $api_result->type = "order_info";
 
-$stmt = $conn->prepare("select od.PokemonName as PokemonName, od.Level as Level, uo.State as State, uo.Finished as Finished, uo.Closed as Closed, u.Username as Breeder, o.Price as Price from UserOrder uo
+$stmt = $conn->prepare("select uo.ID as UserOrderID, od.PokemonName as PokemonName, od.Level as Level, uo.State as State, uo.Finished as Finished, uo.Closed as Closed, u.Username as Breeder, o.Price as Price from UserOrder uo
 join Offer o on uo.ID = ?
 and uo.UserID = ?
 and uo.AcceptedOfferID = o.ID
@@ -28,6 +28,7 @@ $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no valid order found");
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
+  $order->user_order_id = $row["UserOrderID"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
   $order->state = $row["State"];
