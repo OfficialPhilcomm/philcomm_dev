@@ -1202,6 +1202,21 @@ function showOrderInfo(object) {
       }
     ]
   }));
+  moreInformationBox.appendChild(UIBuilder.fromObject({
+    type: 'div',
+    class: 'buttons',
+    children: [
+      {
+        type: 'button',
+        content: 'Close order',
+        onclick: function() {
+          BackendAPI.closeOrder(object.user_order_id);
+
+          refreshOrders();
+        }
+      }
+    ]
+  }));
 }
 
 function showAcceptedOrderInfo(order) {
@@ -1282,6 +1297,21 @@ function showAcceptedOrderInfo(order) {
       openOrderCopyDialog(order);
     }
   }));
+  if(order.finishable) {
+    buttons.appendChild(UIBuilder.fromObject({
+      type: 'button',
+      content: 'Mark as finished',
+      onclick: function() {
+        BackendAPI.finishOrder(order.user_order_id);
+
+        moreInformation.value = {
+          type: 'order_info',
+          my_order: false,
+          user_order_id: order.user_order_id
+        }
+      }
+    }));
+  }
   moreInformationBox.appendChild(buttons);
   moreInformationBox.appendChild(generateOrderDataBox(order));
 }
