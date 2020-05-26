@@ -15,6 +15,7 @@ $api_result->orders = array();
 
 $stmt = $conn->prepare("select uo.ID as ID, u.Username as Username, od.PokemonName as PokemonName, od.Level as Level, count(o.ID) as OfferCount, uo.State as State from UserOrder uo
 join User u on uo.UserID = ? and uo.UserID = u.ID
+and uo.Closed = 0
 join OrderData od on uo.OrderDataID = od.ID
 left join Offer o on o.UserOrderID = uo.ID
 group by ID
