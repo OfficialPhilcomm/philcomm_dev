@@ -54,7 +54,7 @@ main #popup-container {
 
   transition: 200ms all;
 
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #popup-container .popup button:hover {
@@ -62,7 +62,7 @@ main #popup-container {
   color: white;
 }
 #popup-container .popup button:last-child {
-  margin-left: 0;
+  margin-right: 0;
 }
 #popup-container .popup button.no-button {
   border: 2px solid #ed4040;
