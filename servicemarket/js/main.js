@@ -317,7 +317,7 @@ function generateAllOrderBox(userOrder) {
         for(let offer of apiResponse.offers) {
           dom.appendChild(UIBuilder.fromObject({
             type: 'div',
-            content: offer.id + " " + offer.price + " " + offer.username,
+            content: offer.username + " makes it for " + offer.price + "$",
             children: [{
               type: 'button',
               content: 'Accept',
