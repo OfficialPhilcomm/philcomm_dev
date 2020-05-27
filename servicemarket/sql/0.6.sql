@@ -13,7 +13,8 @@ insert into User (Username, Password) values
   ('Captn', password('')),
   ('Baklava', password('')),
   ('Katzu', password('')),
-  ('Angel', password(''));
+  ('Angel', password('')),
+  ('Rex', password(''));
 
 drop table if exists OrderData;
 create table OrderData (
