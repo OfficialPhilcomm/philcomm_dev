@@ -11,6 +11,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+echo "$body->username $body->password";
+
 $stmt = $conn->prepare("insert into User (Username, Password) values (?, password(?))");
 $stmt->bind_param("ii", $body->username, $body->password);
 $stmt->execute();
