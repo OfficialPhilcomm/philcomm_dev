@@ -2,7 +2,7 @@ const POKE_API_BASE_URL = "https://pokeapi.co/api/v2/";
 
 class PokemonAPI {
   static requestPokemonNames() {
-    const url = "pokemon?limit=151";
+    const url = "pokemon?limit=647";
 
     var request = new XMLHttpRequest();
     request.open('GET', POKE_API_BASE_URL + url, false);
