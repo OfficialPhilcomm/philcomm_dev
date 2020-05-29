@@ -24,7 +24,7 @@ main #popup-container {
 
   padding: 20px;
 
-  position: relative;
+  position: absolute;
 }
 
 #popup-container .popup.changelog {
