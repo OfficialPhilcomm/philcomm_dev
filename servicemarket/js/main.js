@@ -1106,63 +1106,6 @@ function openNewOrderDialog() {
   }
 }
 
-function openRegisterDialog() {
-  let usernameInput = UIBuilder.fromObject({
-    type: 'input'
-  });
-  let passwordInput = UIBuilder.fromObject({
-    type: 'input',
-    input_type: 'password'
-  });
-  let submitButton = UIBuilder.fromObject({
-    type: 'button',
-    content: 'Register'
-  });
-
-  let container = UIBuilder.fromObject({type: 'div'});
-
-  let table = UIBuilder.fromObject({
-    type: 'table',
-    children: [
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'Username'
-          },
-          {
-            type: 'td',
-            children: [ usernameInput ]
-          }
-        ]
-      },
-      {
-        type: 'tr',
-        children: [
-          {
-            type: 'td',
-            content: 'Password'
-          },
-          {
-            type: 'td',
-            children: [ passwordInput ]
-          }
-        ]
-      }
-    ]
-  });
-  container.appendChild(table);
-  container.appendChild(submitButton);
-
-  let closeFunction = createCloseablePopup(container);
-
-  submitButton.onclick = function() {
-    console.log('register username: ' + usernameInput.value + ' pw: ' + passwordInput.value);
-    closeFunction();
-  }
-}
-
 function openOrderCopyDialog(orderData) {
   let popup = UIBuilder.fromObject({
     type: 'textarea',
