@@ -746,6 +746,84 @@ function generateOrderDataBox(orderData) {
   return container;
 }
 
+function openRegisterDialog() {
+  let usernameInput = UIBuilder.fromObject({type: 'input'});
+  let passwordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
+  let passwordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
+  let errorDisplay = UIBuilder.fromObject({type: 'div'});
+
+  let closeFunction = function() {};
+
+  let popup = UIBuilder.fromObject({
+    type: 'div',
+    children: [
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'Username'
+              },
+              {
+                type: 'td',
+                children: [usernameInput]
+              }
+            ],
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  content: 'Password'
+                },
+                {
+                  type: 'td',
+                  children: [passwordInput]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  content: 'Repeat password'
+                },
+                {
+                  type: 'td',
+                  children: [passwordRepeatInput]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      errorDisplay,
+      {
+        type: 'button',
+        content: 'register',
+        onclick: function() {
+          if(usernameInput.value === "") {
+            errorDisplay.innerHTML = "Username missing";
+          } else if(passwordInput.value === "") {
+            errorDisplay.innerHTML = "Password missing";
+          } else if(passwordInput.value !== passwordRepeatInput.value) {
+            errorDisplay.innerHTML = "Passwords are different";
+          } else {
+            BackendAPI.register(usernameInput.value, passwordInput.value);
+            closeFunction();
+          }
+        }
+      }
+    ]
+  });
+
+  closeFunction = createCloseablePopup(popup);
+}
+
 function openNewOrderDialog() {
   let pokemonSelect = UIBuilder.fromObject({type: 'select'});
   let levelSelect = UIBuilder.fromObject({

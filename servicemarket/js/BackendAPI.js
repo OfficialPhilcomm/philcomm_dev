@@ -63,6 +63,18 @@ class BackendAPI {
     }
   }
 
+  static register(username, password) {
+    const url = "api/register.php";
+    var request = new XMLHttpRequest();
+    request.open('POST', url, false);
+    request.send(JSON.stringify(
+      {
+        username: username,
+        password: password
+      }
+    ));
+  }
+
   static requestLoginStatus() {
     const url = "api/login_status.php";
 

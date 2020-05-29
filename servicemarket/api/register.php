@@ -1,8 +1,6 @@
 <?php
 include 'general.php';
 
-requireLogin();
-
 $arguments['username'] = 'string';
 $arguments['password'] = 'string';
 $body = validateBody($arguments);
