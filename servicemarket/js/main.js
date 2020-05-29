@@ -288,73 +288,6 @@ loggedIn.registerListener(function(newValue) {
       ]
     });
 
-    let popup = UIBuilder.fromObject({
-      type: 'div', class: 'popup',
-      children: [
-        {
-          type: 'table',
-          children: [
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  content: 'Username:'
-                },
-                {
-                  type: 'td',
-                  children: [
-                    usernameInput
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  content: 'Password:'
-                },
-                {
-                  type: 'td',
-                  children: [
-                    passwordInput
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  content: 'Dont have an account? Register',
-                  onclick: function() {
-                    openRegisterDialog();
-                  }
-                }
-              ]
-            },
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  children: [
-                    {
-                      type: 'button',
-                      content: 'Login',
-                      onclick: loginClick
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    });
     usernameInput.onkeypress = function(event) {
       if(event.keyCode === 13) loginClick();
     }
@@ -378,8 +311,13 @@ loggedIn.registerListener(function(newValue) {
       }
     }
 
-    popupContainer.appendChild(popup);
-    popupChange();
+    createPopup(UIBuilder.fromObject({
+      type: 'div',
+      children: [
+        loginContainer,
+        registerContainer
+      ]
+    }));
 
     usernameInput.focus();
 
