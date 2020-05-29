@@ -166,7 +166,7 @@ loggedIn.registerListener(function(newValue) {
     logoutImg.style.display = "none";
 
     let loginOpened = new LiveData();
-    loginOpened = true;
+    loginOpened.value = true;
 
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
