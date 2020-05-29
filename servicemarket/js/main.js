@@ -300,6 +300,7 @@ loggedIn.registerListener(function(newValue) {
     }
 
     notRegisteredButton.onclick = function() {
+      loginContainer.style.display = "none";
       registerContainer.style.display = "block";
     }
 
@@ -316,6 +317,7 @@ loggedIn.registerListener(function(newValue) {
         errorDisplay.innerHTML = "Passwords are different";
       } else {
         BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
+        loginContainer.style.display = "block";
         registerContainer.style.display = "none";
       }
     }
