@@ -207,12 +207,10 @@ loggedIn.registerListener(function(newValue) {
             {
               type: 'tr',
               children: {
-                {
-                  type: 'td',
-                  content: 'Dont have an account? Register',
-                  onclick: function() {
-                    openRegisterDialog();
-                  }
+                type: 'td',
+                content: 'Dont have an account? Register',
+                onclick: function() {
+                  openRegisterDialog();
                 }
               }
             },
