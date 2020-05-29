@@ -781,33 +781,33 @@ function openRegisterDialog() {
                 type: 'td',
                 children: [usernameInput]
               }
-            ],
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  content: 'Password'
-                },
-                {
-                  type: 'td',
-                  children: [passwordInput]
-                }
-              ]
-            },
-            {
-              type: 'tr',
-              children: [
-                {
-                  type: 'td',
-                  content: 'Repeat password'
-                },
-                {
-                  type: 'td',
-                  children: [passwordRepeatInput]
-                }
-              ]
-            }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'Password'
+              },
+              {
+                type: 'td',
+                children: [passwordInput]
+              }
+            ]
+          },
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                content: 'Repeat password'
+              },
+              {
+                type: 'td',
+                children: [passwordRepeatInput]
+              }
+            ]
           }
         ]
       },
