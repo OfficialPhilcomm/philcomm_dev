@@ -168,6 +168,8 @@ loggedIn.registerListener(function(newValue) {
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
 
+    let notRegisteredButton = UIBuilder.fromObject({type: 'div', content: 'No Account? Create one here'});
+
     let registerUsernameInput = UIBuilder.fromObject({type: 'input'});
     let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
@@ -288,11 +290,17 @@ loggedIn.registerListener(function(newValue) {
       ]
     });
 
+    registerContainer.style.display = "none";
+
     usernameInput.onkeypress = function(event) {
       if(event.keyCode === 13) loginClick();
     }
     passwordInput.onkeypress = function(event) {
       if(event.keyCode === 13) loginClick();
+    }
+
+    notRegisteredButton.onclick = function() {
+      registerContainer.style.display = "block";
     }
 
     function loginClick() {
@@ -308,6 +316,7 @@ loggedIn.registerListener(function(newValue) {
         errorDisplay.innerHTML = "Passwords are different";
       } else {
         BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
+        registerContainer.style.display = "none";
       }
     }
 
@@ -315,6 +324,7 @@ loggedIn.registerListener(function(newValue) {
       type: 'div',
       children: [
         loginContainer,
+        notRegisteredButton,
         registerContainer
       ]
     }));
