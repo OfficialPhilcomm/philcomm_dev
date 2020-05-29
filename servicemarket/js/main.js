@@ -168,6 +168,126 @@ loggedIn.registerListener(function(newValue) {
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
 
+    let registerUsernameInput = UIBuilder.fromObject({type: 'input'});
+    let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
+    let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
+    let registerErrorDisplay = UIBuilder.fromObject({type: 'div'});
+
+    let loginContainer = UIBuilder.fromObject({
+      type: 'div',
+      children: [
+        {
+          type: 'table',
+          children: [
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'Username'
+                },
+                {
+                  type: 'td',
+                  children: [usernameInput]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'Password'
+                },
+                {
+                  type: 'td',
+                  children: [passwordInput]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: 'div',
+          class: 'buttons',
+          children: [
+            {
+              type: 'button',
+              content: 'login',
+              onclick: loginClick
+            }
+          ]
+        }
+      ]
+    });
+
+    let registerContainer = UIBuilder.fromObject({
+      type: 'div',
+      children: [
+        {
+          type: 'table',
+          children: [
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'Username'
+                },
+                {
+                  type: 'td',
+                  children: [registerUsernameInput]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'Password'
+                },
+                {
+                  type: 'td',
+                  children: [registerPasswordInput]
+                }
+              ]
+            },
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'Repeat password'
+                },
+                {
+                  type: 'td',
+                  children: [registerPasswordRepeatInput]
+                }
+              ]
+            }
+          ]
+        },
+        registerErrorDisplay,
+        {
+          type: 'div',
+          class: 'buttons',
+          children: [
+            {
+              type: 'button',
+              content: 'register',
+              onclick: registerClick
+            }
+          ]
+        }
+      ]
+    });
+
     let popup = UIBuilder.fromObject({
       type: 'div', class: 'popup',
       children: [
@@ -244,6 +364,18 @@ loggedIn.registerListener(function(newValue) {
 
     function loginClick() {
       login(popup.getElementsByClassName("td-username")[0].value, popup.getElementsByClassName("td-password")[0].value);
+    }
+
+    function registerClick() {
+      if(registerUsernameInput.value === "") {
+        errorDisplay.innerHTML = "Username missing";
+      } else if(registerPasswordInput.value === "") {
+        errorDisplay.innerHTML = "Password missing";
+      } else if(registerPasswordInput.value !== registerPasswordRepeatInput.value) {
+        errorDisplay.innerHTML = "Passwords are different";
+      } else {
+        BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
+      }
     }
 
     popupContainer.appendChild(popup);
@@ -756,84 +888,6 @@ function generateOrderDataBox(orderData) {
   });
 
   return container;
-}
-
-function openRegisterDialog() {
-  let usernameInput = UIBuilder.fromObject({type: 'input'});
-  let passwordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
-  let passwordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
-  let errorDisplay = UIBuilder.fromObject({type: 'div'});
-
-  let closeFunction = function() {};
-
-  let popup = UIBuilder.fromObject({
-    type: 'div',
-    children: [
-      {
-        type: 'table',
-        children: [
-          {
-            type: 'tr',
-            children: [
-              {
-                type: 'td',
-                content: 'Username'
-              },
-              {
-                type: 'td',
-                children: [usernameInput]
-              }
-            ]
-          },
-          {
-            type: 'tr',
-            children: [
-              {
-                type: 'td',
-                content: 'Password'
-              },
-              {
-                type: 'td',
-                children: [passwordInput]
-              }
-            ]
-          },
-          {
-            type: 'tr',
-            children: [
-              {
-                type: 'td',
-                content: 'Repeat password'
-              },
-              {
-                type: 'td',
-                children: [passwordRepeatInput]
-              }
-            ]
-          }
-        ]
-      },
-      errorDisplay,
-      {
-        type: 'button',
-        content: 'register',
-        onclick: function() {
-          if(usernameInput.value === "") {
-            errorDisplay.innerHTML = "Username missing";
-          } else if(passwordInput.value === "") {
-            errorDisplay.innerHTML = "Password missing";
-          } else if(passwordInput.value !== passwordRepeatInput.value) {
-            errorDisplay.innerHTML = "Passwords are different";
-          } else {
-            BackendAPI.register(usernameInput.value, passwordInput.value);
-            closeFunction();
-          }
-        }
-      }
-    ]
-  });
-
-  closeFunction = createCloseablePopup(popup);
 }
 
 function openNewOrderDialog() {

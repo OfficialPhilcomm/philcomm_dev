@@ -83,3 +83,7 @@ main #popup-container {
 #popup-container .popup .buttons.centered {
   justify-content: center;
 }
+
+#popup-container td.right {
+  text-align: right;
+}
