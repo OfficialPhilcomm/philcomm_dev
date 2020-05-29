@@ -165,6 +165,9 @@ loggedIn.registerListener(function(newValue) {
   } else {
     logoutImg.style.display = "none";
 
+    let loginOpened = new LiveData();
+    loginOpened = true;
+
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
 
@@ -299,9 +302,20 @@ loggedIn.registerListener(function(newValue) {
       if(event.keyCode === 13) loginClick();
     }
 
+    loginOpened.registerListener(function(newValue) {
+      if(newValue) {
+        loginContainer.style.display = "block";
+        registerContainer.style.display = "none";
+        notRegisteredButton.innerHTML = "No Account? Create one here";
+      } else {
+        loginContainer.style.display = "none";
+        registerContainer.style.display = "block";
+        notRegisteredButton.innerHTML = "Return to login";
+      }
+    });
+
     notRegisteredButton.onclick = function() {
-      loginContainer.style.display = "none";
-      registerContainer.style.display = "block";
+      loginOpened.value = !loginOpened.value;
     }
 
     function loginClick() {
@@ -317,8 +331,8 @@ loggedIn.registerListener(function(newValue) {
         errorDisplay.innerHTML = "Passwords are different";
       } else {
         BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
-        loginContainer.style.display = "block";
-        registerContainer.style.display = "none";
+        errorDisplay.innerHTML = "";
+        loginOpened.value = true;
       }
     }
 
