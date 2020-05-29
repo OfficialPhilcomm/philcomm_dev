@@ -331,7 +331,7 @@ loggedIn.registerListener(function(newValue) {
         errorDisplay.innerHTML = "Passwords are different";
       } else {
         BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
-        errorDisplay.innerHTML = "";
+        registerErrorDisplay.innerHTML = "";
         loginOpened.value = true;
       }
     }
