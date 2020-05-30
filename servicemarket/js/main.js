@@ -319,7 +319,7 @@ loggedIn.registerListener(function(newValue) {
     }
 
     function loginClick() {
-      login(popup.getElementsByClassName("td-username")[0].value, popup.getElementsByClassName("td-password")[0].value);
+      login(usernameInput.value, passwordInput.value);
     }
 
     function registerClick() {
