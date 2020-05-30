@@ -89,3 +89,7 @@ main .own_requests {
 main .more_information {
   grid-area: more_information;
 }
+
+.clickable {
+  cursor: pointer;
+}

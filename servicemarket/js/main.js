@@ -171,7 +171,7 @@ loggedIn.registerListener(function(newValue) {
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
 
-    let notRegisteredButton = UIBuilder.fromObject({type: 'div', content: 'No Account? Create one here'});
+    let notRegisteredButton = UIBuilder.fromObject({type: 'div', class: 'clickable', content: 'No Account? Create one here'});
 
     let registerUsernameInput = UIBuilder.fromObject({type: 'input'});
     let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
