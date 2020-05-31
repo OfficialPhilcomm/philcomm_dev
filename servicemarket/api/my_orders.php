@@ -18,7 +18,7 @@ join User u on uo.UserID = ? and uo.UserID = u.ID
 and uo.Closed = 0
 join OrderData od on uo.OrderDataID = od.ID
 left join Offer o on o.UserOrderID = uo.ID
-group by UserOrderID
+group by uo.ID
 order by uo.CreatedAt desc");
 $stmt->bind_param("i", getUserID());
 $stmt->execute();
@@ -26,7 +26,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
-  $order->id = $row["ID"];
+  $order->id = $row["UserOrderID"];
   $order->username = $row["Username"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
