@@ -4,9 +4,9 @@ table.stats-table {
 }
 
 table.stats-table input.iv {
-  width: 40px;
+  width: 60px;
 }
 
 table.stats-table input.ev {
-  width: 50px;
+  width: 70px;
 }
