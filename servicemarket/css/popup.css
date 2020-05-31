@@ -98,3 +98,15 @@ main #popup-container {
   border: 1px solid #242424;
   outline: none;
 }
+
+#popup-container select {
+  appearance: none;
+  border: 1px solid #9c9c9c;
+  padding: 5px 10px;
+  background-color: white;
+  transition: 200ms background-color;
+}
+#popup-container select:focus {
+  outline: none;
+  background-color: #bfbfbf;
+}
