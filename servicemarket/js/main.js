@@ -599,6 +599,21 @@ function generateAllOrderBox(userOrder) {
 }
 
 function generateMyOrderBox(userOrder) {
+  let thirtyOneCount = 0;
+  let thirtyCount = 0;
+  let ivs = [
+    userOrder.iv_hp,
+    userOrder.iv_atk,
+    userOrder.iv_def,
+    userOrder.iv_spatk,
+    userOrder.iv_spdef,
+    userOrder.iv_spe
+  ];
+  for(let iv of ivs) {
+    if(iv === 30) thirtyCount++;
+    if(iv === 31) thirtyOneCount++;
+  }
+
   let buttons = UIBuilder.fromObject({type: 'div', class: 'buttons'});
 
   if(userOrder.state === null && userOrder.offer_count > 0) {
@@ -667,7 +682,7 @@ function generateMyOrderBox(userOrder) {
                   },
                   {
                     type: 'div',
-                    content: 'todo: 31, 30'
+                    content: thirtyOneCount + 'x31 ' + thirtyCount + 'x30'
                   },
                   {
                     type: 'div',
@@ -680,19 +695,19 @@ function generateMyOrderBox(userOrder) {
                 children: [
                   {
                     type: 'div',
-                    content: 'move1'
+                    content: userOrder.move1
                   },
                   {
                     type: 'div',
-                    content: 'move2'
+                    content: userOrder.move2
                   },
                   {
                     type: 'div',
-                    content: 'move3'
+                    content: userOrder.move3
                   },
                   {
                     type: 'div',
-                    content: 'move4'
+                    content: userOrder.move4
                   }
                 ]
               }
