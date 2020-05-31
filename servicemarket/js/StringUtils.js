@@ -6,4 +6,12 @@ class StringUtils {
     }
     return words.join(' ');
   }
+
+  static stateToString(state) {
+    return state === 0 ? 'accepted' :
+    state === 1 ? 'started' :
+    state === 2 ? 'breeded' :
+    state === 3 ? 'leveled' :
+    state === 4 ? 'finished'
+  }
 }

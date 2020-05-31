@@ -599,50 +599,7 @@ function generateAllOrderBox(userOrder) {
 }
 
 function generateMyOrderBox(userOrder) {
-  let container = document.createElement("div");
-  container.className = "order-box";
-
-  let infoTable = document.createElement("table");
-
-  let thRow = UIBuilder.fromObject({
-    type: 'tr',
-    children: [
-      {
-        type: 'th',
-        content: 'Pokemon'
-      }
-    ]
-  });
-  infoTable.appendChild(thRow);
-
-  let infoRow = UIBuilder.fromObject({
-    type: 'tr',
-    children: [
-      {
-        type: 'td',
-        content: StringUtils.humanize(userOrder.pokemon_name) + " lvl " + userOrder.level
-      }
-    ]
-  });
-  infoTable.appendChild(infoRow);
-
-  if(userOrder.state === null && userOrder.offer_count > 0) {
-    thRow.appendChild(UIBuilder.fromObject({
-      type: 'th',
-      content: 'Offers'
-    }));
-    infoRow.appendChild(UIBuilder.fromObject({
-      type: 'td',
-      content: userOrder.offer_count
-    }));
-  }
-
-  container.appendChild(infoTable);
-
-  let buttons = UIBuilder.fromObject({
-    type: 'div',
-    class: 'buttons'
-  });
+  let buttons = UIBuilder.fromObject({type: 'div', class: 'buttons'});
 
   if(userOrder.state === null && userOrder.offer_count > 0) {
     let allOffersButton = UIBuilder.fromObject({
@@ -691,7 +648,61 @@ function generateMyOrderBox(userOrder) {
     buttons.appendChild(userOrderInfoButton);
   }
 
-  container.appendChild(buttons);
+  let container = UIBuilder.fromObject({
+    type: 'div',
+    class: 'order-box',
+    children: [
+      {
+        type: 'table',
+        children: [
+          {
+            type: 'tr',
+            children: [
+              {
+                type: 'td',
+                children: [
+                  {
+                    type: 'div',
+                    content: StringUtils.humanize(userOrder.pokemon_name) + " lvl " + userOrder.level
+                  },
+                  {
+                    type: 'div',
+                    content: 'todo: 31, 30'
+                  },
+                  {
+                    type: 'div',
+                    content: (userOrder.state === null) ? "Offers: " + userOrder.offer_count : 'State: ' + StringUtils.stateToString(userOrder.state)
+                  }
+                ]
+              },
+              {
+                type: 'td',
+                children: [
+                  {
+                    type: 'div',
+                    content: 'move1'
+                  },
+                  {
+                    type: 'div',
+                    content: 'move2'
+                  },
+                  {
+                    type: 'div',
+                    content: 'move3'
+                  },
+                  {
+                    type: 'div',
+                    content: 'move4'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      buttons
+    ]
+  });
 
   return container;
 }
