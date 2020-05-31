@@ -686,7 +686,7 @@ function generateMyOrderBox(userOrder) {
                   },
                   {
                     type: 'div',
-                    content: (userOrder.state === null) ? "Offers: " + userOrder.offer_count : 'State: ' + StringUtils.stateToString(userOrder.state)
+                    content: (userOrder.state === null) ? "Offers: " + userOrder.offer_count : 'State: ' + StringUtils.humanize(StringUtils.stateToString(userOrder.state))
                   }
                 ]
               },
@@ -695,19 +695,19 @@ function generateMyOrderBox(userOrder) {
                 children: [
                   {
                     type: 'div',
-                    content: userOrder.move1
+                    content: StringUtils.humanize(userOrder.move1)
                   },
                   {
                     type: 'div',
-                    content: userOrder.move2
+                    content: StringUtils.humanize(userOrder.move2)
                   },
                   {
                     type: 'div',
-                    content: userOrder.move3
+                    content: StringUtils.humanize(userOrder.move3)
                   },
                   {
                     type: 'div',
-                    content: userOrder.move4
+                    content: StringUtils.humanize(userOrder.move4)
                   }
                 ]
               }
