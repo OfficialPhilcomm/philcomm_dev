@@ -96,4 +96,5 @@ main #popup-container {
 }
 #popup-container input:focus {
   border: 1px solid #525252;
+  outline: none;
 }
