@@ -8,10 +8,10 @@ class StringUtils {
   }
 
   static stateToString(state) {
-    return state === 0 ? 'accepted' :
+    return (state === 0 ? 'accepted' :
     state === 1 ? 'started' :
     state === 2 ? 'breeded' :
     state === 3 ? 'leveled' :
-    state === 4 ? 'finished'
+    state === 4 ? 'finished')
   }
 }
