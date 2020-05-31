@@ -13,12 +13,12 @@ $api_result = new stdClass();
 $api_result->type = "my_orders";
 $api_result->orders = array();
 
-$stmt = $conn->prepare("select uo.ID as ID, u.Username as Username, od.PokemonName as PokemonName, od.Level as Level, count(o.ID) as OfferCount, uo.State as State from UserOrder uo
+$stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, od.*, count(o.ID) as OfferCount, uo.State as State from UserOrder uo
 join User u on uo.UserID = ? and uo.UserID = u.ID
 and uo.Closed = 0
 join OrderData od on uo.OrderDataID = od.ID
 left join Offer o on o.UserOrderID = uo.ID
-group by ID
+group by UserOrderID
 order by uo.CreatedAt desc");
 $stmt->bind_param("i", getUserID());
 $stmt->execute();
@@ -32,6 +32,16 @@ while($row = $result->fetch_assoc()) {
   $order->level = $row["Level"];
   $order->offer_count = $row["OfferCount"];
   $order->state = $row["State"];
+  $order->move1 = $row["Move1"];
+  $order->move2 = $row["Move2"];
+  $order->move3 = $row["Move3"];
+  $order->move4 = $row["Move4"];
+  $order->iv_hp = $row["IVHP"];
+  $order->iv_atk = $row["IVATK"];
+  $order->iv_def = $row["IVDEF"];
+  $order->iv_spatk = $row["IVSPATK"];
+  $order->iv_spdef = $row["IVSPDEF"];
+  $order->iv_spe = $row["IVSPE"];
   $api_result->orders[] = $order;
 }
 
