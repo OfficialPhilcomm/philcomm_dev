@@ -82,11 +82,21 @@ function requestAllOrders() {
 
   if(allOrders.orders.length !== 0) {
     allOrdersBox.appendChild(UIBuilder.fromObject({
-      type: 'img',
-      src: 'icons/sync-alt-solid.svg',
-      onclick: function() {
-        requestAllOrders()
-      }
+      type: 'div',
+      class: 'order-title',
+      children: [
+        {
+          type: 'span',
+          content: 'All orders'
+        },
+        {
+          type: 'img',
+          src: 'icons/sync-alt-solid.svg',
+          onclick: function() {
+            requestAllOrders()
+          }
+        }
+      ]
     }));
 
     for(let order of allOrders.orders) {
