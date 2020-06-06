@@ -8,7 +8,7 @@ $conn->close();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ServiceMarket&copy; 2020</title>
 
     <link rel="stylesheet" href="css/style.css.php">
     <link rel="stylesheet" href="css/progressbar.css">
