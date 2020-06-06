@@ -1169,6 +1169,8 @@ function openNewOrderDialog() {
 }
 
 function openOrderCopyDialog(orderData) {
+  console.log(orderData);
+
   let popup = UIBuilder.fromObject({
     type: 'textarea',
     select_value: "Username: " + orderData.username + "\n\n" +
