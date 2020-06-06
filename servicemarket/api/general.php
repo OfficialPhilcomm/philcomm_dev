@@ -13,7 +13,7 @@ function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
 function isValidLogin() {
-  return (isset($_SESSION['valid_login']) && $_SESSION['valid_login'] && $_SESSION['login_version'] === app_version())
+  return (isset($_SESSION['valid_login']) && $_SESSION['valid_login'] && $_SESSION['login_version'] === app_version());
 }
 
 function requireLogin() {
