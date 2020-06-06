@@ -1169,12 +1169,11 @@ function openNewOrderDialog() {
 }
 
 function openOrderCopyDialog(orderData) {
-  console.log(orderData);
-
   let popup = UIBuilder.fromObject({
     type: 'textarea',
     select_value: "Username: " + orderData.username + " lvl " + orderData.level + "\n\n" +
-    StringUtils.humanize(orderData.pokemon_name) + "\n\n" +
+    StringUtils.humanize(orderData.pokemon_name) + "\n" +
+    StringUtils.humanize(orderData.ability) + "\n\n" +
     "Moves: \n" +
     StringUtils.humanize(orderData.move1) + "\n" +
     StringUtils.humanize(orderData.move2) + "\n" +

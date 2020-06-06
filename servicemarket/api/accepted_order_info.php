@@ -23,6 +23,7 @@ uo.Finished as Finished,
 o.Price as Price,
 od.PokemonName as PokemonName,
 od.Level as Level,
+od.Ability as Ability,
 od.Move1 as Move1,
 od.Move2 as Move2,
 od.Move3 as Move3,
@@ -59,6 +60,7 @@ while($row = $result->fetch_assoc()) {
   $order->finished = ($row["Finished"] === 0 ? false : true);
   $order->price = $row["Price"];
   $order->pokemon_name = $row["PokemonName"];
+  $order->ability = $row["Ability"];
   $order->level = $row["Level"];
   $order->move1 = $row["Move1"];
   $order->move2 = $row["Move2"];
