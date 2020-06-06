@@ -5,7 +5,7 @@ $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 $conn->query("update Counter set Value = Value + 1 where KeyName = 'RequestCount'", MYSQLI_ASYNC);
 $conn->close();
 
-function app_version() { return '0.7' }
+function app_version() { return '0.7'; }
 
 function db_host() { return "db5000463258.hosting-data.io"; }
 function db_user() { return "dbu43335"; }
