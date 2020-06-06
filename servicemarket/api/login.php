@@ -24,6 +24,7 @@ if($result->num_rows !== 0) {
   while($row = $result->fetch_assoc()) {
     $success = true;
     $_SESSION['valid_login'] = true;
+    $_SESSION['login_version'] = app_version();
     $_SESSION['user_id'] = $row['ID'];
     $_SESSION['username'] = $row['Username'];
   }
