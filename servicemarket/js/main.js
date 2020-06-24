@@ -342,11 +342,11 @@ loggedIn.registerListener(function(newValue) {
 
     function registerClick() {
       if(registerUsernameInput.value === "") {
-        errorDisplay.innerHTML = "Username missing";
+        registerErrorDisplay.innerHTML = "Username missing";
       } else if(registerPasswordInput.value === "") {
-        errorDisplay.innerHTML = "Password missing";
+        registerErrorDisplay.innerHTML = "Password missing";
       } else if(registerPasswordInput.value !== registerPasswordRepeatInput.value) {
-        errorDisplay.innerHTML = "Passwords are different";
+        registerErrorDisplay.innerHTML = "Passwords are different";
       } else {
         BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
         registerErrorDisplay.innerHTML = "";
