@@ -9,6 +9,8 @@ var moreInformationBox = document.getElementById("more_information");
 
 var pokemonList = PokemonAPI.requestPokemonNames();
 
+const states = ['accepted', 'starting', 'breeding', 'leveling', 'finishing'];
+
 // Live Data
 var loggedIn = new LiveData();
 loggedIn.value = false;
@@ -1336,7 +1338,7 @@ function showAcceptedOrderInfo(order) {
     class: 'title',
     content: 'Order of ' + StringUtils.humanize(order.pokemon_name) + " lvl " + order.level + (order.finished ? " (finished)" : "")
   }));
-  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], order.state);
+  let progressBar = new ProgressBar(states, order.state);
   if(order.finished) progressBar.complete(order.state + 1);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({

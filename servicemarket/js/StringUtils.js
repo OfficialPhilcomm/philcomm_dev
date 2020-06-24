@@ -7,17 +7,7 @@ class StringUtils {
     return words.join(' ');
   }
 
-  static stateToString(state) {
-    if(state === 0) {
-      return 'accepted'
-    } else if(state === 1) {
-      return 'started'
-    } else if(state === 2) {
-      return 'breeded'
-    } else if(state === 3) {
-      return 'leveled'
-    } else if(state === 4) {
-      return 'finished'
-    }
+  static stateToString(stateID) {
+    state[stateID];
   }
 }
