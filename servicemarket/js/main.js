@@ -1273,7 +1273,7 @@ function showOrderInfo(object) {
     class: 'title',
     content: 'Order of ' + StringUtils.humanize(object.pokemon_name) + " lvl " + object.level + (object.finished ? " (finished)" : "")
   }));
-  let progressBar = new ProgressBar(['accepted', 'started', 'breeded', 'leveled', 'finished'], object.state);
+  let progressBar = new ProgressBar(states, object.state);
   if(object.finished) progressBar.complete(object.state + 1);
   moreInformationBox.appendChild(progressBar.element);
   moreInformationBox.appendChild(UIBuilder.fromObject({
@@ -1384,11 +1384,11 @@ function showAcceptedOrderInfo(order) {
           type: 'div'
         });
         let stateSelect = UIBuilder.fromObject({type: 'select'});
-        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'accepted', select_value: '0'}));
-        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'started', select_value: '1'}));
-        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'breeded', select_value: '2'}));
-        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'leveled', select_value: '3'}));
-        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: 'finished', select_value: '4'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: states[0], select_value: '0'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: states[1], select_value: '1'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: states[2], select_value: '2'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: states[3], select_value: '3'}));
+        stateSelect.appendChild(UIBuilder.fromObject({type: 'option', content: states[4], select_value: '4'}));
         stateSelect.selectedIndex = order.state;
         popup.appendChild(stateSelect);
         let closeFunction = createCloseablePopup(popup);
