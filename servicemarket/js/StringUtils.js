@@ -7,7 +7,7 @@ class StringUtils {
     return words.join(' ');
   }
 
-  static stateToString(stateID) {
-    state[stateID];
+  static stateToString(state) {
+    states[state];
   }
 }
