@@ -13,7 +13,7 @@ $api_result = new stdClass();
 $api_result->type = "my_orders";
 $api_result->orders = array();
 
-$stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, od.*, count(o.ID) as OfferCount, uo.State as State from UserOrder uo
+$stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, od.*, count(o.ID) as OfferCount, uo.State as State, uo.Finished as Finished from UserOrder uo
 join User u on uo.UserID = ? and uo.UserID = u.ID
 and uo.Closed = 0
 join OrderData od on uo.OrderDataID = od.ID
@@ -28,6 +28,7 @@ while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["UserOrderID"];
   $order->username = $row["Username"];
+  $order->finished = $row["Finished"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
   $order->offer_count = $row["OfferCount"];

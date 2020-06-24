@@ -706,7 +706,7 @@ function generateMyOrderBox(userOrder) {
                   },
                   {
                     type: 'div',
-                    content: (userOrder.state === null) ? "Offers: " + userOrder.offer_count : 'State: ' + StringUtils.humanize(StringUtils.stateToString(userOrder.state))
+                    content: (userOrder.state === null) ? "Offers: " + userOrder.offer_count : 'State: ' + (userOrder.finished ? "Finished" : StringUtils.humanize(StringUtils.stateToString(userOrder.state)))
                   }
                 ]
               },
