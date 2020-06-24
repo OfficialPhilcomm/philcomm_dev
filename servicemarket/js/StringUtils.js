@@ -8,6 +8,6 @@ class StringUtils {
   }
 
   static stateToString(state) {
-    states[state];
+    return states[state];
   }
 }
