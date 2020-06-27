@@ -1,0 +1,39 @@
+:root {
+  --typewriter-font-size: 20pt;
+}
+
+typewriter {
+  font-weight: bold;
+  text-align: center;
+}
+typewriter::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+
+  color: rgba(255, 255, 255, 0);
+
+  width: 10px;
+
+  animation-name: typewriter-cursor-blink;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes typewriter-cursor-blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
