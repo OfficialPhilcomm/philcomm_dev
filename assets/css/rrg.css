@@ -92,7 +92,14 @@ main #text {
   margin-right: auto;
   height: 200px;
 
+  padding: 5px;
+
   resize: none;
+
+  font-size: 15px;
+
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 main #generate_button {
