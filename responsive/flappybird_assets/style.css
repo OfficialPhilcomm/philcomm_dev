@@ -1,0 +1,22 @@
+html,body {
+  font-family: Roboto,sans-serif;
+}
+
+canvas {
+  border: 2px solid black;
+}
+canvas#chart {
+  border: none;
+}
+
+#container {
+  width: 1000px;
+  height: 500px;
+}
+
+#visuals {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+}

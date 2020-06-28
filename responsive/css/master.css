@@ -1,17 +1,5 @@
 :root {
   --color-dark: #10141A;
-
-  /* Footer */
-  --dimension-footer-height: 80px;
-
-  --color-footer-background: white;
-  --color-text-footer: #707070;
-
-  --color-github: #333333;
-  --color-github-hover: #1f1f1f;
-
-  --color-twitter: #1da1f2;
-  --color-twitter-hover: #178ad1;
 }
 
 @font-face {
@@ -153,96 +141,8 @@ main .about-me p {
   line-height: 1.6;
 }
 
-footer {
-  padding: 1rem;
-  background-color: var(--color-footer-background);
-  text-align: center;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
-  height: var(--dimension-footer-height);
-}
-
-footer .social-media {
-  margin-left: auto;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-footer .social-media .github, footer .social-media .twitter {
-  margin-left: 10px;
-}
-
-footer .social-media svg {
-  height: 40px;
-}
-
-footer .social-media .social-text {
-  display: none;
-
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-footer .social-media .social-icon-svg {
-  background-color: var(--color-footer-background);
-
-  transition: 200ms fill;
-}
-footer .social-media .github .social-icon-svg {
-  fill: var(--color-github);
-}
-footer .social-media .github .social-icon-svg:hover {
-  fill: var(--color-github-hover);
-}
-footer .social-media .twitter .social-icon-svg {
-  fill: var(--color-twitter);
-}
-footer .social-media .twitter .social-icon-svg:hover {
-  fill: var(--color-twitter-hover);
-}
-
 @media screen and (min-width: 600px) { /* For tablets and up.*/
-  footer .social-media .social-icon {
-    display: none;
-  }
 
-  footer .social-media .social-text {
-    display: flex;
-  }
-
-  footer .social-media .social-text .text {
-    margin-right: 5px;
-  }
-
-  footer .social-media .social-text a {
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 200ms color;
-  }
-
-  footer .social-media .github .social-text a {
-    color: var(--color-github);
-  }
-  footer .social-media .github .social-text a:hover {
-    color: var(--color-github-hover);
-  }
-
-  footer .social-media .twitter .social-text a {
-    color: var(--color-twitter);
-  }
-  footer .social-media .twitter .social-text a:hover {
-    color: var(--color-twitter-hover);
-  }
 }
 
 @media screen and (min-width: 768px) { /*for laptops and desktops*/

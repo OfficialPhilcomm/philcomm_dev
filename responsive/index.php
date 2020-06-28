@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>@dev_philcomm</title>
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/typewriter.css">
 
     <script src="js/typewriter.js" charset="utf-8"></script>
@@ -35,7 +36,7 @@
         </div>
       </div>
       <div class="project">
-        <a class="circle">
+        <a class="circle" href="flappybird.php" target="_blank">
           <img src="icons/brain-solid.svg">
         </a>
         <div class="description">
@@ -78,37 +79,6 @@
       </div>
     </main>
 
-    <footer>
-      <div class="copyright">&copy; Philipp Schlesinger</div>
-      <div class="social-media">
-        <div class="github">
-          <div class="social-icon">
-            <a href="https://github.com/OfficialPhilcomm" target="_blank">
-              <?php include 'icons/github.svg' ?>
-            </a>
-          </div>
-          <div class="social-text">
-            <div class="text">
-              Github:
-            </div>
-            <a href="https://github.com/OfficialPhilcomm" target="_blank">@OfficialPhilcomm</a>
-          </div>
-        </div>
-
-        <div class="twitter">
-          <div class="social-icon">
-            <a href="https://twitter.com/dev_philcomm" target="_blank">
-              <?php include 'icons/twitter.svg' ?>
-            </a>
-          </div>
-          <div class="social-text">
-            <div class="text">
-              Twitter:
-            </div>
-            <a href="https://twitter.com/dev_philcomm" target="_blank">@dev_philcomm</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <?php include 'footer.html' ?>
   </body>
 </html>

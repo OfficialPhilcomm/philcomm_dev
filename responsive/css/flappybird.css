@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: bold;
+  src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  src: url("../fonts/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  border-width: thin;
+  src: url("../fonts/Roboto-Thin.ttf");
+}
+
+* {
+  font-family: Roboto;
+
+  box-sizing: border-box;
+}
+
+html,body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+
+  background-color: #10141A;
+}
+
+main #visuals #sketch-holder {
+  padding: 0 10px;
+}
+
+main #visuals #sketch-holder .p5Canvas {
+  width: 100% !important;
+  max-width: 500px !important;
+  height: auto !important;
+}
+
+main .text-section {
+  width: 100%;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 40px 0 0 0;
+  padding: 0 0 10px 0;
+}
+main .text-section h1, main .text-section p {
+  width: 100%;
+}
+main .text-section h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+main .text-section p {
+  text-align: justify;
+  padding: 0 20px;
+  width: 420px;
+  max-width: 100%;
+  line-height: 1.6;
+}
+main .text-section ul {
+  text-align: left;
+  list-style: none;
+}
+main .text-section ul li::before {
+  content: '-';
+  margin-left: -20px;
+  margin-right: 10px;
+}
+
+main .visuals {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main #sketch-holder {
+  text-align: center;
+}
+
+main #settings {
+  display: none;
+}
