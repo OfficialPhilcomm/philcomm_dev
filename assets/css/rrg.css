@@ -1,0 +1,126 @@
+:root {
+  --color-dark: #10141A;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: bold;
+  src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: italic;
+  src: url("../fonts/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  border-width: thin;
+  src: url("../fonts/Roboto-Thin.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+html,body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-dark);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  position: relative;
+}
+
+main {
+  width: 100%;
+
+  margin-bottom: 100px;
+}
+
+main #buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 5px;
+}
+
+main button {
+  background-color: white;
+
+  border: none;
+  border-radius: 1000px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-dark);
+
+  padding: 5px 10px;
+
+  margin: 5px;
+
+  cursor: pointer;
+}
+
+main .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main #text {
+  width: calc(100% - 20px);
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+
+  resize: none;
+}
+
+main #generate_button {
+  width: calc(100% - 20px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main #generated {
+  width: calc(100% - 20px);
+  height: 300px;
+
+  padding: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: white;
+
+  border-radius: 10px;
+
+  overflow-y: auto;
+}
+
+footer {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+}

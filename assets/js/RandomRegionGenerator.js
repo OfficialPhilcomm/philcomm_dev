@@ -129,7 +129,7 @@ class RandomRegionGenerator {
     let textarea = document.getElementById(this.textarea_id);
     let text = textarea.value;
     let cursorposition = textarea.selectionStart;
-    text = text.substring(0, textarea.selectionStart) + " (" + category + ") " + text.substring(textarea.selectionEnd, text.length);
+    text = text.substring(0, textarea.selectionStart) + "(" + category + ") " + text.substring(textarea.selectionEnd, text.length);
     textarea.value = text;
     textarea.selectionStart = cursorposition + category.length + 3;
     textarea.selectionEnd = cursorposition + category.length + 3;
