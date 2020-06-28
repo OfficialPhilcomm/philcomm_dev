@@ -37,7 +37,10 @@
           "long sleeper",
           "technology enthusiast",
           "lvl21 mage",
-          "walking star wars encyclopedia"
+          "walking star wars encyclopedia",
+          "spends too much money on tech",
+          "wannabe ai expert",
+          "master of bob-ombs in mario kart"
           ]'></typewriter>
         <img class="arrow-down" src="assets/icons/chevron-down-solid.svg">
       </div>
