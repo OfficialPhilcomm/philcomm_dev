@@ -61,6 +61,7 @@ function preload() {
 
 function setup() {
   var canvas = createCanvas(500, 500);
+  canvas.id("flappy-canvas");
   canvas.parent("sketch-holder");
   game_speed_slider = createSlider(1, 64, Settings.default_game_speed);
   game_speed_slider.parent("game_speed");

@@ -42,7 +42,7 @@ main #visuals #sketch-holder {
   padding: 0 10px;
 }
 
-main #visuals #sketch-holder .p5Canvas {
+main #visuals #sketch-holder #flappy-canvas {
   width: 100% !important;
   max-width: 500px !important;
   height: auto !important;
