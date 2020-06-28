@@ -24,11 +24,11 @@
           "technology enthusiast",
           "lvl21 mage"
           ]'></typewriter>
-        <img class="arrow-down" src="chevron-down-solid.svg">
+        <img class="arrow-down" src="icons/chevron-down-solid.svg">
       </div>
       <div class="project">
         <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
-          <img src="Pen-and-Blade-logo-large.png">
+          <img src="icons/Pen-and-Blade-logo-large.png">
         </a>
         <div class="description">
           Visit the P&B podcast
@@ -36,7 +36,7 @@
       </div>
       <div class="project">
         <a class="circle">
-          <img src="brain-solid.svg">
+          <img src="icons/brain-solid.svg">
         </a>
         <div class="description">
           FlappyBird AI project
@@ -84,7 +84,7 @@
         <div class="github">
           <div class="social-icon">
             <a href="https://github.com/OfficialPhilcomm" target="_blank">
-              <?php include 'github.svg' ?>
+              <?php include 'icons/github.svg' ?>
             </a>
           </div>
           <div class="social-text">
@@ -98,7 +98,7 @@
         <div class="twitter">
           <div class="social-icon">
             <a href="https://twitter.com/dev_philcomm" target="_blank">
-              <?php include 'twitter.svg' ?>
+              <?php include 'icons/twitter.svg' ?>
             </a>
           </div>
           <div class="social-text">
