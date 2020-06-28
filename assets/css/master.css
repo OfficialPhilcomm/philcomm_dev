@@ -62,14 +62,12 @@ main .top .title {
 main .top .typewriter {
   color: white;
 
+  min-height: 20px;
+
   font-size: 20px;
   text-align: center;
-}
-main .top .typewriter {
-  color: white;
 
-  min-height: 20px;
-  font-size: 20px;
+  height: 20px;
 }
 main .top .typewriter::after {
   background-color: white;
