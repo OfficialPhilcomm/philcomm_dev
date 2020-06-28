@@ -130,10 +130,21 @@ main .about-me {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin: 40px 0 0 0;
 }
 main .about-me h1, main .about-me p {
   width: 100%;
+}
+main .about-me h1 {
   text-align: center;
+}
+main .about-me p {
+  text-align: justify;
+  padding: 0 20px;
+  width: 420px;
+  max-width: 100%;
+  line-height: 1.6;
 }
 
 footer {
