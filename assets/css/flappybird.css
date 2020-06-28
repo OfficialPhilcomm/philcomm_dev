@@ -38,11 +38,11 @@ body {
   background-color: #10141A;
 }
 
-main #visuals #sketch-holder {
+main .visuals #sketch-holder {
   padding: 0 10px;
 }
 
-main #visuals #sketch-holder #flappy-canvas {
+main .visuals #sketch-holder #flappy-canvas {
   width: 100% !important;
   max-width: 500px !important;
   height: auto !important;
@@ -98,6 +98,44 @@ main #sketch-holder {
   text-align: center;
 }
 
-main #settings {
-  display: none;
+main .settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 10px;
+
+  padding: 0 10px;
+}
+
+main .settings table {
+  border-radius: 10px;
+  background-color: white;
+
+  padding: 10px;
+}
+
+main .settings button {
+  background-color: white;
+  border: 2px solid #10141A;
+  border-radius: 100px;
+  padding: 5px 10px;
+  margin-left: 5px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: bold;
+  transition: 200ms color,border;
+}
+main .settings button:hover {
+  color: #2e394a;
+  border: 2px solid #2e394a;
+}
+
+@media screen and (min-width: 1000px) {
+  main .visuals {
+    flex-direction: row;
+  }
 }

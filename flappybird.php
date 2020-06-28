@@ -50,56 +50,40 @@
         <h1>flappy bird ai</h1>
       </div>
 
-      <div id="visuals">
+      <div class="visuals">
         <div id="sketch-holder"></div>
-        <!--<div id="container"><canvas id="chart"></canvas></div>-->
-      </div>
 
-      <div id="settings">
-        <table>
-          <tr>
-            <td colspan="2"><button onclick="loop()">Start</button><button onclick="noLoop()">Stop</button></td>
-          </tr>
-          <tr>
-            <td colspan="2"><button onclick="population.killAll()">Kill all current</button></td>
-          </tr>
-          <tr>
-            <td><span>Game speed</span></td>
-            <td><span id="game_speed"></span></td>
-          </tr>
-          <tr>
-            <td><span>Volume</span></td>
-            <td><span id="volume"></span></td>
-          </tr>
-          <tr>
-            <td><span>Remaining from generation</span></td>
-            <td><span id="population_size"></span></td>
-          </tr>
-          <tr>
-            <td><span>Generation size</span></td>
-            <td><input type="number" min="10" max="200" id="population_size_input" /></td>
-          </tr>
-          <tr>
-            <td><span>Mutation rate (%)</span></td>
-            <td><input type="number" min="0.1" max="100" step="0.1" id="mutation_rate" /></td>
-          </tr>
-          <tr>
-            <td><span>Generation</span></td>
-            <td><span id="generation"></span></td>
-          </tr>
-          <tr>
-            <td><span>Highscore</span></td>
-            <td><span id="highscore"></span></td>
-          </tr>
-          <tr>
-            <td><span>Error rate</span></td>
-            <td><span id="error_rate"></span></td>
-          </tr>
-          <tr>
-            <td><span>Nearly perfect since gen</span></td>
-            <td><span id="np"></span></td>
-          </tr>
-        </table>
+        <div class="settings">
+          <table>
+            <tr>
+              <td colspan="2"><button onclick="loop()">Start</button><button onclick="noLoop()">Stop</button></td>
+            </tr>
+            <tr>
+              <td><span>Game speed</span></td>
+              <td><span id="game_speed"></span></td>
+            </tr>
+            <tr>
+              <td><span>Mutation rate (%)</span></td>
+              <td><input type="number" min="0.1" max="100" step="0.1" id="mutation_rate" /></td>
+            </tr>
+            <tr>
+              <td><span>Generation</span></td>
+              <td><span id="generation"></span></td>
+            </tr>
+            <tr>
+              <td><span>Highscore</span></td>
+              <td><span id="highscore"></span></td>
+            </tr>
+            <tr>
+              <td><span>Error rate</span></td>
+              <td><span id="error_rate"></span></td>
+            </tr>
+            <tr>
+              <td><span>Nearly perfect since gen</span></td>
+              <td><span id="np"></span></td>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <div class="text-section">

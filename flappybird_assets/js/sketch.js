@@ -5,10 +5,6 @@ var population;
 var best_saved;
 
 var game_speed_slider;
-var volume_slider;
-
-var population_size_span;
-var population_size_input;
 
 var mutation_rate_input;
 
@@ -65,11 +61,6 @@ function setup() {
   canvas.parent("sketch-holder");
   game_speed_slider = createSlider(1, 64, Settings.default_game_speed);
   game_speed_slider.parent("game_speed");
-  volume_slider = createSlider(0, 100, Settings.volume * 100);
-  volume_slider.parent("volume");
-  population_size_span = select("#population_size");
-  population_size_input = document.getElementById("population_size_input");
-  population_size_input.value = Settings.population_size;
   mutation_rate_input = document.getElementById("mutation_rate");
   mutation_rate_input.value = Settings.mutation_rate * 100;
   best_saved = false;
@@ -92,12 +83,8 @@ function draw() {
   let next_pipe;
 
   for(let i = 0; i < game_speed_slider.value(); i++) {
-    // game logic stuff
-
-    renewPopulationSize();
-
     // sound amplifier
-    Settings.volume = volume_slider.value() / 100;
+    Settings.volume = 0 / 100;
     sound_jump.amp(Settings.volume * 0.5);
     sound_pass.amp(Settings.volume);
     sound_death.amp(Settings.volume);
@@ -216,10 +203,6 @@ function checkForBestSave(score) {
   }
 }
 
-function renewPopulationSize() {
-  population_size_span.html(population.population.length);
-  Settings.population_size = parseInt(population_size_input.value);
-}
 function renewGeneration() {
   generationSpan.html(generation);
 }
