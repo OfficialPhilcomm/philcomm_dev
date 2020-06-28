@@ -210,7 +210,7 @@ function renewHighscore(score) {
   if(score > highscore || highscore === 0) {
     highscore = score;
     highscoreSpan.html(highscore + " (gen " + generation + ")");
-    error_rate_span.html(calculateErrorRate() + "%");
+    error_rate_span.html(calculateErrorRate().toString().substring(0, 10) + "%");
   }
 }
 function renewNearlyPerfect(score) {

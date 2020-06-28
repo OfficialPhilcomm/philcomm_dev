@@ -107,6 +107,10 @@ main .settings {
   margin-top: 10px;
 
   padding: 0 10px;
+
+  width: 100%;
+  max-width: 500px;
+  overflow-x: hidden;
 }
 
 main .settings table {
