@@ -21,7 +21,8 @@
           "stuck in quarantine",
           "podcast creator",
           "long sleeper",
-          "technology enthusiast"
+          "technology enthusiast",
+          "lvl21 mage"
           ]'></typewriter>
         <img class="arrow-down" src="chevron-down-solid.svg">
       </div>
