@@ -4,6 +4,20 @@
     <title>FlappyBird AI project</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=" theme-color" content="#10141A">
+
+    <meta name="description" content="@dev_philcomm's flappy bird ai" />
+    <meta name="keywords" content="homepage, development, ai, robots" />
+    <meta property="og:title" content="@dev_philcomm's Flappy Bird AI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://philcomm.dev/" />
+    <meta property="og:site_name" content="@dev_philcomm" />
+    <meta property=“og:description“ content="Flappy Bird recreated for AI to learn the game" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@dev_philcomm's Flappy Bird AI" />
+    <meta name="twitter:description" content="Flappy Bird recreated for AI to learn the game" />
+    <meta name="twitter:site" content="@dev_philcomm" />
 
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/flappybird.css">

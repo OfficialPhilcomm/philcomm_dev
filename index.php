@@ -9,6 +9,8 @@
     <script src="assets/js/typewriter.js" charset="utf-8"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=" theme-color" content="#10141A">
+
     <meta name="description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
     <meta name="keywords" content="homepage, development, ai, robots" />
     <meta property="og:title" content="@dev_philcomm's Homepage" />
