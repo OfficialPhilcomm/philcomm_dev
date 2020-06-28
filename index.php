@@ -63,13 +63,13 @@
           My name is Philcomm. I am a mage on level 21.
         </p>
         <p>
-          With the age of two, I became my orphan. When the orcs raided my home town, my parents got killed by saving me. A clan of druids found me and raised me as their own.
+          With the age of eleven, I became an orphan. When the orcs raided my home town, my parents got killed by saving me. A clan of druids found me and raised me as their own.
         </p>
         <p>
           I spend a lot of time learning about magic, and searched for ways to improve it.
         </p>
         <p>
-          When I got to level 20, I decided to travel the lands of germania, to gain more experience with magic. The first stop on my journey is the mystic wastelands called Berlin.
+          When I got to level 20, I decided to travel the lands of germania, to gain more xp and level up. The first stop on my journey is the mystic wastelands called Berlin.
         </p>
         <p>
           At this point you are probably like: what is he talking about... Well, obviously this is not my real origin story, but it is pretty much the truth.<br>
@@ -87,8 +87,8 @@
           When I am not developing (which is rarely the case), I like to hike, skate, read or play video games.
         </p>
         <p>
-          In 2019, I came in touch with a Dungeons and Dragons YouTube channel. Since then, we work together on content.<br>
-          In 2020, we started the Pen & Blade podcast, where we just casually talk about stuff we have an interest in.
+          In 2019, I came in touch with a Dungeons and Dragons YouTube channel called Pen & Blade. Since then, we work together on all sorts of content.<br>
+          In July 2020, we started the Pen & Blade podcast, where we just casually talk about stuff we have an interest in.
         </p>
       </div>
     </main>
