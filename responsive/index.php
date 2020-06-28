@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="project">
-        <a class="circle" href="flappybird.php" target="_blank">
+        <a class="circle" href="flappybird.php">
           <img src="icons/brain-solid.svg">
         </a>
         <div class="description">
