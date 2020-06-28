@@ -10,7 +10,7 @@
     <meta name="keywords" content="homepage, development, ai, robots" />
     <meta property="og:title" content="@dev_philcomm's Flappy Bird AI" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://philcomm.dev/" />
+    <meta property="og:url" content="https://philcomm.dev/flappybird" />
     <meta property="og:site_name" content="@dev_philcomm" />
     <meta property=“og:description“ content="Flappy Bird recreated for AI to learn the game" />
 
