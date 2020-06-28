@@ -69,19 +69,21 @@ main .top .title {
   color: white;
 
   font-size: 40px;
+  text-align: center;
 }
 main .top .typewriter {
   color: white;
 
   font-size: 20px;
+  text-align: center;
 }
-main .top .typewriter .title {
+main .top .typewriter {
   color: white;
 
   min-height: 20px;
   font-size: 20px;
 }
-main .top .typewriter .title::after {
+main .top .typewriter::after {
   background-color: white;
   height: 20px;
 }
