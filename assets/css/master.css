@@ -80,7 +80,16 @@ main .top .arrow-down {
   bottom: 10px;
 }
 
+main .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 main .project {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,5 +153,20 @@ main .about-me p {
 }
 
 @media screen and (min-width: 768px) { /*for laptops and desktops*/
+  main .projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
+  main .project {
+    width: 50%;
+
+    padding: 0 25px 0 calc(50% - 200px - 25px);
+  }
+
+  main .project:nth-child(1n+2) {
+    padding-left: 0%;
+
+    padding: 0 calc(50% - 200px - 25px) 0 25px;
+  }
 }

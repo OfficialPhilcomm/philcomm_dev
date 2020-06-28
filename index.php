@@ -41,20 +41,22 @@
           ]'></typewriter>
         <img class="arrow-down" src="assets/icons/chevron-down-solid.svg">
       </div>
-      <div class="project">
-        <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
-          <img src="assets/icons/Pen-and-Blade-logo-large.png">
-        </a>
-        <div class="description">
-          Visit the P&B podcast
+      <div class="projects">
+        <div class="project">
+          <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
+            <img src="assets/icons/Pen-and-Blade-logo-large.png">
+          </a>
+          <div class="description">
+            Visit the P&B podcast
+          </div>
         </div>
-      </div>
-      <div class="project">
-        <a class="circle" href="flappybird">
-          <img src="assets/icons/brain-solid.svg">
-        </a>
-        <div class="description">
-          FlappyBird AI project
+        <div class="project">
+          <a class="circle" href="flappybird">
+            <img src="assets/icons/brain-solid.svg">
+          </a>
+          <div class="description">
+            FlappyBird AI project
+          </div>
         </div>
       </div>
       <div class="about-me">
