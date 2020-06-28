@@ -23,7 +23,8 @@
           "podcast creator",
           "long sleeper",
           "technology enthusiast",
-          "lvl21 mage"
+          "lvl21 mage",
+          "walking star wars encyclopedia"
           ]'></typewriter>
         <img class="arrow-down" src="icons/chevron-down-solid.svg">
       </div>
