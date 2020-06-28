@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8">
     <title>@dev_philcomm</title>
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/typewriter.css">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/typewriter.css">
 
-    <script src="js/typewriter.js" charset="utf-8"></script>
+    <script src="assets/js/typewriter.js" charset="utf-8"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -25,11 +25,11 @@
           "lvl21 mage",
           "walking star wars encyclopedia"
           ]'></typewriter>
-        <img class="arrow-down" src="icons/chevron-down-solid.svg">
+        <img class="arrow-down" src="assets/icons/chevron-down-solid.svg">
       </div>
       <div class="project">
         <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
-          <img src="icons/Pen-and-Blade-logo-large.png">
+          <img src="assets/icons/Pen-and-Blade-logo-large.png">
         </a>
         <div class="description">
           Visit the P&B podcast
@@ -37,7 +37,7 @@
       </div>
       <div class="project">
         <a class="circle" href="flappybird">
-          <img src="icons/brain-solid.svg">
+          <img src="assets/icons/brain-solid.svg">
         </a>
         <div class="description">
           FlappyBird AI project
@@ -79,6 +79,6 @@
       </div>
     </main>
 
-    <?php include 'footer.html' ?>
+    <?php include 'assets/components/footer.html' ?>
   </body>
 </html>

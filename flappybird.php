@@ -5,8 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/flappybird.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/flappybird.css">
 
     <!-- Game Engine stuff -->
     <script src="flappybird_assets/js/p5.min.js"></script>
@@ -119,6 +119,6 @@
       </div>
     </main>
 
-    <?php include 'footer.html' ?>
+    <?php include 'assets/components/footer.html' ?>
   </body>
 </html>
