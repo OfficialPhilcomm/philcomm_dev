@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^home$ index.php [NC,L]
+
+RewriteRule ^flappybird$ flappybird.php [NC,L]
+
+ErrorDocument 404 404.html

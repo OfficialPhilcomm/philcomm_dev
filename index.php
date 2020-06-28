@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -37,7 +36,7 @@
         </div>
       </div>
       <div class="project">
-        <a class="circle" href="flappybird.php">
+        <a class="circle" href="flappybird">
           <img src="icons/brain-solid.svg">
         </a>
         <div class="description">
