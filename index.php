@@ -9,6 +9,18 @@
     <script src="assets/js/typewriter.js" charset="utf-8"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
+    <meta name="keywords" content="homepage, development, ai, robots" />
+    <meta property="og:title" content="@dev_philcomm's Homepage" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://philcomm.dev/" />
+    <meta property="og:site_name" content="@dev_philcomm" />
+    <meta property=“og:description“ content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@dev_philcomm's Homepage" />
+    <meta name="twitter:description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
+    <meta name="twitter:site" content="@dev_philcomm" />
   </head>
   <body>
     <main>
