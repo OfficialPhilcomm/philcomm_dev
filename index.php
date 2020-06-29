@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>@dev_philcomm</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/typewriter.css">
@@ -9,7 +12,7 @@
     <script src="assets/js/typewriter.js" charset="utf-8"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=" theme-color" content="#10141A">
+    <meta name="theme-color" content="#10141A">
 
     <meta name="description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
     <meta name="keywords" content="homepage, development, ai, robots" />
@@ -43,12 +46,12 @@
           "master of bob-ombs in mario kart",
           "dungeon master"
           ]'></typewriter>
-        <a class="arrow-down" href="#projects"><img src="assets/icons/chevron-down-solid.svg"></a>
+        <a class="arrow-down" href="#projects"><img src="assets/icons/chevron-down-solid.svg" alt="Scroll down"></a>
       </div>
       <div id="projects" class="projects">
         <div class="project">
-          <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
-            <img src="assets/icons/Pen-and-Blade-logo-large.png">
+          <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" rel="noreferrer" target="_blank">
+            <img src="assets/icons/Pen-and-Blade-logo-large.png" alt="Pen & Blade logo">
           </a>
           <div class="description">
             Visit the P&B podcast
@@ -56,7 +59,7 @@
         </div>
         <div class="project">
           <a class="circle" href="flappybird">
-            <img src="assets/icons/brain-solid.svg">
+            <img src="assets/icons/brain-solid.svg" alt="AI logo">
           </a>
           <div class="description">
             FlappyBird AI project
