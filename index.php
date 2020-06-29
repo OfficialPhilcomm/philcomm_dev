@@ -43,7 +43,7 @@
           "master of bob-ombs in mario kart",
           "dungeon master"
           ]'></typewriter>
-        <a href="#projects"><img class="arrow-down" src="assets/icons/chevron-down-solid.svg"></a>
+        <a class="arrow-down" href="#projects"><img src="assets/icons/chevron-down-solid.svg"></a>
       </div>
       <div id="projects" class="projects">
         <div class="project">
