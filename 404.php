@@ -12,10 +12,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta name="description" content="404 not found">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
   <link rel="stylesheet" type="text/css" href="assets/css/404.css">
 </head>
