@@ -43,9 +43,9 @@
           "master of bob-ombs in mario kart",
           "dungeon master"
           ]'></typewriter>
-        <img class="arrow-down" src="assets/icons/chevron-down-solid.svg">
+        <a href="#projects"><img class="arrow-down" src="assets/icons/chevron-down-solid.svg"></a>
       </div>
-      <div class="projects">
+      <div id="projects" class="projects">
         <div class="project">
           <a class="circle" href="https://open.spotify.com/show/76EijoNVHIGuwHnb533MtJ?si=Obkw4mLfTXCA4K8imDS6QA" target="_blank">
             <img src="assets/icons/Pen-and-Blade-logo-large.png">
