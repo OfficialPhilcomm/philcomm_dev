@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Page not found | @dev_philcomm</title>
-
   <?php print_meta_tags(
     "homepage, development, 404",
     "Not found",
