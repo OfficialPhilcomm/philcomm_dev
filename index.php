@@ -64,21 +64,24 @@
       </div>
       <div class="about-me">
         <h1>about me</h1>
+        <p>My name is Philcomm</p>
+        <p>I am a mage.</p>
+        <p>Level 21.</p>
         <p>
-          My name is Philcomm. I am a mage on level 21.
+          In my eleventh year I became an orphan. When orcs raided my home town, I got split from my parents. A clan of druids found me and raised me as their own.
         </p>
         <p>
-          With the age of eleven, I became an orphan. When the orcs raided my home town, my parents got killed by saving me. A clan of druids found me and raised me as their own.
+          I spend much time learning the mystic arts of magic, and have searched for ways to improve it.
         </p>
         <p>
-          I spend a lot of time learning about magic, and searched for ways to improve it.
+          When I reached the 20th level, I decided to travel the lands of Germania to gain more XP and level up. I first came upon the humanoid city called Berlin.
         </p>
         <p>
-          When I got to level 20, I decided to travel the lands of germania, to gain more xp and level up. The first stop on my journey is the mystic wastelands called Berlin.
+          In this moment perhaps you are wondering... What is he talking about?
         </p>
         <p>
-          At this point you are probably like: what is he talking about... Well, obviously this is not my real origin story, but it is pretty much the truth.<br>
-          Replace magic with development, and the story above is damn accurate.
+          Well, obviously this is not my real origin story, but it isn't far from the truth.<br>
+          Replace 'magic' with 'development' and the story above is pretty damn accurate.
         </p>
         <p>
           My name is Philipp, I am a software developer currently located in Berlin, Germany.
