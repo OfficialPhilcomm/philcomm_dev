@@ -7,7 +7,7 @@
       "homepage, development, ai, robots",
       "@dev_philcomm's Flappy Bird AI",
       "Flappy Bird recreated for AI to learn the game",
-      "https://philcomm.dev/")
+      "https://philcomm.dev/flappybird")
     ?>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
