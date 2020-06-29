@@ -1,3 +1,6 @@
+<?php include 'helper.php' ?>
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <?php print_meta_tags(
