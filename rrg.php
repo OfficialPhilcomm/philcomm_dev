@@ -1,25 +1,19 @@
+<?php include 'helper.php' ?>
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>RRG | @dev_philcomm</title>
+    <?php print_meta_tags(
+      "homepage, development, dungeons, dragon, youtube",
+      "RRG",
+      "The RRG is created for Pen & Blade YouTube channel to quickly generate random tiny D&D settings",
+      "https://philcomm.dev/rrg")
+    ?>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/rrg.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=" theme-color" content="#10141A">
-
-    <meta name="description" content="The RRG is created for Pen & Blade YouTube channel to quickly generate random tiny D&D settings" />
-    <meta name="keywords" content="homepage, development, dungeons, dragon, youtube" />
-    <meta property="og:title" content="RRG | @dev_philcomm" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://philcomm.dev/rrg" />
-    <meta property="og:site_name" content="@dev_philcomm" />
-    <meta property=“og:description“ content="The RRG is created for Pen & Blade YouTube channel to quickly generate random tiny D&D settings" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RRG | @dev_philcomm" />
-    <meta name="twitter:description" content="The RRG is created for Pen & Blade YouTube channel to quickly generate random tiny D&D settings" />
-    <meta name="twitter:site" content="@dev_philcomm" />
 
     <script defer src="assets/js/RandomRegionGenerator.js"></script>
   </head>
