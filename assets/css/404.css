@@ -2,29 +2,6 @@
   --color-dark: #10141A;
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url("../fonts/Roboto-Regular.ttf");
-}
-
-@font-face {
-  font-family: Roboto;
-  font-weight: bold;
-  src: url("../fonts/Roboto-Bold.ttf");
-}
-
-@font-face {
-  font-family: Roboto;
-  font-style: italic;
-  src: url("../fonts/Roboto-Italic.ttf");
-}
-
-@font-face {
-  font-family: Roboto;
-  border-width: thin;
-  src: url("../fonts/Roboto-Thin.ttf");
-}
-
 * {
   box-sizing: border-box;
   font-family: Roboto;

@@ -1,8 +1,18 @@
-<!DOCTYPE html>
+<?php include 'helper.php' ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Page not found | @dev_philcomm</title>
+
+  <?php print_meta_tags(
+    "homepage, development, 404",
+    "Not found",
+    "404 not found",
+    "https://philcomm.dev/404")
+  ?>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8">
   <meta name="description" content="404 not found">
