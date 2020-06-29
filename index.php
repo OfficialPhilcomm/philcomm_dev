@@ -40,7 +40,8 @@
           "walking star wars encyclopedia",
           "spends too much money on tech",
           "wannabe ai expert",
-          "master of bob-ombs in mario kart"
+          "master of bob-ombs in mario kart",
+          "dungeon master"
           ]'></typewriter>
         <img class="arrow-down" src="assets/icons/chevron-down-solid.svg">
       </div>
