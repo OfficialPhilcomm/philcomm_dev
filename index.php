@@ -1,8 +1,15 @@
+<?php include 'helper.php' ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>@dev_philcomm</title>
+    <?php print_meta_tags(
+      "homepage, development, ai, robots",
+      "Home",
+      "Homepage of @dev_philcomm, better known as Philipp Schlesinger",
+      "https://philcomm.dev/")
+    ?>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/master.css">
@@ -10,22 +17,6 @@
     <link rel="stylesheet" href="assets/css/typewriter.css">
 
     <script src="assets/js/typewriter.js" charset="utf-8"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#10141A">
-
-    <meta name="description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
-    <meta name="keywords" content="homepage, development, ai, robots" />
-    <meta property="og:title" content="@dev_philcomm's Homepage" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://philcomm.dev/" />
-    <meta property="og:site_name" content="@dev_philcomm" />
-    <meta property=“og:description“ content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="@dev_philcomm's Homepage" />
-    <meta name="twitter:description" content="Homepage of @dev_philcomm, better known as Philipp Schlesinger" />
-    <meta name="twitter:site" content="@dev_philcomm" />
   </head>
   <body>
     <main>
