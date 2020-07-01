@@ -10,8 +10,6 @@
       "https://philcomm.dev/")
     ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/typewriter.css">

@@ -20,4 +20,8 @@ function print_meta_tags($keywords, $title, $description, $url) {
   echo "<meta name=\"twitter:title\" content=\"$title\" />\n";
   echo "<meta name=\"twitter:description\" content=\"$description\" />\n";
   echo "<meta name=\"twitter:site\" content=\"@dev_philcomm\" />\n";
+  echo "\n";
+  echo "<link href=\"https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap\" rel=\"stylesheet\">\n";
+  echo "\n";
+  echo "<link rel=\"icon\" type=\"image/png\" href=\"assets/favicon.png\"/>\n";
 }
