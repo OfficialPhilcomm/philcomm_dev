@@ -9,6 +9,7 @@ class UIBuilder {
     if(uiJSON.src) domElement.src = uiJSON.src;
     if(uiJSON.onclick) domElement.onclick = uiJSON.onclick;
     if(uiJSON.input_type) domElement.type = uiJSON.input_type;
+    if(uiJSON.input_pattern) domElement.pattern = uiJSON.input_pattern;
     if(uiJSON.required) domElement.required = uiJSON.required;
     if(uiJSON.select_value) domElement.value = uiJSON.select_value;
     if(uiJSON.min) domElement.min = uiJSON.min;
