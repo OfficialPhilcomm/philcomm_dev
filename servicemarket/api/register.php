@@ -19,10 +19,34 @@ $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no success");
 
 $userID = $conn->insert_id;
-$stmt = $conn->prepare("inser into UserActivation (UserID) values (?)");
+$stmt = $conn->prepare("insert into UserActivation (UserID) values (?)");
 
 $stmt->bind_param("i", $userID);
 $stmt->execute();
+
+$userActivationID = $conn->insert_id;
+
+$stmt = $conn->prepare("select RegistrationKey from UserActivation
+where ID = ? limit 1");
+
+$stmt->bind_param("i", $userActivationID);
+$stmt->execute();
+
+$userActivationKey = "";
+
+$result = $stmt->get_result();
+while($row = $result->fetch_assoc()) {
+  $userActivationKey = $row['RegistrationKey'];
+}
+
+$msg = "To activate your account, click the link below\n
+https://philcomm.dev/servicemarket/api/activate_user.php?activation_code=$userActivationKey";
+
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+
+// send email
+mail($body->email, "PokeMMO ServiceMarket Account Verification", $msg);
 
 $stmt->close();
 
