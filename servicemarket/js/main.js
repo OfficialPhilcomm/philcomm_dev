@@ -387,7 +387,12 @@ loggedIn.registerListener(function(newValue) {
     }
 
     function registerClick() {
-      if(registerUsernameInput.value === "") {
+      if(registerEmailInput.value === "") {
+        registerError.value = {
+          error: true,
+          message: "Email missing"
+        };
+      } else if(registerUsernameInput.value === "") {
         registerError.value = {
           error: true,
           message: "Username missing"
