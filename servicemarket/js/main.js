@@ -189,9 +189,25 @@ loggedIn.registerListener(function(newValue) {
     let loginOpened = new LiveData();
     loginOpened.value = true;
 
+    let loginError = new LiveData();
+    loginError.value = {
+      error: false,
+      message: ""
+    };
+
+    let registerError = new LiveData();
+    registerError.value = {
+      error: false,
+      message: ""
+    };
+
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
     let loginErrorDisplay = UIBuilder.fromObject({type: 'div'});
+    loginError.registerListener(function(newError) {
+      loginErrorDisplay.style.color = newError.error ? "red" : "black";
+      loginErrorDisplay.innerHTML = newError.message;
+    });
 
     let notRegisteredButton = UIBuilder.fromObject({type: 'div', class: 'clickable', content: 'No Account? Create one here'});
 
@@ -200,6 +216,10 @@ loggedIn.registerListener(function(newValue) {
     let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerErrorDisplay = UIBuilder.fromObject({type: 'div'});
+    registerError.registerListener(function(newError) {
+      registerErrorDisplay.style.color = newError.error ? "red" : "black";
+      registerErrorDisplay.innerHTML = newError.message;
+    });
 
     let loginContainer = UIBuilder.fromObject({
       type: 'div',
@@ -359,22 +379,40 @@ loggedIn.registerListener(function(newValue) {
     function loginClick() {
       let success = login(usernameInput.value, passwordInput.value);
       if(!success) {
-        loginErrorDisplay.innerHTML = "Login failed";
+        loginError.value = {
+          error: true,
+          message: "Login failed"
+        };
       }
     }
 
     function registerClick() {
       if(registerUsernameInput.value === "") {
-        registerErrorDisplay.innerHTML = "Username missing";
+        registerError.value = {
+          error: true,
+          message: "Username missing"
+        };
       } else if(registerPasswordInput.value === "") {
-        registerErrorDisplay.innerHTML = "Password missing";
+        registerError.value = {
+          error: true,
+          message: "Password missing"
+        };
       } else if(registerPasswordInput.value !== registerPasswordRepeatInput.value) {
-        registerErrorDisplay.innerHTML = "Passwords are different";
+        registerError.value = {
+          error: true,
+          message: "Passwords are different"
+        };
       } else {
         BackendAPI.register(registerEmailInput.value, registerUsernameInput.value, registerPasswordInput.value);
-        registerErrorDisplay.innerHTML = "";
         loginOpened.value = true;
-        loginErrorDisplay.innerHTML = "Account has been created and an activation email has been sent";
+        registerError.value = {
+          error: false,
+          message: ""
+        };
+        loginError.value = {
+          error: false,
+          message: "Account has been created and an activation email has been sent"
+        };
       }
     }
 
