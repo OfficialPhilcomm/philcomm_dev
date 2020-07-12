@@ -13,7 +13,7 @@ insert into User (Email, Username, Password, Activated) values
 create table UserActivation (
   ID int not null auto_increment primary key,
   UserID int not null,
-  RegistrationKey varchar(36) not null default uuid()
+  RegistrationKey varchar(36) not null
 );
 alter table UserActivation add foreign key (UserID) references User(ID) on update cascade on delete cascade;
 

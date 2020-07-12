@@ -19,7 +19,7 @@ $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no success");
 
 $userID = $conn->insert_id;
-$stmt = $conn->prepare("insert into UserActivation (UserID) values (?)");
+$stmt = $conn->prepare("insert into UserActivation (UserID, RegistrationKey) values (?, uuid())");
 
 $stmt->bind_param("i", $userID);
 $stmt->execute();
