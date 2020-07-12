@@ -193,6 +193,7 @@ loggedIn.registerListener(function(newValue) {
 
     let notRegisteredButton = UIBuilder.fromObject({type: 'div', class: 'clickable', content: 'No Account? Create one here'});
 
+    let registerEmailInput = UIBuilder.fromObject({type: 'input', input_type: 'email'});
     let registerUsernameInput = UIBuilder.fromObject({type: 'input'});
     let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
@@ -254,6 +255,20 @@ loggedIn.registerListener(function(newValue) {
         {
           type: 'table',
           children: [
+            {
+              type: 'tr',
+              children: [
+                {
+                  type: 'td',
+                  class: 'right',
+                  content: 'E-Mail'
+                },
+                {
+                  type: 'td',
+                  children: [registerEmailInput]
+                }
+              ]
+            },
             {
               type: 'tr',
               children: [
@@ -350,7 +365,7 @@ loggedIn.registerListener(function(newValue) {
       } else if(registerPasswordInput.value !== registerPasswordRepeatInput.value) {
         registerErrorDisplay.innerHTML = "Passwords are different";
       } else {
-        BackendAPI.register(registerUsernameInput.value, registerPasswordInput.value);
+        BackendAPI.register(registerEmailInput.value, registerUsernameInput.value, registerPasswordInput.value);
         registerErrorDisplay.innerHTML = "";
         loginOpened.value = true;
       }

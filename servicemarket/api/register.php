@@ -1,6 +1,7 @@
 <?php
 include 'general.php';
 
+$arguments['email'] = 'string';
 $arguments['username'] = 'string';
 $arguments['password'] = 'string';
 $body = validateBody($arguments);
@@ -11,8 +12,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("insert into User (Username, Password) values (?, password(?))");
-$stmt->bind_param("ss", $body->username, $body->password);
+$stmt = $conn->prepare("insert into User (Email, Username, Password) values (?, ?, password(?))");
+$stmt->bind_param("ss", $body->email, $body->username, $body->password);
 $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no success");
