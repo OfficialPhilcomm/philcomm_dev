@@ -212,7 +212,7 @@ loggedIn.registerListener(function(newValue) {
     let notRegisteredButton = UIBuilder.fromObject({type: 'div', class: 'clickable', content: 'No Account? Create one here'});
 
     let registerEmailInput = UIBuilder.fromObject({type: 'input', class: 'validation', input_type: 'email', required: true});
-    let registerUsernameInput = UIBuilder.fromObject({type: 'input', class: 'validation', input_pattern: '.{1,}'});
+    let registerUsernameInput = UIBuilder.fromObject({type: 'input', class: 'validation', input_pattern: '.{1,}', required: true});
     let registerPasswordInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerErrorDisplay = UIBuilder.fromObject({type: 'div'});
