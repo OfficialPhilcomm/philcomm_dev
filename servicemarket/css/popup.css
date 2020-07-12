@@ -101,6 +101,9 @@ main #popup-container {
 #popup-container input:invalid {
   border: 1px solid #ed4040;
 }
+#popup-container input:valid {
+  border: 1px solid #00c949;
+}
 
 #popup-container select {
   appearance: none;
