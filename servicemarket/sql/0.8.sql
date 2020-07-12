@@ -10,6 +10,7 @@ insert into User (Email, Username, Password, Activated) values
   ('test@test.com', 'dev', password(''), 1),
   ('test2@test.com', 'Philcomm', password(''), 1);
 
+drop table if exists UserActivation;
 create table UserActivation (
   ID int not null auto_increment primary key,
   UserID int not null,
