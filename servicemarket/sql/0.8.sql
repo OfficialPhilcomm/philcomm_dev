@@ -15,6 +15,7 @@ create table UserActivation (
   UserID int not null,
   RegistrationKey varchar(36) not null default uuid()
 );
+alter table UserActivation add foreign key (UserID) references User(ID) on update cascade on delete cascade;
 
 drop table if exists OrderData;
 create table OrderData (
