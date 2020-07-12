@@ -190,6 +190,7 @@ loggedIn.registerListener(function(newValue) {
 
     let usernameInput = UIBuilder.fromObject({ type: 'input', class: 'td-username', input_type: 'text' });
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
+    let loginErrorDisplay = UIBuilder.fromObject({type: 'div'});
 
     let notRegisteredButton = UIBuilder.fromObject({type: 'div', class: 'clickable', content: 'No Account? Create one here'});
 
@@ -235,6 +236,7 @@ loggedIn.registerListener(function(newValue) {
             }
           ]
         },
+        loginErrorDisplay,
         {
           type: 'div',
           class: 'buttons',
@@ -368,6 +370,7 @@ loggedIn.registerListener(function(newValue) {
         BackendAPI.register(registerEmailInput.value, registerUsernameInput.value, registerPasswordInput.value);
         registerErrorDisplay.innerHTML = "";
         loginOpened.value = true;
+        loginErrorDisplay.innerHTML = "Account has been created and an activation email has been sent";
       }
     }
 
