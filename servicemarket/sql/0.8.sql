@@ -1,7 +1,7 @@
 drop table if exists User;
 create table User (
   ID int not null auto_increment primary key,
-  Email text not null,
+  Email text not null unique,
   Username varchar(64) not null unique,
   Password text not null,
   Activated tinyint(1) not null default 0
