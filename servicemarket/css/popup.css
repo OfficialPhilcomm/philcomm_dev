@@ -98,10 +98,10 @@ main #popup-container {
   border: 1px solid #242424;
   outline: none;
 }
-#popup-container input:invalid {
+#popup-container input.validation:invalid {
   border: 1px solid #ed4040;
 }
-#popup-container input:valid {
+#popup-container input.validation:valid {
   border: 1px solid #00c949;
 }
 
