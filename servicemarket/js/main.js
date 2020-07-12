@@ -205,7 +205,7 @@ loggedIn.registerListener(function(newValue) {
     let passwordInput = UIBuilder.fromObject({ type: 'input', class: 'td-password', input_type: 'password' });
     let loginErrorDisplay = UIBuilder.fromObject({type: 'div'});
     loginError.registerListener(function(newError) {
-      loginErrorDisplay.style.color = newError.error ? "red" : "black";
+      loginErrorDisplay.style.color = newError.error ? "#ed4040" : "black";
       loginErrorDisplay.innerHTML = newError.message;
     });
 
@@ -217,7 +217,7 @@ loggedIn.registerListener(function(newValue) {
     let registerPasswordRepeatInput = UIBuilder.fromObject({type: 'input', input_type: 'password'});
     let registerErrorDisplay = UIBuilder.fromObject({type: 'div'});
     registerError.registerListener(function(newError) {
-      registerErrorDisplay.style.color = newError.error ? "red" : "black";
+      registerErrorDisplay.style.color = newError.error ? "#ed4040" : "black";
       registerErrorDisplay.innerHTML = newError.message;
     });
 
