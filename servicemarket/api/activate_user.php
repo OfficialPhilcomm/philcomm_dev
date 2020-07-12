@@ -22,7 +22,6 @@ if($result->num_rows === 0) throwError("no valid user");
 $userActivationID = 0;
 $userID = 0;
 
-$result = $stmt->get_result();
 while($row = $result->fetch_assoc()) {
   $userActivationID = $row['UserActivationID'];
   $userID = $row['UserID'];
