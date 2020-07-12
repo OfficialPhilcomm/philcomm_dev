@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 $stmt = $conn->prepare("select ID,Username from User
-where Username = ? and Password = password(?) limit 1");
+where Username = ? and Password = password(?) and Activated = 1 limit 1");
 $stmt->bind_param("ss", $body->user, $body->pass);
 $stmt->execute();
 

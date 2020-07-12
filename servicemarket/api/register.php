@@ -13,10 +13,17 @@ if ($conn->connect_error) {
 }
 
 $stmt = $conn->prepare("insert into User (Email, Username, Password) values (?, ?, password(?))");
-$stmt->bind_param("ss", $body->email, $body->username, $body->password);
+$stmt->bind_param("sss", $body->email, $body->username, $body->password);
 $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no success");
+
+$userID = $conn->insert_id;
+$stmt = $conn->prepare("inser into UserActivation (UserID) values (?)");
+
+$stmt->bind_param("i", $userID);
+$stmt->execute();
+
 $stmt->close();
 
 $conn->close();
