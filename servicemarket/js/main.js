@@ -68,6 +68,7 @@ function login(un, pw) {
       loggedIn.value = true;
     }
   }
+  return result.success
 }
 
 function logout() {
@@ -356,7 +357,10 @@ loggedIn.registerListener(function(newValue) {
     }
 
     function loginClick() {
-      login(usernameInput.value, passwordInput.value);
+      let success = login(usernameInput.value, passwordInput.value);
+      if(!success) {
+        loginErrorDisplay.innerHTML = "Login failed";
+      }
     }
 
     function registerClick() {
