@@ -10,6 +10,7 @@
       "https://philcomm.dev/flappybird")
     ?>
 
+    <link rel="stylesheet" href="assets/css/password_initiative.css">
     <link rel="stylesheet" href="assets/css/footer.css">
   </head>
   <body>
