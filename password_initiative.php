@@ -51,6 +51,16 @@
           If you are using a new password like this every month, you are already taking a huge
           step in the right direction.
         </p>
+        <h1>Next steps</h1>
+        <p>
+          If you wanna be even safer, consider using a password manager. Good ones
+          are for example Lastpass or 1Password. They store your passwords, so you only
+          have to copy and paste them when needed. Your password for the password
+          manager should be extra strong though.
+        </p>
+        <p>
+          Another step is 2 Factor authentication.
+        </p>
       </div>
     </main>
 
