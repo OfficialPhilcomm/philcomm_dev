@@ -1,5 +1,8 @@
 RewriteEngine On
 
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
 RewriteRule ^home$ index.php [NC,L]
 
 RewriteRule ^flappybird$ flappybird.php [NC,L]
