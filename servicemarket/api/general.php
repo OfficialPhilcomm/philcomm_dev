@@ -11,8 +11,11 @@ function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
 function requireLogin() {
+  if(!array_key_exists("Authorization", apache_request_headers())) {
+    throwError("Authorization header not set; please request active api key");
+  }
+
   $authorization_header = apache_request_headers()['Authorization'];
-  if($authorization_header === "") throwError("Authorization header not set; please request active api key");
   echo "Header: ".$authorization_header;
 }
 
