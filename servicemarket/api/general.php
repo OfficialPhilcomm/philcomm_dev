@@ -32,17 +32,15 @@ function requireLogin() {
     throwError("Connection failed: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("select at.ID, u.ID as UserID, u.Username from AccessToken at
+  $stmt = $conn->prepare("select at.ID, u.ID as UserID at
   join User u on at.Token = ?
   and at.UserID = u.ID limit 1");
   $stmt->bind_param("s", $auth_token);
   $stmt->execute();
   $result = $stmt->get_result();
   if($result->num_rows === 0) throwError("auth token not found");
-  /*$username = "";*/
   while($row = $result->fetch_assoc()) {
     $GLOBALS['userID'] = $row["UserID"];
-    echo "Set id to ".$row["UserID"];
   }
 }
 
