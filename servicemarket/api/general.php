@@ -10,12 +10,7 @@ function db_user() { return "dbu43335"; }
 function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
-$userID = 0;
-
-function getUserID() { 
-  global $userID;
-  return "test ".$userID; 
-}
+function getUserID() { return $GLOABLS["userID"]; }
 
 function requireLogin() {
   $headers = apache_request_headers();
@@ -46,7 +41,7 @@ function requireLogin() {
   if($result->num_rows === 0) throwError("auth token not found");
   /*$username = "";*/
   while($row = $result->fetch_assoc()) {
-    $userID = $row["UserID"];
+    $GLOBALS['userID'] = $row["UserID"];
     echo "Set id to ".$row["UserID"];
   }
 }
