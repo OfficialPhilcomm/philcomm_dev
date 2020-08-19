@@ -2,11 +2,11 @@ drop table if exists ApiKey;
 create table ApiKey (
   ID int not null auto_increment primary key,
   Name varchar(64) not null,
-  Key varchar(36) not null default uuid(),
+  APIKey varchar(36) not null,
   Active tinyint(1) not null default 1,
   CreatedAt datetime not null default now()
 );
-insert into ApiKey(Name) values ('main-app');
+insert into ApiKey(Name, APIKey) values ('main-app', uuid());
 
 drop table if exists User;
 create table User (
@@ -31,7 +31,7 @@ alter table UserActivation add foreign key (UserID) references User(ID) on updat
 drop table if exists AccessToken;
 create table AccessToken (
   ID int not null auto_increment primary key,
-  Token varchar(36) not null default uuid(),
+  Token varchar(36) not null,
   UserID int not null,
   CreatedAt datetime not null default now()
 );
