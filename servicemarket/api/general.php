@@ -13,6 +13,10 @@ function db_name() { return "dbs443745"; }
 function requireLogin() {
   $headers = apache_request_headers();
 
+  foreach ($headers as $header => $value) {
+    echo "$header: $value\n";
+  }
+
   /*if(!array_key_exists("API-Key", $headers)) {
     throwError("API-Key header not set; please request active api key");
   }
