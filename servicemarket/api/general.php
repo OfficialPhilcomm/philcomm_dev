@@ -11,20 +11,20 @@ function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
 function requireLogin() {
-  foreach (apache_request_headers() as $header => $value) {
-    echo "$header: $value\n";
+  $headers = apache_request_headers();
+
+  f(!array_key_exists("API-Token", $headers)) {
+    throwError("API-Token header not set; please request active api key");
   }
 
-  if(!array_key_exists("Token", apache_request_headers())) {
-    throwError("Token header not set; please request active api key");
+  if(!array_key_exists("Auth-Token", $headers)) {
+    throwError("Auth-Token header not set; please use active user token");
   }
 
-  if(!array_key_exists("Authorization", apache_request_headers())) {
-    throwError("Authorzation header not set; please use active user token");
-  }
-
-  $authorization_header = apache_request_headers()['Token'];
-  echo "Header: ".$authorization_header;
+  $api_token = $headers['API-Token'];
+  $auth_token = $headers['Auth-Token'];
+  echo "API-Token: ".$api_token;
+  echo "Auth-Token: ".$auth_token;
 }
 
 function validateBody($arguments) {
