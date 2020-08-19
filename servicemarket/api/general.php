@@ -12,6 +12,7 @@ function db_name() { return "dbs443745"; }
 
 function requireLogin() {
   $authorization_header = apache_request_headers()['Authorization'];
+  if($authorization_header === "") throwError("Authorization header not set; please request active api key");
   echo "Header: ".$authorization_header;
 }
 
