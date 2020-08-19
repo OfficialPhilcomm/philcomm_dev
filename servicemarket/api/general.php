@@ -29,6 +29,19 @@ function requireLogin() {
   $auth_token = $headers['Auth-Token'];
   echo "Api-Token: ".$api_token;
   echo "Auth-Token: ".$auth_token;
+
+  $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+
+  if ($conn->connect_error) {
+    throwError("Connection failed: " . $conn->connect_error);
+  }
+
+  $stmt = $conn->prepare("select at.ID from AccessToken at
+  where at.Token = ?");
+  $stmt->bind_param("s", $auth_token);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if($result->num_rows === 0) throwError("auth token not found");
 }
 
 function validateBody($arguments) {
