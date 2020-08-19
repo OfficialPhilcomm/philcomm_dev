@@ -37,7 +37,7 @@ function requireLogin() {
     throwError("Connection failed: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("select at.ID, u.ID as UserID at
+  $stmt = $conn->prepare("select at.ID, u.ID as UserID from AccessToken at
   join User u on at.Token = ?
   and at.UserID = u.ID limit 1");
   $stmt->bind_param("s", $auth_token);
