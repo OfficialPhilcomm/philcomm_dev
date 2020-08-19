@@ -13,10 +13,6 @@ function db_name() { return "dbs443745"; }
 function requireLogin() {
   $headers = apache_request_headers();
 
-  foreach ($headers as $header => $value) {
-    echo "$header: $value\n";
-  }
-
   if(!array_key_exists("Api-Token", $headers)) {
     throwError("Api-Token header not set; please request active api key");
   }
@@ -27,8 +23,6 @@ function requireLogin() {
 
   $api_token = $headers['Api-Token'];
   $auth_token = $headers['Auth-Token'];
-  echo "Api-Token: ".$api_token;
-  echo "Auth-Token: ".$auth_token;
 
   $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
@@ -43,11 +37,11 @@ function requireLogin() {
   $stmt->execute();
   $result = $stmt->get_result();
   if($result->num_rows === 0) throwError("auth token not found");
-  $username = "";
+  /*$username = "";
   while($row = $result->fetch_assoc()) {
     $username = $row["Username"];
   }
-  echo "Username: ".$username;
+  echo "Username: ".$username;*/
 }
 
 function validateBody($arguments) {
