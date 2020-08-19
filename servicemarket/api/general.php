@@ -22,7 +22,7 @@ function requireLogin() {
   }*/
 
   $api_token = $headers['API-Key'];
-  $auth_token = $headers['Auth-Key'];
+  $auth_token = $headers['Auth-Token'];
   echo "API-Key: ".$api_token;
   echo "Auth-Token: ".$auth_token;
 }
