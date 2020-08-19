@@ -12,7 +12,7 @@ function db_name() { return "dbs443745"; }
 
 function requireLogin() {
   $authorization_header = apache_request_headers()['Authorization'];
-  echo $authorization_header;
+  echo "Header: ".$authorization_header;
 }
 
 function validateBody($arguments) {
