@@ -13,13 +13,13 @@ function db_name() { return "dbs443745"; }
 function requireLogin() {
   $headers = apache_request_headers();
 
-  if(!array_key_exists("API-Token", $headers)) {
+  /*if(!array_key_exists("API-Token", $headers)) {
     throwError("API-Token header not set; please request active api key");
   }
 
   if(!array_key_exists("Auth-Token", $headers)) {
     throwError("Auth-Token header not set; please use active user token");
-  }
+  }*/
 
   $api_token = $headers['API-Token'];
   $auth_token = $headers['Auth-Token'];
