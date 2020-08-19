@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("select at.ID, u.Username from AccessToken at
 join User u on at.Token = ?
 and at.CreatedAt > NOW() - INTERVAL 1 DAY
+and at.UserID = u.ID
 limit 1");
 $stmt->bind_param("s", $body->auth_token);
 $stmt->execute();
