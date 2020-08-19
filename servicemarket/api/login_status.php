@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
 include 'general.php';
 
 $arguments['auth_token'] = 'string';
