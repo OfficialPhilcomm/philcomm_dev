@@ -44,6 +44,7 @@ function requireLogin() {
   /*$username = "";*/
   while($row = $result->fetch_assoc()) {
     $userID = $row["UserID"];
+    echo "Set id to ".$row["UserID"];
   }
 }
 
