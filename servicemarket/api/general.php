@@ -10,6 +10,10 @@ function db_user() { return "dbu43335"; }
 function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
+$userID = 0;
+
+function getUserID() { return $userID; }
+
 function requireLogin() {
   $headers = apache_request_headers();
 
@@ -30,18 +34,17 @@ function requireLogin() {
     throwError("Connection failed: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("select at.ID, u.Username from AccessToken at
+  $stmt = $conn->prepare("select at.ID, u.ID as UserID, u.Username from AccessToken at
   join User u on at.Token = ?
   and at.UserID = u.ID limit 1");
   $stmt->bind_param("s", $auth_token);
   $stmt->execute();
   $result = $stmt->get_result();
   if($result->num_rows === 0) throwError("auth token not found");
-  /*$username = "";
+  /*$username = "";*/
   while($row = $result->fetch_assoc()) {
-    $username = $row["Username"];
+    $userID = $row["UserID"];
   }
-  echo "Username: ".$username;*/
 }
 
 function validateBody($arguments) {
@@ -57,10 +60,6 @@ function validateBody($arguments) {
   }
 
   return $body;
-}
-
-function getUserID() {
-  return $_SESSION['user_id'];
 }
 
 function throwError($error) {
