@@ -17,17 +17,17 @@ function requireLogin() {
     echo "$header: $value\n";
   }
 
-  if(!array_key_exists("API-Token", $headers)) {
-    throwError("API-Token header not set; please request active api key");
+  if(!array_key_exists("Api-Token", $headers)) {
+    throwError("Api-Token header not set; please request active api key");
   }
 
   if(!array_key_exists("Auth-Token", $headers)) {
     throwError("Auth-Token header not set; please use active user token");
   }
 
-  $api_token = $headers['API-Token'];
+  $api_token = $headers['Api-Token'];
   $auth_token = $headers['Auth-Token'];
-  echo "API-Token: ".$api_token;
+  echo "Api-Token: ".$api_token;
   echo "Auth-Token: ".$auth_token;
 }
 
