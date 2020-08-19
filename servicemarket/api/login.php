@@ -59,7 +59,7 @@ if($result->num_rows === 0) {
 $api_response = new stdClass();
 $api_response->success = $success;
 if($success) {
-  $api_response->username = $_SESSION['username'];
+  $api_response->username = $username;
   $api_response->auth_token = $token;
 }
 exit(json_encode($api_response));
