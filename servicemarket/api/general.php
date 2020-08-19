@@ -10,7 +10,7 @@ function db_user() { return "dbu43335"; }
 function db_pass() { return "2fC&uUc5su!NVFsG"; }
 function db_name() { return "dbs443745"; }
 
-function getUserID() { return $GLOABLS["userID"]; }
+function getUserID() { return $GLOBALS["userID"]; }
 
 function requireLogin() {
   $headers = apache_request_headers();
