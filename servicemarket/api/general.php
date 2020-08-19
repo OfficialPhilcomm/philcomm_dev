@@ -12,7 +12,10 @@ function db_name() { return "dbs443745"; }
 
 $userID = 0;
 
-function getUserID() { return "test ".$userID; }
+function getUserID() { 
+  global $userID;
+  return "test ".$userID; 
+}
 
 function requireLogin() {
   $headers = apache_request_headers();
