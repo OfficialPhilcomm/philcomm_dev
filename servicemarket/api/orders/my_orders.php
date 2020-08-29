@@ -43,6 +43,7 @@ while($row = $result->fetch_assoc()) {
   $order->iv_spatk = $row["IVSPATK"];
   $order->iv_spdef = $row["IVSPDEF"];
   $order->iv_spe = $row["IVSPE"];
+  $order->my_order = true;
   $api_result->orders[] = $order;
 }
 
