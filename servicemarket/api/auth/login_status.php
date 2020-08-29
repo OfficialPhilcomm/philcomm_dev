@@ -1,5 +1,5 @@
 <?php
-include 'general.php';
+include '../general.php';
 
 $arguments['auth_token'] = 'string';
 $body = validateBody($arguments);

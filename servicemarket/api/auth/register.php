@@ -1,5 +1,5 @@
 <?php
-include 'general.php';
+include '../general.php';
 
 $arguments['email'] = 'string';
 $arguments['username'] = 'string';

@@ -1,5 +1,5 @@
 <?php
-include 'general.php';
+include '../general.php';
 
 $activation_code = $_GET['activation_code'];
 
