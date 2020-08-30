@@ -16,7 +16,7 @@ $api_result->orders = array();
 $stmt = $conn->prepare("select
 uo.ID as ID,
 u.Username as Username,
-od.*,
+od.*
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
