@@ -16,6 +16,7 @@ $api_result->orders = array();
 $stmt = $conn->prepare("select
 uo.ID as ID,
 u.Username as Username,
+u.ID as UserID,
 od.*
 from UserOrder uo
 join User u on uo.UserID = u.ID
@@ -30,6 +31,7 @@ while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->id = $row["ID"];
   $order->username = $row["Username"];
+  $order->is_my_order = (($row["UserID"] === getUserID()) ? true : false);
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
   $order->ability = $row["Ability"];

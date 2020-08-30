@@ -32,6 +32,7 @@ while($row = $result->fetch_assoc()) {
   $order->level = $row["Level"];
   $order->ability = $row["Ability"];
   $order->item = $row["Item"];
+  $order->is_my_order = false;
   $api_result->orders[] = $order;
 }
 
