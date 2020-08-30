@@ -33,7 +33,7 @@ and uo.OrderDataID = od.ID
 join User bu on uo.UserID = bu.ID
 left join Offer o on uo.AcceptedOfferID = o.ID
 left join User u on o.UserID = u.ID
-where (uo.State is null or o.UserID = ? or o.UserID = ?)
+where (uo.State is null or uo.UserID = ? or o.UserID = ?)
 and uo.Closed = 0");
 $stmt->bind_param("iii", $body->user_order_id, getUserID(), getUserID());
 $stmt->execute();
