@@ -17,6 +17,7 @@ $api_result->type = "order_info";
 
 $stmt = $conn->prepare("select 
 uo.ID as UserOrderID, 
+bu.ID as BuyerID,
 bu.Username as BuyerName,
 uo.State,
 uo.Finished,
@@ -40,6 +41,7 @@ if($result->num_rows === 0) throwError("no valid order found");
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
   $order->user_order_id = $row["UserOrderID"];
+  $order->is_my_order = ($row["BuyerID"] === getUserID() ? true : false);
 
   $order->state = $row["State"];
   $order->finishable = (($order->state === 4 && $row["Finished"] === 0) ? true : false);
