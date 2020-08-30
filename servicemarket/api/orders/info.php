@@ -47,6 +47,7 @@ while($row = $result->fetch_assoc()) {
 
   $order->state = $row["State"];
   if($row["BreederID"] === getUserID()) {
+    $order->state_changeable = true;
     $order->finishable = (($order->state === 4 && $row["Finished"] === 0) ? true : false);
   }
   $order->finished = ($row["Finished"] === 1 ? true : false);
