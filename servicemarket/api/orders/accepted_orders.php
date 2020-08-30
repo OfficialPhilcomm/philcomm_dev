@@ -13,7 +13,7 @@ $api_result = new stdClass();
 $api_result->type = "accepted_orders";
 $api_result->orders = array();
 
-$stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, uo.State as State, od.PokemonName as PokemonName, od.Level as Level from UserOrder uo
+$stmt = $conn->prepare("select uo.ID as UserOrderID, u.Username as Username, uo.State as State, od.* from UserOrder uo
 join Offer o on uo.AcceptedOfferID = o.ID
 and o.UserID = ?
 and uo.Closed = 0
@@ -30,6 +30,8 @@ while($row = $result->fetch_assoc()) {
   $order->state = $row["State"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
+  $order->ability = $row["Ability"];
+  $order->item = $row["Item"];
   $api_result->orders[] = $order;
 }
 

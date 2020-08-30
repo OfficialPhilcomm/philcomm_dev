@@ -16,24 +16,7 @@ $api_result->orders = array();
 $stmt = $conn->prepare("select
 uo.ID as ID,
 u.Username as Username,
-od.PokemonName as PokemonName,
-od.Level as Level,
-od.Move1 as Move1,
-od.Move2 as Move2,
-od.Move3 as Move3,
-od.Move4 as Move4,
-od.IVHP as IVHP,
-od.IVATK as IVATK,
-od.IVDEF as IVDEF,
-od.IVSPATK as IVSPATK,
-od.IVSPDEF as IVSPDEF,
-od.IVSPE as IVSPE,
-od.EVHP as EVHP,
-od.EVATK as EVATK,
-od.EVDEF as EVDEF,
-od.EVSPATK as EVSPATK,
-od.EVSPDEF as EVSPDEF,
-od.EVSPE as EVSPE
+od.*,
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
@@ -49,6 +32,8 @@ while($row = $result->fetch_assoc()) {
   $order->username = $row["Username"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
+  $order->ability = $row["Ability"];
+  $order->item = $row["Item"];
   $order->move1 = $row["Move1"];
   $order->move2 = $row["Move2"];
   $order->move3 = $row["Move3"];
