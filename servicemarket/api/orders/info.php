@@ -19,12 +19,14 @@ $stmt = $conn->prepare("select
 uo.ID as UserOrderID, 
 bu.ID as BuyerID,
 bu.Username as BuyerName,
+bu.ID as BuyerID,
 uo.State,
 uo.Finished,
 uo.Closed,
 od.*,
 o.Price,
-u.Username as BreederName
+u.Username as BreederName,
+u.ID as BreederID
 from UserOrder uo
 join OrderData od on uo.ID = ?
 and uo.OrderDataID = od.ID
@@ -44,9 +46,13 @@ while($row = $result->fetch_assoc()) {
   $order->is_my_order = ($row["BuyerID"] === getUserID() ? true : false);
 
   $order->state = $row["State"];
-  $order->finishable = (($order->state === 4 && $row["Finished"] === 0) ? true : false);
+  if($row["BreederID"] === getUserID()) {
+    $order->finishable = (($order->state === 4 && $row["Finished"] === 0) ? true : false);
+  }
   $order->finished = ($row["Finished"] === 1 ? true : false);
-  $order->closeable = (($row["Finished"] === 1 && $row["Closed"] === 0) ? true : false);
+  if($row["BuyerID"] === getUserID()) {
+    $order->closeable = (($row["Finished"] === 1 && $row["Closed"] === 0) ? true : false);
+  }
   $order->closed = ($row["Closed"] === 1 ? true : false);
   $order->buyer = $row["BuyerName"];
   $order->breeder = $row["BreederName"];
