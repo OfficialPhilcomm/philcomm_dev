@@ -62,7 +62,7 @@ $stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Level, Move1
 IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
 values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 echo $stmt->error;
-$stmt->bind_param("ssisssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->level, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability, $body->item,
+$stmt->bind_param("ssissssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->level, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability, $body->item,
 $body->iv_hp, $body->iv_atk, $body->iv_def, $body->iv_spatk, $body->iv_spdef, $body->iv_spe,
 $body->ev_hp, $body->ev_atk, $body->ev_def, $body->ev_spatk, $body->ev_spdef, $body->ev_spe);
 $stmt->execute();
