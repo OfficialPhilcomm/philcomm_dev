@@ -14,7 +14,7 @@ $api_result->type = "all_orders";
 $api_result->orders = array();
 
 $stmt = $conn->prepare("select
-uo.ID as ID,
+uo.ID as OrderID,
 u.Username as Username,
 u.ID as UserID,
 od.*
@@ -29,7 +29,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 while($row = $result->fetch_assoc()) {
   $order = new stdClass();
-  $order->id = $row["ID"];
+  $order->id = $row["OrderID"];
   $order->username = $row["Username"];
   $order->is_my_order = (($row["UserID"] === getUserID()) ? true : false);
   $order->offer_possible = (($row["UserID"] !== getUserID()) ? true : false);

@@ -17,7 +17,6 @@ $stmt = $conn->prepare("select ID from UserOrder
 where ID = ?
 and UserID != ?
 and AcceptedOfferID is null");
-throwError($body->user_order_id);
 $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 $result = $stmt->get_result();
