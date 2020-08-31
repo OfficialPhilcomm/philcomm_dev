@@ -64,6 +64,7 @@ while($row = $result->fetch_assoc()) {
   $order_data->level = $row["Level"];
   $order_data->gender = $row["Gender"];
   $order_data->ability = $row["Ability"];
+  $order_data->item = $row["Item"];
   
   $moves = new stdClass();
   $moves->move1 = $row["Move1"];
