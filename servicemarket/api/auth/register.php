@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()) {
 }
 
 $msg = "To activate your account, click the link below\n
-https://philcomm.dev/servicemarket/api/activate_user.php?activation_code=$userActivationKey";
+https://philcomm.dev/servicemarket/api/auth/activate_user.php?activation_code=$userActivationKey";
 
 // use wordwrap() if lines are longer than 70 characters
 $msg = wordwrap($msg,70);
