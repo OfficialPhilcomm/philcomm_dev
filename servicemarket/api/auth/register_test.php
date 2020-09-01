@@ -6,7 +6,7 @@ include '../general.php';
 // $arguments['password'] = 'string';
 // $body = validateBody($arguments);
 $body = new stdClass();
-$body->email = "info@philcomm.dev";
+$body->email = "officialphilcomm@gmail.com";
 $body->username = 'testuser123';
 $body->password = "t";
 
