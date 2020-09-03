@@ -66,7 +66,6 @@ function validateBody($arguments) {
 
 function throwError($error) {
   $api_response = new stdClass();
-  $api_response->errors = array();
-  $api_response->errors[] = $error;
+  $api_response->error = $error;
   exit(json_encode($api_response));
 }
