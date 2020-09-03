@@ -11,7 +11,7 @@ insert into ApiKey(Name, APIKey) values ('main-app', uuid());
 drop table if exists User;
 create table User (
   ID int not null auto_increment primary key,
-  Email varchar(128) not null unique,
+  Email varchar(128) unique,
   Username varchar(64) not null unique,
   Password text not null,
   Activated tinyint(1) not null default 0
