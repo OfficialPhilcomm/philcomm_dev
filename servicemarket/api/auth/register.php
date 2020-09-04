@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("select ID from User where Username = ?");
 $stmt->bind_param("s", $body->username);
 $stmt->execute();
-$resukt = $stmt->get_result();
+$result = $stmt->get_result();
 if($result->num_rows > 0) throwError("username taken");
 
 $stmt = $conn->prepare("insert into User (Username, Password, Activated) values (?, password(?), 1)");
