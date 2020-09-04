@@ -13,6 +13,14 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+$stmt = $conn->prepare("select o.ID from UserOrder uo
+join Offer o on uo.ID = ?
+and o.UserID = ?");
+$stmt->bind_param("ii", $body->user_order_id, getUserID());
+$stmt->execute();
+$result = $stmt->get_result();
+if($result->num_rows > 0) throwError("already created offer");
+
 $stmt = $conn->prepare("select ID from UserOrder
 where ID = ?
 and UserID != ?
