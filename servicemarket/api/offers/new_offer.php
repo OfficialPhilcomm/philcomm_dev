@@ -13,9 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("select o.ID from UserOrder uo
-join Offer o on uo.ID = ?
-and o.UserID = ?");
+$stmt = $conn->prepare("select ID from Offer where UserOrderID = ? and UserID = ?");
 $stmt->bind_param("ii", $body->user_order_id, getUserID());
 $stmt->execute();
 $result = $stmt->get_result();
