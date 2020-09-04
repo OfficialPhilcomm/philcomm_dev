@@ -17,11 +17,14 @@ $stmt = $conn->prepare("select
 uo.ID as OrderID,
 u.Username as Username,
 u.ID as UserID,
-od.*
+od.*,
+o.Price as OfferedPrice
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
 join OrderData od on uo.OrderDataID = od.ID
+left join Offer o on o.UserOrderId = uo.ID 
+and o.UserID = ?
 order by uo.CreatedAt desc");
 $stmt->bind_param("i", getUserID());
 $stmt->execute();
@@ -36,6 +39,9 @@ while($row = $result->fetch_assoc()) {
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
   $order->ability = $row["Ability"];
+  if($row["OfferedPrice"] !== null) {
+    $order->offered_price = $row["OfferedPrice"];
+  }
   $order->item = $row["Item"];
   $order->move1 = $row["Move1"];
   $order->move2 = $row["Move2"];
