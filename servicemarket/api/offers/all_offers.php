@@ -16,7 +16,7 @@ $api_result = new stdClass();
 $api_result->type = "all_offers";
 $api_result->offers = array();
 
-$stmt = $conn->prepare("select o.ID as OfferID, o.Price as Price, u.Username as Username from UserOrder uo
+$stmt = $conn->prepare("select o.ID as OfferID, o.Price as Price, o.DaysNeeded, u.Username as Username from UserOrder uo
 join Offer o on uo.ID = ?
 and uo.UserID = ?
 and o.UserOrderID = uo.ID
@@ -31,6 +31,7 @@ while($row = $result->fetch_assoc()) {
   $offer = new stdClass();
   $offer->id = $row["OfferID"];
   $offer->price = $row["Price"];
+  $offer->days_needed = $row["Price"];
   $offer->username = $row["Username"];
   $api_result->offers[] = $offer;
 }

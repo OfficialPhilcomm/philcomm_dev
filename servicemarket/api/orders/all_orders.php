@@ -18,7 +18,8 @@ uo.ID as OrderID,
 u.Username as Username,
 u.ID as UserID,
 od.*,
-o.Price as OfferedPrice
+o.Price as OfferedPrice,
+o.DaysNeeded,
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
@@ -42,6 +43,7 @@ while($row = $result->fetch_assoc()) {
   $order->ability = $row["Ability"];
   if($row["OfferedPrice"] !== null) {
     $order->offered_price = $row["OfferedPrice"];
+    $order->days_needed = $row["DaysNeeded"];
   }
   $order->item = $row["Item"];
   $order->move1 = $row["Move1"];
