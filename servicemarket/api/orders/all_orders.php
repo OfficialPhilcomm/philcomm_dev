@@ -42,8 +42,10 @@ while($row = $result->fetch_assoc()) {
   $order->nature = $row["Nature"];
   $order->ability = $row["Ability"];
   if($row["OfferedPrice"] !== null) {
-    $order->offered_price = $row["OfferedPrice"];
-    $order->days_needed = $row["DaysNeeded"];
+    $my_offer = new stdClass();
+    $my_offer->price = $row["OfferedPrice"];
+    $my_offer->days_needed = $row["DaysNeeded"];
+    $order->my_offer = $my_offer;
   }
   $order->item = $row["Item"];
   $order->move1 = $row["Move1"];
