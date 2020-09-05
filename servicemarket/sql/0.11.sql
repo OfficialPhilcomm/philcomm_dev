@@ -82,7 +82,7 @@ drop table if exists Offer;
 create table Offer (
   ID int not null auto_increment primary key,
   Price int not null,
-  TimeNeeded int not null,
+  DaysNeeded int not null,
   UserOrderID int not null,
   UserID int not null,
   CreatedAt datetime not null default now()

@@ -5,7 +5,7 @@ requireLogin();
 
 $arguments['user_order_id'] = 'integer';
 $arguments['price'] = 'integer';
-$arguments['time_needed'] = 'integer';
+$arguments['days_needed'] = 'integer';
 $body = validateBody($arguments);
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
@@ -29,8 +29,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 if($result->num_rows === 0) throwError("no valid order found");
 
-$stmt = $conn->prepare("insert into Offer (Price,TimeNeeded,UserID,UserOrderID) values (?, ?, ?, ?)");
-$stmt->bind_param("iiii", $body->price, $body->time_needed, getUserID(), $body->user_order_id);
+$stmt = $conn->prepare("insert into Offer (Price,DaysNeeded,UserID,UserOrderID) values (?, ?, ?, ?)");
+$stmt->bind_param("iiii", $body->price, $body->days_needed, getUserID(), $body->user_order_id);
 $stmt->execute();
 
 $stmt->close();
