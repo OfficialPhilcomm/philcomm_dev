@@ -31,7 +31,7 @@ while($row = $result->fetch_assoc()) {
   $offer = new stdClass();
   $offer->id = $row["OfferID"];
   $offer->price = $row["Price"];
-  $offer->days_needed = $row["Price"];
+  $offer->days_needed = $row["DaysNeeded"];
   $offer->username = $row["Username"];
   $api_result->offers[] = $offer;
 }
