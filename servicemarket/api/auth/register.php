@@ -6,6 +6,11 @@ $arguments['password'] = 'string';
 $body = validateBody($arguments);
 
 if(strlen($body->password) < 8) throwError("password must be 8 characters");
+$uppercase = preg_match('@[A-Z]@', $body->password);
+$lowercase = preg_match('@[a-z]@', $body->password);
+$number    = preg_match('@[0-9]@', $body->password);
+$specialChars = preg_match('@[^\w]@', $body->password);
+if(!$uppercase || !$lowercase || !$number || !$specialChars) throwError("password must contain upper case, lower case and special characters");
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
