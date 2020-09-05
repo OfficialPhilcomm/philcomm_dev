@@ -12,7 +12,7 @@ $lowercase = preg_match('@[a-z]@', $body->password);
 $number    = preg_match('@[0-9]@', $body->password);
 $specialChars = preg_match('@[^\w]@', $body->password);
 
-if(!$uppercase || !$lowercase || !$number || !$specialChars) throwError("password must contain\r\n- upper case\r\n- lower case\r\n- special characters");
+if(!$uppercase || !$lowercase || !$number || !$specialChars) throwError("password must contain\r\n- upper case\r\n- lower case\r\n- number\r\n- special characters");
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
