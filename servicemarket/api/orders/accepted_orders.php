@@ -30,6 +30,7 @@ while($row = $result->fetch_assoc()) {
   $order->state = $row["State"];
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
+  $order->nature = $row["Nature"];
   $order->ability = $row["Ability"];
   $order->item = $row["Item"];
   $order->iv_hp = $row["IVHP"];

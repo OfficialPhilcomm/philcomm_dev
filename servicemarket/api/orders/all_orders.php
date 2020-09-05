@@ -38,6 +38,7 @@ while($row = $result->fetch_assoc()) {
   $order->offer_possible = (($row["UserID"] !== getUserID()) ? true : false);
   $order->pokemon_name = $row["PokemonName"];
   $order->level = $row["Level"];
+  $order->nature = $row["Nature"];
   $order->ability = $row["Ability"];
   if($row["OfferedPrice"] !== null) {
     $order->offered_price = $row["OfferedPrice"];

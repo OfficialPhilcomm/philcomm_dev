@@ -62,6 +62,7 @@ while($row = $result->fetch_assoc()) {
   $order_data = new stdClass();
   $order_data->pokemon_name = $row["PokemonName"];
   $order_data->level = $row["Level"];
+  $order_data->nature = $row["Nature"];
   $order_data->gender = $row["Gender"];
   $order_data->ability = $row["Ability"];
   $order_data->item = $row["Item"];
