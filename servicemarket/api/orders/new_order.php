@@ -12,6 +12,7 @@ $arguments['move4'] = 'string';
 $arguments['level'] = 'integer';
 $arguments['ability'] = 'string';
 $arguments['item'] = 'string';
+$arguments['nature'] = 'string';
 $arguments['iv_hp'] = 'integer';
 $arguments['iv_atk'] = 'integer';
 $arguments['iv_def'] = 'integer';
@@ -58,11 +59,11 @@ foreach($evs as $value) {
 $total_evs = $body->ev_hp + $body->ev_atk + $body->ev_def + $body->ev_spatk + $body->ev_spdef + $body->ev_spe;
 if($total_evs > 510) throwError("total evs cant be bigger than 510");
 
-$stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Level, Move1, Move2, Move3, Move4, Ability, Item,
+$stmt = $conn->prepare("insert into OrderData (PokemonName, Gender, Nature, Level, Move1, Move2, Move3, Move4, Ability, Item,
 IVHP, IVATK, IVDEF, IVSPATK, IVSPDEF, IVSPE, EVHP, EVATK, EVDEF, EVSPATK, EVSPDEF, EVSPE)
-values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 echo $stmt->error;
-$stmt->bind_param("ssissssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->level, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability, $body->item,
+$stmt->bind_param("sssissssssiiiiiiiiiiii", $body->pokemon_name, $body->gender, $body->nature, $body->level, $body->move1, $body->move2, $body->move3, $body->move4, $body->ability, $body->item,
 $body->iv_hp, $body->iv_atk, $body->iv_def, $body->iv_spatk, $body->iv_spdef, $body->iv_spe,
 $body->ev_hp, $body->ev_atk, $body->ev_def, $body->ev_spatk, $body->ev_spdef, $body->ev_spe);
 $stmt->execute();
