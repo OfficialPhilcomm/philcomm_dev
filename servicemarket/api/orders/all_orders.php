@@ -19,7 +19,7 @@ u.Username as Username,
 u.ID as UserID,
 od.*,
 o.Price as OfferedPrice,
-o.DaysNeeded,
+o.DaysNeeded
 from UserOrder uo
 join User u on uo.UserID = u.ID
 and uo.AcceptedOfferID is null
