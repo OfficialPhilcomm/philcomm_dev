@@ -45,7 +45,7 @@ while($row = $result->fetch_assoc()) {
     $offer = new stdClass();
     $offer->price = $row["OfferedPrice"];
     $offer->days_needed = $row["DaysNeeded"];
-    $order-$offer = $offer;
+    $order->offer = $offer;
   }
   $order->item = $row["Item"];
   $order->move1 = $row["Move1"];
