@@ -31,6 +31,13 @@ set State = ? where ID = ?");
 
 $stmt->bind_param("ii", $body->state, $body->user_order_id);
 $stmt->execute();
+$result = $stmt->get_result();
+if($result->num_rows === 0) throwError("update failed");
+
+$api_result = new stdClass();
+$api_result->type = "update_state";
+$api_result->success = true;
+echo json_encode($api_result);
 
 $stmt->close();
 
