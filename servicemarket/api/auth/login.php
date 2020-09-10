@@ -6,6 +6,10 @@ $arguments['pass'] = 'string';
 $body = validateBody($arguments);
 
 $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
+$conn->query("update Counter set Value = Value + 1 where KeyName = 'LoginCount'", MYSQLI_ASYNC);
+$conn->close();
+
+$conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
