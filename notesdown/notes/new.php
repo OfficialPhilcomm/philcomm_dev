@@ -9,6 +9,7 @@ $conn = new mysqli(db_host(), db_user(), db_pass(), db_name());
 if ($conn->connect_error) {
   throwError("db error");
 }
+
 $stmt = $conn->prepare("insert into Note (FrontID,Note) values (uuid(), ?)");
 echo $stmt->error;
 $stmt->bind_param("s", $body->note);
