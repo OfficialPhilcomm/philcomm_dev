@@ -7,7 +7,7 @@ typewriter {
   text-align: center;
 }
 typewriter::after {
-  content: '|';
+  content: "|";
   display: inline-block;
   margin-left: 2px;
 
@@ -16,7 +16,7 @@ typewriter::after {
   width: 10px;
 
   animation-name: typewriter-cursor-blink;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
 
