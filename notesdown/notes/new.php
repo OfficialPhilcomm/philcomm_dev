@@ -10,9 +10,19 @@ if ($conn->connect_error) {
   throwError("db error");
 }
 
-$stmt = $conn->prepare("insert into Note (FrontID,Note) values (uuid(), ?)");
+$uuid = "";
+
+$stmt = $conn->prepare("select uuid() as uuid");
+$stmt->execute();
+
+$result = $stmt->get_result();
+while($row = $result->fetch_assoc()) {
+  $uuid = $row["uuid"];
+}
+
+$stmt = $conn->prepare("insert into Note (FrontID,Note) values (?, ?)");
 echo $stmt->error;
-$stmt->bind_param("s", $body->note);
+$stmt->bind_param("ss", $uuid, $body->note);
 $stmt->execute();
 
 $stmt->close();
@@ -21,4 +31,5 @@ $conn->close();
 
 $api_response = new stdClass();
 $api_response->success = true;
+$api_response->uuid = $uuid;
 exit(json_encode($api_response));
